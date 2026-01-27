@@ -37,7 +37,7 @@ export function TitleScreen({ onNavigate }: TitleScreenProps) {
         className="text-center mb-12"
       >
         <h1 className="text-6xl md:text-8xl font-display text-boston-gold mb-4">
-          Wicked Smart
+          Wicked Smaht
         </h1>
         <p className="text-xl text-boston-cream/70 font-body">
           A Boston Trivia Adventure
