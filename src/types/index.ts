@@ -10,6 +10,7 @@ export interface Location {
   triviaCount: number;
   parTime: number;
   redemptionType: RedemptionType;
+  backgroundImage: string;
 }
 
 export type RedemptionType =

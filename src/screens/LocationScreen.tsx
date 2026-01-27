@@ -331,9 +331,18 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${location.backgroundImage})` }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-boston-navy/70 via-boston-navy/50 to-boston-navy/90" />
+      </div>
+
       {/* Header */}
-      <div className="p-4 flex justify-between items-center bg-boston-navy/80">
+      <div className="relative p-4 flex justify-between items-center bg-boston-navy/80">
         <div className="flex items-center gap-4">
           <button
             onClick={() => onNavigate('map')}
@@ -350,7 +359,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col justify-end p-4">
+      <div className="relative flex-1 flex flex-col justify-end p-4">
         {/* NPC Portrait (centered when not in dialogue) */}
         {phase === 'entering' && (
           <motion.div

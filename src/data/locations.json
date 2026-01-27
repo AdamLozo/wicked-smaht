@@ -6,7 +6,8 @@
     "unlockRequirement": null,
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "pronunciation"
+    "redemptionType": "pronunciation",
+    "backgroundImage": "/assets/images/locations/southie.png"
   },
   "north_end": {
     "id": "north_end",
@@ -15,7 +16,8 @@
     "unlockRequirement": ["southie"],
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "memory_match"
+    "redemptionType": "memory_match",
+    "backgroundImage": "/assets/images/locations/north_end.png"
   },
   "fenway": {
     "id": "fenway",
@@ -24,7 +26,8 @@
     "unlockRequirement": ["southie"],
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "speed_naming"
+    "redemptionType": "speed_naming",
+    "backgroundImage": "/assets/images/locations/fenway.png"
   },
   "beacon_hill": {
     "id": "beacon_hill",
@@ -33,7 +36,8 @@
     "unlockRequirement": ["southie", "north_end", "fenway"],
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "unscramble"
+    "redemptionType": "unscramble",
+    "backgroundImage": "/assets/images/locations/beacon_hill.png"
   },
   "charlestown": {
     "id": "charlestown",
@@ -42,7 +46,8 @@
     "unlockRequirement": ["southie"],
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "timeline"
+    "redemptionType": "timeline",
+    "backgroundImage": "/assets/images/locations/charlestown.png"
   },
   "back_bay": {
     "id": "back_bay",
@@ -51,7 +56,8 @@
     "unlockRequirement": ["southie", "north_end", "fenway"],
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "spot_errors"
+    "redemptionType": "spot_errors",
+    "backgroundImage": "/assets/images/locations/back_bay.png"
   },
   "cambridge": {
     "id": "cambridge",
@@ -60,7 +66,8 @@
     "unlockRequirement": ["southie", "north_end", "fenway"],
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "match_game"
+    "redemptionType": "match_game",
+    "backgroundImage": "/assets/images/locations/cambridge.png"
   },
   "dorchester": {
     "id": "dorchester",
@@ -69,7 +76,8 @@
     "unlockRequirement": ["beacon_hill", "back_bay", "cambridge", "charlestown"],
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "quote_completion"
+    "redemptionType": "quote_completion",
+    "backgroundImage": "/assets/images/locations/dorchester.png"
   },
   "downtown": {
     "id": "downtown",
@@ -78,7 +86,8 @@
     "unlockRequirement": ["beacon_hill", "back_bay", "cambridge", "charlestown"],
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "photo_id"
+    "redemptionType": "photo_id",
+    "backgroundImage": "/assets/images/locations/downtown.png"
   },
   "seaport": {
     "id": "seaport",
@@ -87,6 +96,7 @@
     "unlockRequirement": ["dorchester", "downtown"],
     "triviaCount": 5,
     "parTime": 300,
-    "redemptionType": "rapid_fire"
+    "redemptionType": "rapid_fire",
+    "backgroundImage": "/assets/images/locations/seaport.png"
   }
 }
