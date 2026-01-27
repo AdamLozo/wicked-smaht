@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DialogueBox, TriviaCard, Button, Portrait, ScoreDisplay } from '../components';
-import { useGame, useLifeline } from '../contexts';
+import { RaceSplitScreen, StealChallengeScreen } from '../components/rivals';
+import { useGame, useLifeline, useRival } from '../contexts';
 import { useSFX } from '../hooks';
-import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion } from '../data';
-import type { ScreenId, LocationPhase, DialogueLine, Character, TriviaQuestion } from '../types';
+import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation } from '../data';
+import type { ScreenId, LocationPhase, DialogueLine, Character, TriviaQuestion, StealQuestion } from '../types';
 
 interface LocationScreenProps {
   onNavigate: (screen: ScreenId, data?: Record<string, unknown>) => void;
@@ -24,6 +25,10 @@ function getPlayerGreeting(characterId: string): string {
 
 export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
   const locationId = data.locationId as string;
+  const raceOpponent = data.raceOpponent as 'brendan' | 'maeve' | null | undefined;
+  const stealTarget = data.stealTarget as 'brendan' | 'maeve' | null | undefined;
+  const isStealChallenge = data.isStealChallenge as boolean | undefined;
+
   const location = locations[locationId];
   const npc = npcs[location.npc];
   const trivia = getTrivia(locationId);
@@ -37,6 +42,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
   } = useGame();
 
   const { resetLocationLifelines } = useLifeline();
+  const { startRace, startSteal, triggerRandomInterruption } = useRival();
 
   const playerCharacter = state.selectedCharacter
     ? playerCharacters[state.selectedCharacter]
@@ -52,6 +58,11 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
   const [showReaction, setShowReaction] = useState(false);
   const [lastReaction, setLastReaction] = useState('');
   const [usedAlternateIndices, setUsedAlternateIndices] = useState<number[]>([]);
+
+  // Race and steal state
+  const [isRacing, setIsRacing] = useState(false);
+  const [isStealing, setIsStealing] = useState(false);
+  const [stealQuestion, setStealQuestion] = useState<StealQuestion | null>(null);
 
   // Get the current question and its hints
   const currentQuestion = trivia?.questions[questionIndex];
@@ -113,13 +124,43 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     { speaker: 'npc', speakerId: npc.id, text: `You want another shot? Redemption challenge?` },
   ];
 
-  // Auto-advance from entering
+  // Handle race or steal mode on mount
   useEffect(() => {
-    if (phase === 'entering') {
+    if (raceOpponent) {
+      // Start a race immediately
+      setIsRacing(true);
+      startRace(raceOpponent, locationId);
+    } else if (isStealChallenge && stealTarget) {
+      // Start a steal challenge
+      const question = getStealQuestionForLocation(locationId);
+      if (question) {
+        setStealQuestion(question);
+        setIsStealing(true);
+        startSteal(stealTarget, locationId);
+      } else {
+        // No steal question available, go back to map
+        onNavigate('map');
+      }
+    }
+  }, [raceOpponent, stealTarget, isStealChallenge, locationId, startRace, startSteal, onNavigate]);
+
+  // Auto-advance from entering (only if not racing or stealing)
+  useEffect(() => {
+    if (phase === 'entering' && !isRacing && !isStealing) {
       const timer = setTimeout(() => setPhase('intro_dialogue'), 1000);
       return () => clearTimeout(timer);
     }
-  }, [phase]);
+  }, [phase, isRacing, isStealing]);
+
+  // Trigger random interruptions during trivia
+  useEffect(() => {
+    if (phase === 'trivia_loop' && !isRacing && !isStealing) {
+      // 15% chance of interruption per question
+      if (Math.random() < 0.15) {
+        triggerRandomInterruption();
+      }
+    }
+  }, [phase, questionIndex, isRacing, isStealing, triggerRandomInterruption]);
 
   const handleDialogueAdvance = useCallback(() => {
     const currentDialogue = phase === 'intro_dialogue'
@@ -214,6 +255,64 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     if (line.speaker === 'player') return playerCharacter;
     return null;
   }, [getCurrentDialogue, npc, playerCharacter]);
+
+  // Handle race completion
+  const handleRaceComplete = useCallback((playerWon: boolean, playerCorrect: boolean) => {
+    setIsRacing(false);
+
+    if (playerWon) {
+      // Player won the race, continue with normal location flow
+      playSFX('correct');
+      setPhase('intro_dialogue');
+    } else {
+      // Player lost the race, return to map
+      playSFX('wrong');
+      setTimeout(() => {
+        onNavigate('map');
+      }, 500);
+    }
+  }, [playSFX, onNavigate]);
+
+  // Handle steal completion
+  const handleStealComplete = useCallback((success: boolean) => {
+    setIsStealing(false);
+    setStealQuestion(null);
+
+    if (success) {
+      playSFX('key_get');
+    } else {
+      playSFX('wrong');
+    }
+
+    // Always return to map after steal attempt
+    setTimeout(() => {
+      onNavigate('map');
+    }, 500);
+  }, [playSFX, onNavigate]);
+
+  // Show race screen if racing
+  if (isRacing && raceOpponent && currentQuestion) {
+    return (
+      <RaceSplitScreen
+        question={currentQuestion}
+        opponentId={raceOpponent}
+        onComplete={handleRaceComplete}
+        timeLimit={30}
+      />
+    );
+  }
+
+  // Show steal screen if stealing
+  if (isStealing && stealTarget && stealQuestion) {
+    return (
+      <StealChallengeScreen
+        question={stealQuestion}
+        targetId={stealTarget}
+        onComplete={handleStealComplete}
+        timeLimit={45}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -318,6 +417,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
           </div>
         )}
       </div>
+
     </div>
   );
 }
