@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRival } from '../../contexts';
-import { Portrait } from '../ui/Portrait';
 
 interface Message {
   id: string;
