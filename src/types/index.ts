@@ -107,6 +107,7 @@ export interface Polaroid {
   location: string;
   image: string;
   caption: string;
+  title: string;
   triggerType: 'dialogue_branch' | 'environment' | 'trivia_bonus' | 'redemption_reward';
   triggerCondition?: string;
 }

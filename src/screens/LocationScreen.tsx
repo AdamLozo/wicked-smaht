@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DialogueBox, TriviaCard, Button, Portrait, ScoreDisplay } from '../components';
-import { RaceSplitScreen, StealChallengeScreen } from '../components/rivals';
+import { RaceSplitScreen, StealChallengeScreen, BrendanTextOverlay, MaeveMemoPlayer } from '../components/rivals';
 import { useGame, useLifeline, useRival, useAudio } from '../contexts';
 import { useSFX } from '../hooks';
-import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation, getRandomIntroDialogue, getRandomSuccessDialogue, getRandomFailureDialogue } from '../data';
+import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation, getRandomIntroDialogue, getRandomSuccessDialogue, getRandomFailureDialogue, getUncollectedPolaroidByType, getRandomUncollectedPolaroid } from '../data';
 import type { ScreenId, LocationPhase, DialogueLine, Character, TriviaQuestion, StealQuestion } from '../types';
 
 interface LocationScreenProps {
@@ -27,11 +27,12 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     answerQuestion,
     addScore,
     completeLocation,
-    failLocation
+    failLocation,
+    collectPolaroid
   } = useGame();
 
   const { resetLocationLifelines } = useLifeline();
-  const { startRace, startSteal, triggerRandomInterruption } = useRival();
+  const { state: rivalState, startRace, startSteal, triggerRandomInterruption, dismissInterruption } = useRival();
 
   const playerCharacter = state.selectedCharacter
     ? playerCharacters[state.selectedCharacter]
@@ -53,6 +54,10 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
   const [isRacing, setIsRacing] = useState(false);
   const [isStealing, setIsStealing] = useState(false);
   const [stealQuestion, setStealQuestion] = useState<StealQuestion | null>(null);
+
+  // Polaroid collection state
+  const [showPolaroidNotification, setShowPolaroidNotification] = useState(false);
+  const [collectedPolaroidTitle, setCollectedPolaroidTitle] = useState('');
 
   // Get the current question and its hints
   const currentQuestion = trivia?.questions[questionIndex];
@@ -214,6 +219,25 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
       } else {
         // End of trivia
         if (newCorrectCount >= GAME_CONSTANTS.PASSING_THRESHOLD) {
+          // Award polaroid on success
+          const polaroidToCollect = getRandomUncollectedPolaroid(locationId, state.collectedPolaroids);
+          if (polaroidToCollect) {
+            collectPolaroid(polaroidToCollect.id);
+            addScore(SCORING.POLAROID_FOUND);
+            setCollectedPolaroidTitle(polaroidToCollect.title || 'Memory');
+            setShowPolaroidNotification(true);
+            playSFX('polaroid');
+          }
+
+          // Perfect score bonus: award trivia_bonus polaroid if available
+          if (newCorrectCount === trivia.questions.length) {
+            const bonusPolaroid = getUncollectedPolaroidByType(locationId, 'trivia_bonus', state.collectedPolaroids);
+            if (bonusPolaroid && bonusPolaroid.id !== polaroidToCollect?.id) {
+              collectPolaroid(bonusPolaroid.id);
+              addScore(SCORING.POLAROID_FOUND);
+            }
+          }
+
           setPhase('success_dialogue');
           setDialogueIndex(0);
         } else {
@@ -223,7 +247,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
         }
       }
     }, 2000);
-  }, [trivia, questionIndex, answerQuestion, addScore, correctCount, locationId, failLocation, playSFX]);
+  }, [trivia, questionIndex, answerQuestion, addScore, correctCount, locationId, failLocation, playSFX, state.collectedPolaroids, collectPolaroid]);
 
   // Reset location lifelines when entering a new location
   useEffect(() => {
@@ -429,6 +453,45 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
           </div>
         )}
       </div>
+
+      {/* Rival Interruption Overlays */}
+      <BrendanTextOverlay
+        isOpen={rivalState.interruption.active && rivalState.interruption.type === 'brendan_text'}
+        onClose={dismissInterruption}
+        message={rivalState.interruption.content || ''}
+        helpContent={rivalState.interruption.helpContent}
+      />
+      <MaeveMemoPlayer
+        isOpen={rivalState.interruption.active && rivalState.interruption.type === 'maeve_memo'}
+        onClose={dismissInterruption}
+        message={rivalState.interruption.content || ''}
+        audioFile={rivalState.interruption.audioFile}
+        helpContent={rivalState.interruption.helpContent}
+      />
+
+      {/* Polaroid Collection Notification */}
+      <AnimatePresence>
+        {showPolaroidNotification && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: -20 }}
+            className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-boston-navy/95 backdrop-blur border-2 border-boston-gold rounded-lg p-4 shadow-lg shadow-boston-gold/20"
+            onAnimationComplete={() => {
+              setTimeout(() => setShowPolaroidNotification(false), 3000);
+            }}
+          >
+            <div className="flex items-center gap-3">
+              <div className="text-4xl">📸</div>
+              <div>
+                <p className="text-boston-gold font-display text-sm">Memory Found!</p>
+                <p className="text-boston-cream font-body">"{collectedPolaroidTitle}"</p>
+                <p className="text-boston-cream/50 text-xs mt-1">+{SCORING.POLAROID_FOUND} points</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );

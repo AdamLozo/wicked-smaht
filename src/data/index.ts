@@ -153,6 +153,24 @@ export function hasAllPolaroidsForLocation(locationId: string, collectedIds: str
   return locationPolaroids.every(p => collectedIds.includes(p.id));
 }
 
+export function getUncollectedPolaroidByType(
+  locationId: string,
+  triggerType: 'environment' | 'dialogue_branch' | 'trivia_bonus' | 'redemption_reward',
+  collectedIds: string[]
+): Polaroid | undefined {
+  const uncollected = getUncollectedPolaroidsForLocation(locationId, collectedIds);
+  return uncollected.find(p => p.triggerType === triggerType);
+}
+
+export function getRandomUncollectedPolaroid(
+  locationId: string,
+  collectedIds: string[]
+): Polaroid | undefined {
+  const uncollected = getUncollectedPolaroidsForLocation(locationId, collectedIds);
+  if (uncollected.length === 0) return undefined;
+  return uncollected[Math.floor(Math.random() * uncollected.length)];
+}
+
 // ============================================
 // SCORING HELPERS
 // ============================================
