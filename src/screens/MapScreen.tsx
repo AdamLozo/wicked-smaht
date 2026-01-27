@@ -12,18 +12,20 @@ interface MapScreenProps {
 }
 
 // Location positions on map (percentage-based)
-// Spread out to prevent label overlap
+// Adjust these values to align with your boston-map.png image
+// x: 0 = left edge, 100 = right edge
+// y: 0 = top edge, 100 = bottom edge
 const locationPositions: Record<string, { x: number; y: number; labelOffset?: 'left' | 'right' }> = {
-  southie: { x: 75, y: 78 },
-  north_end: { x: 62, y: 32 },
-  fenway: { x: 18, y: 48 },
-  beacon_hill: { x: 38, y: 38, labelOffset: 'left' },
-  charlestown: { x: 58, y: 15 },
-  back_bay: { x: 28, y: 58 },
-  cambridge: { x: 22, y: 22 },
-  dorchester: { x: 82, y: 88 },
-  downtown: { x: 50, y: 52, labelOffset: 'right' },
-  seaport: { x: 65, y: 68 },
+  cambridge: { x: 25, y: 25 },           // Northwest - across Charles River
+  charlestown: { x: 55, y: 18 },         // North - Bunker Hill area
+  north_end: { x: 58, y: 38 },           // Northeast peninsula
+  beacon_hill: { x: 42, y: 42, labelOffset: 'left' },  // Central-west, State House
+  downtown: { x: 52, y: 48, labelOffset: 'right' },    // Central
+  back_bay: { x: 32, y: 52 },            // West of downtown
+  fenway: { x: 22, y: 55 },              // Further west - ballpark area
+  seaport: { x: 62, y: 62 },             // Southeast - Innovation District
+  southie: { x: 72, y: 72 },             // South Boston - east of seaport
+  dorchester: { x: 65, y: 85 },          // South - largest neighborhood
 };
 
 export function MapScreen({ onNavigate }: MapScreenProps) {

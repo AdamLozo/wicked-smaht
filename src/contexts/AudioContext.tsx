@@ -267,17 +267,28 @@ export function AudioProvider({ children }: AudioProviderProps) {
       return;
     }
 
-    // Stop current track if different
-    if (musicRef.current && currentTrack !== trackName) {
-      musicRef.current.stop();
-      musicRef.current.unload();
+    // If same track is already playing, do nothing
+    if (currentTrack === trackName && musicRef.current && isMusicPlaying) {
+      return;
+    }
+
+    // Stop and cleanup current track with fade out
+    if (musicRef.current) {
+      const oldMusic = musicRef.current;
+      oldMusic.fade(oldMusic.volume(), 0, 500);
+      setTimeout(() => {
+        oldMusic.stop();
+        oldMusic.unload();
+      }, 500);
+      musicRef.current = null;
     }
 
     const path = `/assets/audio/music/${trackName}.mp3`;
+    const targetVolume = audioState.musicVolume * audioState.masterVolume;
 
-    musicRef.current = new Howl({
+    const newMusic = new Howl({
       src: [path],
-      volume: audioState.musicVolume * audioState.masterVolume,
+      volume: 0, // Start silent for fade in
       loop: true,
       preload: true,
       onplay: () => setIsMusicPlaying(true),
@@ -289,9 +300,17 @@ export function AudioProvider({ children }: AudioProviderProps) {
       },
     });
 
+    musicRef.current = newMusic;
     setCurrentTrack(trackName);
-    musicRef.current.play();
-  }, [audioState.musicEnabled, audioState.musicVolume, audioState.masterVolume, currentTrack]);
+
+    // Fade in after a short delay to let old track fade out
+    setTimeout(() => {
+      if (musicRef.current === newMusic) {
+        newMusic.play();
+        newMusic.fade(0, targetVolume, 500);
+      }
+    }, 300);
+  }, [audioState.musicEnabled, audioState.musicVolume, audioState.masterVolume, currentTrack, isMusicPlaying]);
 
   const stopMusic = useCallback(() => {
     if (musicRef.current) {
