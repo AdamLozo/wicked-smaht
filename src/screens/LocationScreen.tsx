@@ -257,7 +257,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
   }, [getCurrentDialogue, npc, playerCharacter]);
 
   // Handle race completion
-  const handleRaceComplete = useCallback((playerWon: boolean, playerCorrect: boolean) => {
+  const handleRaceComplete = useCallback((playerWon: boolean, _playerCorrect: boolean) => {
     setIsRacing(false);
 
     if (playerWon) {
