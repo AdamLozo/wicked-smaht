@@ -252,7 +252,15 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     const line = getCurrentDialogue();
     if (!line) return null;
     if (line.speaker === 'npc') return npc;
-    if (line.speaker === 'player') return playerCharacter;
+    if (line.speaker === 'player') {
+      // Return player character or a fallback if not loaded
+      return playerCharacter || {
+        id: 'player',
+        name: 'You',
+        portrait: '',
+        voiceProfile: { pitch: 1, rate: 1 }
+      } as Character;
+    }
     return null;
   }, [getCurrentDialogue, npc, playerCharacter]);
 
