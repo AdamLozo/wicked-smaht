@@ -4,19 +4,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface PastaCard {
   id: string;
   name: string;
+  shape: string;
   emoji: string;
 }
 
+// Pasta types matching the north_end.json redemption challenge data
 const PASTA_TYPES: PastaCard[] = [
-  { id: 'orecchiette', name: 'Orecchiette', emoji: '👂' },
-  { id: 'farfalle', name: 'Farfalle', emoji: '🦋' },
-  { id: 'penne', name: 'Penne', emoji: '✏️' },
-  { id: 'rigatoni', name: 'Rigatoni', emoji: '🔧' },
-  { id: 'fusilli', name: 'Fusilli', emoji: '🌀' },
-  { id: 'conchiglie', name: 'Conchiglie', emoji: '🐚' },
-  { id: 'linguine', name: 'Linguine', emoji: '〰️' },
-  { id: 'tortellini', name: 'Tortellini', emoji: '🥟' },
+  { id: 'orecchiette', name: 'Orecchiette', shape: 'Small ear-shaped', emoji: '👂' },
+  { id: 'farfalle', name: 'Farfalle', shape: 'Bow-tie', emoji: '🦋' },
+  { id: 'penne', name: 'Penne', shape: 'Little tubes', emoji: '✏️' },
+  { id: 'fusilli', name: 'Fusilli', shape: 'Corkscrew', emoji: '🌀' },
+  { id: 'pappardelle', name: 'Pappardelle', shape: 'Flat wide ribbons', emoji: '🎀' },
+  { id: 'capellini', name: 'Capellini', shape: 'Thin angel hair', emoji: '〰️' },
+  { id: 'conchiglie', name: 'Conchiglie', shape: 'Shell-shaped', emoji: '🐚' },
+  { id: 'orzo', name: 'Orzo', shape: 'Small rice-shaped', emoji: '🍚' },
 ];
+
+const TOTAL_PAIRS = 6;
 
 interface CardState {
   id: string;
@@ -33,7 +37,7 @@ interface MemoryMatchGameProps {
 
 export function MemoryMatchGame({
   onComplete,
-  requiredMatches = 4,
+  requiredMatches = 6,
   timeLimit = 60,
 }: MemoryMatchGameProps) {
   const [cards, setCards] = useState<CardState[]>([]);
@@ -44,11 +48,11 @@ export function MemoryMatchGame({
   const [gameStarted, setGameStarted] = useState(false);
   const [isChecking, setIsChecking] = useState(false);
 
-  // Initialize cards
+  // Initialize cards - use all 8 pasta types, select 6 for the game
   useEffect(() => {
     const selectedPastas = [...PASTA_TYPES]
       .sort(() => Math.random() - 0.5)
-      .slice(0, 6);
+      .slice(0, TOTAL_PAIRS);
 
     const cardPairs = selectedPastas.flatMap((pasta) => [
       { id: `${pasta.id}-a`, pastaId: pasta.id, isFlipped: false, isMatched: false },
@@ -97,10 +101,13 @@ export function MemoryMatchGame({
         ));
         setMatchedCount(prev => {
           const newCount = prev + 1;
-          // Check win condition
-          if (newCount >= 6) {
-            const passed = true;
-            onComplete(passed, newCount * 25 + Math.max(0, timeLeft * 2));
+          // Check win condition - pass if required matches reached, complete if all pairs found
+          if (newCount >= TOTAL_PAIRS) {
+            // All pairs matched - automatic win
+            onComplete(true, newCount * 25 + Math.max(0, timeLeft * 2));
+          } else if (newCount >= requiredMatches) {
+            // Met required threshold but can keep playing for bonus
+            // Don't end yet - let them finish for time bonus
           }
           return newCount;
         });
@@ -119,7 +126,7 @@ export function MemoryMatchGame({
         setIsChecking(false);
       }, 1000);
     }
-  }, [flippedCards, cards, timeLeft, onComplete]);
+  }, [flippedCards, cards, timeLeft, onComplete, requiredMatches]);
 
   const handleCardClick = useCallback((cardId: string) => {
     if (!gameStarted) {
@@ -157,7 +164,10 @@ export function MemoryMatchGame({
       {/* Stats */}
       <div className="flex justify-between mb-4 px-4">
         <div className="text-boston-cream/70">
-          Matches: <span className="text-boston-gold">{matchedCount}/6</span>
+          Matches: <span className={`${matchedCount >= requiredMatches ? 'text-green-400' : 'text-boston-gold'}`}>{matchedCount}/{TOTAL_PAIRS}</span>
+          {matchedCount >= requiredMatches && matchedCount < TOTAL_PAIRS && (
+            <span className="text-green-400 text-xs ml-1">(passed!)</span>
+          )}
         </div>
         <div className={`font-mono ${timeLeft <= 10 ? 'text-red-400' : 'text-boston-cream/70'}`}>
           {Math.floor(timeLeft / 60)}:{(timeLeft % 60).toString().padStart(2, '0')}
@@ -237,7 +247,7 @@ export function MemoryMatchGame({
 
       {/* NPC Commentary */}
       <AnimatePresence>
-        {matchedCount > 0 && matchedCount < 6 && (
+        {matchedCount > 0 && matchedCount < TOTAL_PAIRS && (
           <motion.p
             key={matchedCount}
             initial={{ opacity: 0, y: 10 }}
@@ -245,11 +255,11 @@ export function MemoryMatchGame({
             exit={{ opacity: 0 }}
             className="text-center text-boston-cream/70 mt-4 italic"
           >
-            {matchedCount === 1 && "Not bad. You know your orecchiette from your rigatoni."}
+            {matchedCount === 1 && "Not bad. You know your orecchiette from your pappardelle."}
             {matchedCount === 2 && "My nonna would approve. Keep going."}
             {matchedCount === 3 && "Halfway there. You might actually pass."}
-            {matchedCount === 4 && "Okay, I'm impressed. One more for the record."}
-            {matchedCount === 5 && "Last pair. Don't blow it now."}
+            {matchedCount === 4 && "Four down, two to go. You're getting warm."}
+            {matchedCount === 5 && "One more pair and you've got it. Don't blow it now."}
           </motion.p>
         )}
       </AnimatePresence>

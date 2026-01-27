@@ -111,7 +111,7 @@ export function RedemptionScreen({ onNavigate, data }: RedemptionScreenProps) {
         return (
           <MemoryMatchGame
             onComplete={handleGameComplete}
-            requiredMatches={4}
+            requiredMatches={6}
             timeLimit={60}
           />
         );
