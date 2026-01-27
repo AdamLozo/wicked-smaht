@@ -4,23 +4,12 @@ import { DialogueBox, TriviaCard, Button, Portrait, ScoreDisplay } from '../comp
 import { RaceSplitScreen, StealChallengeScreen } from '../components/rivals';
 import { useGame, useLifeline, useRival, useAudio } from '../contexts';
 import { useSFX } from '../hooks';
-import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation } from '../data';
+import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation, getRandomIntroDialogue, getRandomSuccessDialogue, getRandomFailureDialogue } from '../data';
 import type { ScreenId, LocationPhase, DialogueLine, Character, TriviaQuestion, StealQuestion } from '../types';
 
 interface LocationScreenProps {
   onNavigate: (screen: ScreenId, data?: Record<string, unknown>) => void;
   data: Record<string, unknown>;
-}
-
-// Helper function for character-specific greetings
-function getPlayerGreeting(characterId: string): string {
-  const greetings: Record<string, string> = {
-    danny: "Hi, uh, sorry to bother you. I'm Danny. Sully's nephew? Great-nephew? Something like that.",
-    colleen: "Let's skip the small talk. I'm Colleen. You have something I need.",
-    fitz: "The name's Fitz. And before you ask — yes, I know about the tunnels under the city.",
-    meg: "Meg. Here for the key. Can we make this quick?",
-  };
-  return greetings[characterId] || "I'm here for the key.";
 }
 
 export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
@@ -107,23 +96,21 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     }
   }, [trivia?.alternateQuestions, alternateQuestion]);
 
-  // Generate intro dialogue
-  const introDialogue: DialogueLine[] = [
-    { speaker: 'npc', speakerId: npc.id, text: `Well, well. Another O'Brien looking for a key.` },
-    { speaker: 'npc', speakerId: npc.id, text: `Sully told me you might come by.` },
-    { speaker: 'player', text: playerCharacter ? getPlayerGreeting(playerCharacter.id) : `I'm here for the key.` },
-    { speaker: 'npc', speakerId: npc.id, text: `Let's see if you know your Boston. Five questions. Get three right.` },
-  ];
+  // Generate randomized dialogue - memoized so it stays consistent during the visit
+  const introDialogue = useMemo(() =>
+    getRandomIntroDialogue(npc.id, playerCharacter?.id || 'danny'),
+    [npc.id, playerCharacter?.id]
+  );
 
-  const successDialogue: DialogueLine[] = [
-    { speaker: 'npc', speakerId: npc.id, text: `Not bad, kid. Not bad at all.` },
-    { speaker: 'npc', speakerId: npc.id, text: `Sully would've been proud. Here's your key.` },
-  ];
+  const successDialogue = useMemo(() =>
+    getRandomSuccessDialogue(npc.id),
+    [npc.id]
+  );
 
-  const failureDialogue: DialogueLine[] = [
-    { speaker: 'npc', speakerId: npc.id, text: `That's... not great.` },
-    { speaker: 'npc', speakerId: npc.id, text: `You want another shot? Redemption challenge?` },
-  ];
+  const failureDialogue = useMemo(() =>
+    getRandomFailureDialogue(npc.id),
+    [npc.id]
+  );
 
   // Handle race or steal mode on mount
   useEffect(() => {

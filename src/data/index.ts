@@ -1,4 +1,4 @@
-import type { Location, Character, TriviaSet, Polaroid, Rival, LifelineHint, SullyHint, StealQuestion } from '../types';
+import type { Location, Character, TriviaSet, Polaroid, Rival, LifelineHint, SullyHint, StealQuestion, DialogueLine } from '../types';
 
 // Import JSON data
 import locationsData from './locations.json';
@@ -7,6 +7,7 @@ import polaroidsData from './polaroids.json';
 import lifelineHintsData from './lifeline-hints.json';
 import stealQuestionsData from './steal-questions.json';
 import rivalDialogueData from './rival-dialogue.json';
+import npcDialogueData from './npc-dialogue.json';
 
 // Import trivia files
 import southieTrivia from './trivia/southie.json';
@@ -301,4 +302,98 @@ export function getLocationDialogue(
   const locationData = locationSpecificDialogue[locationId as keyof typeof locationSpecificDialogue];
   if (!locationData) return undefined;
   return locationData[rivalId];
+}
+
+// ============================================
+// NPC DIALOGUE VARIATION
+// ============================================
+
+interface NpcDialogueSet {
+  npcOpener: string;
+  npcFollowup: string;
+  playerGreetings: Record<string, string>;
+  npcChallenge: string;
+}
+
+interface NpcSuccessDialogue {
+  line1: string;
+  line2: string;
+}
+
+interface NpcFailureDialogue {
+  line1: string;
+  line2: string;
+}
+
+interface NpcDialogueData {
+  intro: NpcDialogueSet[];
+  success: NpcSuccessDialogue[];
+  failure: NpcFailureDialogue[];
+}
+
+const npcDialogue = npcDialogueData as Record<string, NpcDialogueData>;
+
+export function getRandomIntroDialogue(
+  npcId: string,
+  playerId: string
+): DialogueLine[] {
+  const dialogueData = npcDialogue[npcId];
+  if (!dialogueData || !dialogueData.intro || dialogueData.intro.length === 0) {
+    // Fallback to default dialogue
+    return [
+      { speaker: 'npc', speakerId: npcId, text: `Well, well. Another O'Brien looking for a key.` },
+      { speaker: 'npc', speakerId: npcId, text: `Sully told me you might come by.` },
+      { speaker: 'player', text: `I'm here for the key.` },
+      { speaker: 'npc', speakerId: npcId, text: `Let's see if you know your Boston. Five questions. Get three right.` },
+    ];
+  }
+
+  // Pick a random intro set
+  const introSet = dialogueData.intro[Math.floor(Math.random() * dialogueData.intro.length)];
+  const playerGreeting = introSet.playerGreetings[playerId] || `I'm here for the key.`;
+
+  return [
+    { speaker: 'npc', speakerId: npcId, text: introSet.npcOpener },
+    { speaker: 'npc', speakerId: npcId, text: introSet.npcFollowup },
+    { speaker: 'player', text: playerGreeting },
+    { speaker: 'npc', speakerId: npcId, text: introSet.npcChallenge },
+  ];
+}
+
+export function getRandomSuccessDialogue(npcId: string): DialogueLine[] {
+  const dialogueData = npcDialogue[npcId];
+  if (!dialogueData || !dialogueData.success || dialogueData.success.length === 0) {
+    // Fallback to default dialogue
+    return [
+      { speaker: 'npc', speakerId: npcId, text: `Not bad, kid. Not bad at all.` },
+      { speaker: 'npc', speakerId: npcId, text: `Sully would've been proud. Here's your key.` },
+    ];
+  }
+
+  // Pick a random success set
+  const successSet = dialogueData.success[Math.floor(Math.random() * dialogueData.success.length)];
+
+  return [
+    { speaker: 'npc', speakerId: npcId, text: successSet.line1 },
+    { speaker: 'npc', speakerId: npcId, text: successSet.line2 },
+  ];
+}
+
+export function getRandomFailureDialogue(npcId: string): DialogueLine[] {
+  const dialogueData = npcDialogue[npcId];
+  if (!dialogueData || !dialogueData.failure || dialogueData.failure.length === 0) {
+    // Fallback to default dialogue
+    return [
+      { speaker: 'npc', speakerId: npcId, text: `That's... not great.` },
+      { speaker: 'npc', speakerId: npcId, text: `You want another shot? Redemption challenge?` },
+    ];
+  }
+
+  // Pick a random failure set
+  const failureSet = dialogueData.failure[Math.floor(Math.random() * dialogueData.failure.length)];
+
+  return [
+    { speaker: 'npc', speakerId: npcId, text: failureSet.line1 },
+    { speaker: 'npc', speakerId: npcId, text: failureSet.line2 },
+  ];
 }
