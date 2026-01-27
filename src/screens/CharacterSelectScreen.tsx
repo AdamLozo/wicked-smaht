@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button, Portrait } from '../components';
-import { useGame } from '../contexts';
+import { useGame, useAudio } from '../contexts';
 import { playerCharacters } from '../data';
 import type { ScreenId } from '../types';
 
@@ -11,6 +11,7 @@ interface CharacterSelectScreenProps {
 
 export function CharacterSelectScreen({ onNavigate }: CharacterSelectScreenProps) {
   const { selectCharacter } = useGame();
+  const { playSfx } = useAudio();
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const characters = Object.values(playerCharacters);
@@ -18,9 +19,15 @@ export function CharacterSelectScreen({ onNavigate }: CharacterSelectScreenProps
 
   const handleConfirm = () => {
     if (selectedId) {
+      playSfx('click');
       selectCharacter(selectedId);
       onNavigate('map');
     }
+  };
+
+  const handleCharacterSelect = (charId: string) => {
+    playSfx('click');
+    setSelectedId(charId);
   };
 
   return (
@@ -47,7 +54,7 @@ export function CharacterSelectScreen({ onNavigate }: CharacterSelectScreenProps
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            onClick={() => setSelectedId(char.id)}
+            onClick={() => handleCharacterSelect(char.id)}
             className={`
               p-4 rounded-lg border-2 transition-all
               ${selectedId === char.id

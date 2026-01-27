@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { DialogueBox, TriviaCard, Button } from '../components';
-import { useGame, useLifeline } from '../contexts';
+import { useGame, useLifeline, useAudio } from '../contexts';
 import { getTrivia, npcs, GAME_CONSTANTS } from '../data';
 import type { ScreenId, DialogueLine } from '../types';
 
@@ -14,6 +14,7 @@ type GauntletPhase = 'intro' | 'question' | 'result' | 'passed' | 'failed';
 export function GauntletScreen({ onNavigate }: GauntletScreenProps) {
   const { attemptGauntlet } = useGame();
   const { enterGauntlet } = useLifeline();
+  const { playMusic, playSfx } = useAudio();
   const sully = npcs.sully;
 
   const gauntletTrivia = getTrivia('gauntlet');
@@ -28,7 +29,8 @@ export function GauntletScreen({ onNavigate }: GauntletScreenProps) {
   // Enter gauntlet mode on mount
   useEffect(() => {
     enterGauntlet();
-  }, [enterGauntlet]);
+    playMusic('gauntlet');
+  }, [enterGauntlet, playMusic]);
 
   const introDialogue: DialogueLine[] = [
     { speaker: 'narrator', text: "The bar falls silent. A spotlight illuminates the brass puzzle box on the counter." },
@@ -50,6 +52,9 @@ export function GauntletScreen({ onNavigate }: GauntletScreenProps) {
     const newAnswers = [...answers, correct];
     setAnswers(newAnswers);
 
+    // Play SFX for correct/wrong
+    playSfx(correct ? 'correct' : 'wrong');
+
     const newCorrectCount = correct ? correctCount + 1 : correctCount;
     if (correct) {
       setCorrectCount(newCorrectCount);
@@ -67,11 +72,14 @@ export function GauntletScreen({ onNavigate }: GauntletScreenProps) {
         const passed = finalCorrect >= GAME_CONSTANTS.GAUNTLET_PASSING_THRESHOLD;
         const score = finalCorrect * 100; // Simplified scoring
 
+        // Play success/failure SFX
+        playSfx(passed ? 'success' : 'failure');
+
         attemptGauntlet(passed, score);
         setPhase(passed ? 'passed' : 'failed');
       }
     }, 1500);
-  }, [answers, correctCount, questionIndex, questions.length, attemptGauntlet]);
+  }, [answers, correctCount, questionIndex, questions.length, attemptGauntlet, playSfx]);
 
   const handleRetry = useCallback(() => {
     setPhase('intro');

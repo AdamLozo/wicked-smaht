@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, useRef, useEffect, type ReactNode } from 'react';
 import { Howl, Howler } from 'howler';
-import type { AudioState, VoiceProfile } from '../types';
+import type { AudioState } from '../types';
 
 // ============================================
 // INITIAL STATE
@@ -34,6 +34,38 @@ const SFX_PATHS = {
 type SfxName = keyof typeof SFX_PATHS;
 
 // ============================================
+// VOICE FILE PATH HELPERS
+// ============================================
+
+const VOICE_BASE_PATH = '/assets/audio/voice';
+
+const CHARACTER_FOLDERS: Record<string, string> = {
+  sully: 'sully',
+  brendan: 'brendan',
+  maeve: 'maeve',
+  danny: 'danny',
+  colleen: 'colleen',
+  fitz: 'fitz',
+  meg: 'meg',
+  rita: 'rita',
+  enzo: 'enzo',
+  tommy: 'npc',
+  trish: 'npc',
+  eddie: 'npc',
+  miles: 'npc',
+  simon: 'npc',
+  mary_catherine: 'npc',
+  jerome: 'npc',
+  elena: 'npc',
+  shared_npc: 'npc',
+};
+
+function getVoiceFilePath(character: string, filename: string): string {
+  const folder = CHARACTER_FOLDERS[character.toLowerCase()] || character.toLowerCase();
+  return `${VOICE_BASE_PATH}/${folder}/${filename}`;
+}
+
+// ============================================
 // CONTEXT VALUE TYPE
 // ============================================
 
@@ -51,9 +83,9 @@ interface AudioContextValue {
   // Sound effects
   playSfx: (name: SfxName) => void;
 
-  // Voice synthesis
-  speak: (text: string, voiceProfile?: VoiceProfile) => void;
-  stopSpeaking: () => void;
+  // Voice (pre-recorded files)
+  playVoice: (character: string, filename: string) => Promise<void>;
+  stopVoice: () => void;
   isSpeaking: boolean;
 
   // Music
@@ -83,8 +115,9 @@ export function AudioProvider({ children }: AudioProviderProps) {
 
   // Refs for audio instances
   const sfxCache = useRef<Map<string, Howl>>(new Map());
+  const voiceCache = useRef<Map<string, Howl>>(new Map());
+  const currentVoiceRef = useRef<Howl | null>(null);
   const musicRef = useRef<Howl | null>(null);
-  const speechSynthRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   // Update global Howler volume when master changes
   useEffect(() => {
@@ -97,8 +130,8 @@ export function AudioProvider({ children }: AudioProviderProps) {
 
   const setVoiceEnabled = useCallback((enabled: boolean) => {
     setAudioState(prev => ({ ...prev, voiceEnabled: enabled }));
-    if (!enabled) {
-      window.speechSynthesis?.cancel();
+    if (!enabled && currentVoiceRef.current) {
+      currentVoiceRef.current.stop();
       setIsSpeaking(false);
     }
   }, []);
@@ -162,45 +195,65 @@ export function AudioProvider({ children }: AudioProviderProps) {
   }, [audioState.sfxEnabled, audioState.sfxVolume, audioState.masterVolume]);
 
   // ============================================
-  // VOICE SYNTHESIS
+  // VOICE (PRE-RECORDED FILES)
   // ============================================
 
-  const speak = useCallback((text: string, voiceProfile?: VoiceProfile) => {
-    if (!audioState.voiceEnabled || !window.speechSynthesis) return;
+  const playVoice = useCallback((character: string, filename: string): Promise<void> => {
+    return new Promise((resolve) => {
+      if (!audioState.voiceEnabled) {
+        resolve();
+        return;
+      }
 
-    // Cancel any ongoing speech
-    window.speechSynthesis.cancel();
+      // Stop any currently playing voice
+      if (currentVoiceRef.current) {
+        currentVoiceRef.current.stop();
+        currentVoiceRef.current = null;
+      }
 
-    const utterance = new SpeechSynthesisUtterance(text);
+      const filePath = getVoiceFilePath(character, filename);
 
-    // Apply voice profile if provided
-    if (voiceProfile) {
-      utterance.rate = voiceProfile.rate;
-      utterance.pitch = voiceProfile.pitch;
-    }
+      // Check cache first
+      let sound = voiceCache.current.get(filePath);
 
-    // Try to find a good voice
-    const voices = window.speechSynthesis.getVoices();
-    const preferredVoice = voices.find(v =>
-      v.lang.startsWith('en') && v.name.includes('English')
-    ) || voices.find(v => v.lang.startsWith('en'));
+      if (!sound) {
+        sound = new Howl({
+          src: [filePath],
+          volume: audioState.masterVolume,
+          onend: () => {
+            setIsSpeaking(false);
+            resolve();
+          },
+          onloaderror: () => {
+            console.warn(`Failed to load voice file: ${filePath}`);
+            setIsSpeaking(false);
+            resolve(); // Resolve instead of reject to avoid breaking game flow
+          },
+        });
 
-    if (preferredVoice) {
-      utterance.voice = preferredVoice;
-    }
+        // Cache the sound for reuse
+        voiceCache.current.set(filePath, sound);
+      } else {
+        // Update volume on cached sound
+        sound.volume(audioState.masterVolume);
+        sound.off('end');
+        sound.on('end', () => {
+          setIsSpeaking(false);
+          resolve();
+        });
+      }
 
-    utterance.volume = audioState.masterVolume;
-
-    utterance.onstart = () => setIsSpeaking(true);
-    utterance.onend = () => setIsSpeaking(false);
-    utterance.onerror = () => setIsSpeaking(false);
-
-    speechSynthRef.current = utterance;
-    window.speechSynthesis.speak(utterance);
+      currentVoiceRef.current = sound;
+      setIsSpeaking(true);
+      sound.play();
+    });
   }, [audioState.voiceEnabled, audioState.masterVolume]);
 
-  const stopSpeaking = useCallback(() => {
-    window.speechSynthesis?.cancel();
+  const stopVoice = useCallback(() => {
+    if (currentVoiceRef.current) {
+      currentVoiceRef.current.stop();
+      currentVoiceRef.current = null;
+    }
     setIsSpeaking(false);
   }, []);
 
@@ -271,10 +324,14 @@ export function AudioProvider({ children }: AudioProviderProps) {
       // Cleanup on unmount
       sfxCache.current.forEach(sound => sound.unload());
       sfxCache.current.clear();
+      voiceCache.current.forEach(sound => sound.unload());
+      voiceCache.current.clear();
+      if (currentVoiceRef.current) {
+        currentVoiceRef.current.unload();
+      }
       if (musicRef.current) {
         musicRef.current.unload();
       }
-      window.speechSynthesis?.cancel();
     };
   }, []);
 
@@ -291,8 +348,8 @@ export function AudioProvider({ children }: AudioProviderProps) {
     setMusicVolume,
     setSfxVolume,
     playSfx,
-    speak,
-    stopSpeaking,
+    playVoice,
+    stopVoice,
     isSpeaking,
     playMusic,
     stopMusic,

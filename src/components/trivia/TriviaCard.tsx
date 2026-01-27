@@ -5,7 +5,7 @@ import { LifelinePanel } from '../ui/LifelinePanel';
 import { AskTheBarModal } from '../ui/AskTheBarModal';
 import { PhoneLocalModal } from '../ui/PhoneLocalModal';
 import { useLifeline, useGame } from '../../contexts';
-import type { TriviaQuestion, LifelineHint, SullyHint, VoiceProfile } from '../../types';
+import type { TriviaQuestion, LifelineHint, SullyHint } from '../../types';
 
 interface TriviaCardProps {
   question: TriviaQuestion;
@@ -17,7 +17,7 @@ interface TriviaCardProps {
   // NPC info for Ask the Bar
   npcName?: string;
   npcPortrait?: string;
-  npcVoiceProfile?: VoiceProfile;
+  npcId?: string; // Character ID for voice file lookup
   // Hint data
   npcHint?: LifelineHint;
   sullyHint?: SullyHint;
@@ -35,7 +35,7 @@ export function TriviaCard({
   inRedemption = false,
   npcName = 'NPC',
   npcPortrait,
-  npcVoiceProfile,
+  npcId,
   npcHint,
   sullyHint,
   alternateQuestion,
@@ -349,7 +349,7 @@ export function TriviaCard({
         onClose={handleAskBarClose}
         npcName={npcName}
         npcPortrait={npcPortrait}
-        voiceProfile={npcVoiceProfile}
+        npcId={npcId}
         hint={defaultNpcHint}
         characterName={gameState.selectedCharacter || undefined}
       />

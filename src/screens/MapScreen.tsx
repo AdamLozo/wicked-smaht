@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button, ScoreDisplay, RivalIndicator, RivalProgressPanel, StealOpportunityBadge } from '../components';
 import { StealSelectionModal } from '../components/rivals/StealChallengeScreen';
 import { FamilyGroupChat } from '../components/rivals/FamilyGroupChat';
-import { useGame, useRival } from '../contexts';
+import { useGame, useRival, useAudio } from '../contexts';
 import { locations, getUnlockedLocations } from '../data';
 import type { ScreenId } from '../types';
 
@@ -29,9 +29,15 @@ const locationPositions: Record<string, { x: number; y: number; labelOffset?: 'l
 export function MapScreen({ onNavigate }: MapScreenProps) {
   const { state, canAttemptGauntlet, locationProgress } = useGame();
   const { checkForRace, getAvailableSteals } = useRival();
+  const { playMusic, playSfx } = useAudio();
 
   const [showStealModal, setShowStealModal] = useState(false);
   const [showGroupChat, setShowGroupChat] = useState(false);
+
+  // Play exploration music on mount
+  useEffect(() => {
+    playMusic('exploration');
+  }, [playMusic]);
 
   const unlockedLocations = getUnlockedLocations(state.completedLocations);
   const availableSteals = getAvailableSteals();
@@ -45,6 +51,7 @@ export function MapScreen({ onNavigate }: MapScreenProps) {
   const handleLocationClick = (locationId: string) => {
     const status = getLocationStatus(locationId);
     if (status === 'unlocked') {
+      playSfx('click');
       // Check if there's a rival at this location for a race
       const rivalAtLocation = checkForRace(locationId);
       onNavigate('location', {
@@ -81,7 +88,7 @@ export function MapScreen({ onNavigate }: MapScreenProps) {
       <div className="relative w-full aspect-[4/3] max-w-4xl mx-auto bg-boston-navy/50 border border-boston-cream/20 rounded-lg overflow-hidden">
         {/* Map Background */}
         <img
-          src="/assets/images/ui/boston-map.svg"
+          src="/assets/images/ui/boston-map.png"
           alt="Map of Boston"
           className="absolute inset-0 w-full h-full object-cover opacity-60"
         />

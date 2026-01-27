@@ -1,6 +1,7 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../components';
-import { useGame } from '../contexts';
+import { useGame, useAudio } from '../contexts';
 import type { ScreenId } from '../types';
 
 interface EndingScreenProps {
@@ -9,22 +10,31 @@ interface EndingScreenProps {
 
 export function EndingScreen({ onNavigate }: EndingScreenProps) {
   const { state, endingType, resetGame } = useGame();
+  const { playMusic } = useAudio();
+
+  // Play victory music on mount (all endings are victories)
+  useEffect(() => {
+    playMusic('victory');
+  }, [playMusic]);
 
   const endings = {
     standard: {
       title: "The Southie Standard Lives On",
       description: "The puzzle box clicks open. Inside, the deed to The Southie Standard. The bar is yours now — a piece of Boston history, passed down through the O'Brien line.",
       epilogue: "Brendan sulks in the corner. Maeve has already left. The regulars raise a glass to Sully, and to you.",
+      image: "/assets/images/endings/standard.png",
     },
     true: {
       title: "Sully's Final Letter",
       description: "Elena hands you an envelope she found in Sully's pocket the night he died. A letter he never sent — addressed to Mary Catherine.",
       epilogue: "You deliver it yourself. For the first time in twenty years, your aunt reads her brother's words. She cries. You sit with her until morning. Some wounds don't heal — but they can be acknowledged.",
+      image: "/assets/images/endings/true.png",
     },
     perfect: {
       title: "One Year Later",
       description: "The Southie Standard is packed. Mary Catherine is behind the bar — she moved back to Boston six months ago. Jerome performs a poem about Sully to a standing ovation.",
       epilogue: "All ten key-holders are here tonight. They share stories you've never heard. Sully wasn't just a bar owner — he was the thread that connected a whole city. And now, that thread runs through you.",
+      image: "/assets/images/endings/perfect.png",
     },
   };
 
@@ -36,12 +46,27 @@ export function EndingScreen({ onNavigate }: EndingScreenProps) {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-8">
+    <div className="min-h-screen bg-black flex items-center justify-center p-4 md:p-8 relative overflow-hidden">
+      {/* Background Ending Image */}
+      <motion.div
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 0.4, scale: 1 }}
+        transition={{ duration: 2 }}
+        className="absolute inset-0"
+      >
+        <img
+          src={ending.image}
+          alt={ending.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/50" />
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="max-w-2xl text-center"
+        className="max-w-2xl text-center relative z-10"
       >
         {/* Ending Type Badge */}
         <motion.p

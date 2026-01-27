@@ -1,14 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { VoiceProfile } from '../../types';
 import { useAudio } from '../../contexts';
 import { Portrait } from './Portrait';
 
 interface DialogueBoxProps {
   speakerName: string;
   speakerPortrait?: string;
+  speakerId?: string; // Character ID for voice file lookup
   text: string;
-  voiceProfile?: VoiceProfile;
+  audioFile?: string; // Voice file to play
   onComplete?: () => void;
   autoAdvance?: boolean;
   autoAdvanceDelay?: number;
@@ -19,8 +19,9 @@ interface DialogueBoxProps {
 export function DialogueBox({
   speakerName,
   speakerPortrait,
+  speakerId,
   text,
-  voiceProfile,
+  audioFile,
   onComplete,
   autoAdvance = false,
   autoAdvanceDelay = 2000,
@@ -29,22 +30,22 @@ export function DialogueBox({
 }: DialogueBoxProps) {
   const [displayedText, setDisplayedText] = useState('');
   const [isComplete, setIsComplete] = useState(false);
-  const { speak, stopSpeaking, isSpeaking } = useAudio();
+  const { playVoice, stopVoice, isSpeaking } = useAudio();
 
   const completeTyping = useCallback(() => {
     setDisplayedText(text);
     setIsComplete(true);
-    stopSpeaking();
-  }, [text, stopSpeaking]);
+    stopVoice();
+  }, [text, stopVoice]);
 
   // Typewriter effect
   useEffect(() => {
     setDisplayedText('');
     setIsComplete(false);
 
-    // Start speaking if voice is available
-    if (voiceProfile) {
-      speak(text, voiceProfile);
+    // Start playing voice file if available
+    if (audioFile && speakerId) {
+      playVoice(speakerId, audioFile);
     }
 
     let index = 0;
@@ -60,9 +61,9 @@ export function DialogueBox({
 
     return () => {
       clearInterval(timer);
-      stopSpeaking();
+      stopVoice();
     };
-  }, [text, typingSpeed, voiceProfile, speak, stopSpeaking]);
+  }, [text, typingSpeed, audioFile, speakerId, playVoice, stopVoice]);
 
   // Auto-advance after completion
   useEffect(() => {

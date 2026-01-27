@@ -13,7 +13,10 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'icons/*.png', 'assets/**/*'],
       manifest: false, // Use existing manifest.json
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,mp3,json}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,json}'],
+        // Don't precache large audio files - they'll be loaded on demand
+        globIgnores: ['**/assets/audio/**'],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB limit
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,

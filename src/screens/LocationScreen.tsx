@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DialogueBox, TriviaCard, Button, Portrait, ScoreDisplay } from '../components';
 import { RaceSplitScreen, StealChallengeScreen } from '../components/rivals';
-import { useGame, useLifeline, useRival } from '../contexts';
+import { useGame, useLifeline, useRival, useAudio } from '../contexts';
 import { useSFX } from '../hooks';
 import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation } from '../data';
 import type { ScreenId, LocationPhase, DialogueLine, Character, TriviaQuestion, StealQuestion } from '../types';
@@ -49,6 +49,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     : null;
 
   const { play: playSFX } = useSFX();
+  const { playMusic } = useAudio();
 
   // Location state machine
   const [phase, setPhase] = useState<LocationPhase>('entering');
@@ -143,6 +144,13 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
       }
     }
   }, [raceOpponent, stealTarget, isStealChallenge, locationId, startRace, startSteal, onNavigate]);
+
+  // Play thinking music during trivia phase
+  useEffect(() => {
+    if (phase === 'trivia_loop') {
+      playMusic('thinking');
+    }
+  }, [phase, playMusic]);
 
   // Auto-advance from entering (only if not racing or stealing)
   useEffect(() => {
@@ -363,7 +371,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
               className="w-full max-w-2xl"
               npcName={npc.name}
               npcPortrait={npc.portrait}
-              npcVoiceProfile={npc.voiceProfile}
+              npcId={npc.id}
               npcHint={npcHint}
               sullyHint={sullyHint}
               alternateQuestion={alternateQuestion}

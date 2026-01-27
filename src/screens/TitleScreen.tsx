@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../components';
+import { useAudio } from '../contexts';
 import { useSaveGame } from '../hooks/useSaveGame';
 import type { ScreenId } from '../types';
 
@@ -9,9 +11,16 @@ interface TitleScreenProps {
 
 export function TitleScreen({ onNavigate }: TitleScreenProps) {
   const { hasSave, deleteSave } = useSaveGame();
+  const { playMusic, playSfx } = useAudio();
   const saveExists = hasSave();
 
+  // Play title music on mount
+  useEffect(() => {
+    playMusic('title');
+  }, [playMusic]);
+
   const handleNewGame = () => {
+    playSfx('click');
     if (saveExists) {
       // Confirm before overwriting
       if (confirm('This will erase your current progress. Continue?')) {
@@ -24,6 +33,7 @@ export function TitleScreen({ onNavigate }: TitleScreenProps) {
   };
 
   const handleContinue = () => {
+    playSfx('click');
     onNavigate('map');
   };
 

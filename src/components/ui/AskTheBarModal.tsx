@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { VoiceProfile, LifelineHint } from '../../types';
+import type { LifelineHint } from '../../types';
 import { useAudio } from '../../contexts';
 import { useFocusTrap } from '../../hooks/useKeyboardNavigation';
 import { Button } from './Button';
@@ -10,7 +10,7 @@ interface AskTheBarModalProps {
   onClose: () => void;
   npcName: string;
   npcPortrait?: string;
-  voiceProfile?: VoiceProfile;
+  npcId?: string; // Character ID for voice file lookup
   hint: LifelineHint;
   characterName?: string;
 }
@@ -20,13 +20,13 @@ export function AskTheBarModal({
   onClose,
   npcName,
   npcPortrait,
-  voiceProfile,
+  npcId,
   hint,
   characterName,
 }: AskTheBarModalProps) {
   const [displayedText, setDisplayedText] = useState('');
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  const { speak, stopSpeaking, isSpeaking } = useAudio();
+  const { playVoice, stopVoice, isSpeaking } = useAudio();
   const containerRef = useRef<HTMLDivElement>(null);
   useFocusTrap(containerRef, isOpen);
 
@@ -35,8 +35,8 @@ export function AskTheBarModal({
   const completeTyping = useCallback(() => {
     setDisplayedText(hint.text);
     setIsTypingComplete(true);
-    stopSpeaking();
-  }, [hint.text, stopSpeaking]);
+    stopVoice();
+  }, [hint.text, stopVoice]);
 
   // Typewriter effect
   useEffect(() => {
@@ -45,9 +45,9 @@ export function AskTheBarModal({
     setDisplayedText('');
     setIsTypingComplete(false);
 
-    // Start speaking if voice is available
-    if (voiceProfile) {
-      speak(hint.text, voiceProfile);
+    // Start playing voice file if available
+    if (hint.audioFile && npcId) {
+      playVoice(npcId, hint.audioFile);
     }
 
     let index = 0;
@@ -63,9 +63,9 @@ export function AskTheBarModal({
 
     return () => {
       clearInterval(timer);
-      stopSpeaking();
+      stopVoice();
     };
-  }, [isOpen, hint.text, voiceProfile, speak, stopSpeaking]);
+  }, [isOpen, hint.text, hint.audioFile, npcId, playVoice, stopVoice]);
 
   // Handle escape key
   useEffect(() => {
