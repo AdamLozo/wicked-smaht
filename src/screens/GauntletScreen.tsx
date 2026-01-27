@@ -1,7 +1,7 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { DialogueBox, TriviaCard, Button } from '../components';
-import { useGame } from '../contexts';
+import { useGame, useLifeline } from '../contexts';
 import { getTrivia, npcs, GAME_CONSTANTS } from '../data';
 import type { ScreenId, DialogueLine } from '../types';
 
@@ -13,6 +13,7 @@ type GauntletPhase = 'intro' | 'question' | 'result' | 'passed' | 'failed';
 
 export function GauntletScreen({ onNavigate }: GauntletScreenProps) {
   const { attemptGauntlet } = useGame();
+  const { enterGauntlet } = useLifeline();
   const sully = npcs.sully;
 
   const gauntletTrivia = getTrivia('gauntlet');
@@ -23,6 +24,11 @@ export function GauntletScreen({ onNavigate }: GauntletScreenProps) {
   const [correctCount, setCorrectCount] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
   const [dialogueIndex, setDialogueIndex] = useState(0);
+
+  // Enter gauntlet mode on mount
+  useEffect(() => {
+    enterGauntlet();
+  }, [enterGauntlet]);
 
   const introDialogue: DialogueLine[] = [
     { speaker: 'narrator', text: "The bar falls silent. A spotlight illuminates the brass puzzle box on the counter." },
