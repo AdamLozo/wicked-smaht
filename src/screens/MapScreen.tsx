@@ -12,20 +12,20 @@ interface MapScreenProps {
 }
 
 // Location positions on map (percentage-based)
-// Adjust these values to align with your boston-map.png image
+// Adjusted to match the vintage Boston map image
 // x: 0 = left edge, 100 = right edge
 // y: 0 = top edge, 100 = bottom edge
 const locationPositions: Record<string, { x: number; y: number; labelOffset?: 'left' | 'right' }> = {
-  cambridge: { x: 25, y: 25 },           // Northwest - across Charles River
-  charlestown: { x: 55, y: 18 },         // North - Bunker Hill area
-  north_end: { x: 58, y: 38 },           // Northeast peninsula
-  beacon_hill: { x: 42, y: 42, labelOffset: 'left' },  // Central-west, State House
-  downtown: { x: 52, y: 48, labelOffset: 'right' },    // Central
-  back_bay: { x: 32, y: 52 },            // West of downtown
-  fenway: { x: 22, y: 55 },              // Further west - ballpark area
-  seaport: { x: 62, y: 62 },             // Southeast - Innovation District
-  southie: { x: 72, y: 72 },             // South Boston - east of seaport
-  dorchester: { x: 65, y: 85 },          // South - largest neighborhood
+  cambridge: { x: 38, y: 18 },           // North of Charles River, Harvard/MIT area
+  charlestown: { x: 52, y: 22 },         // Northeast, across Inner Harbor
+  north_end: { x: 55, y: 35 },           // The peninsula jutting into harbor
+  beacon_hill: { x: 45, y: 38, labelOffset: 'left' },  // West of downtown, near State House
+  downtown: { x: 50, y: 42, labelOffset: 'right' },    // Central Boston
+  back_bay: { x: 38, y: 45 },            // West of downtown, grid pattern area
+  fenway: { x: 28, y: 42 },              // Far west - the green park area visible
+  seaport: { x: 58, y: 55 },             // Southeast waterfront
+  southie: { x: 68, y: 62 },             // South Boston peninsula
+  dorchester: { x: 58, y: 78 },          // South - large area at bottom
 };
 
 export function MapScreen({ onNavigate }: MapScreenProps) {
