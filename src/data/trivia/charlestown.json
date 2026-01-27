@@ -1,0 +1,161 @@
+{
+  "locationId": "charlestown",
+  "questions": [
+    {
+      "id": "charlestown_q1",
+      "prompt": "The Battle of Bunker Hill was actually fought primarily on what nearby hill?",
+      "choices": [
+        "Breed's Hill",
+        "Prospect Hill",
+        "Munjoy Hill",
+        "Telegraph Hill"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Breed's Hill. They built the fortifications in the wrong place. History kept the wrong name. Sounds about right.",
+      "npcReactionWrong": "Breed's Hill. Everybody calls it the Battle of Bunker Hill. But that's not where most of the fighting happened.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "charlestown_q2",
+      "prompt": "The USS Constitution earned what nickname, and in which war?",
+      "choices": [
+        "Old Ironsides - War of 1812",
+        "Freedom's Ship - Revolutionary War",
+        "The Unbreakable - Civil War",
+        "Boston's Pride - War of 1812"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Old Ironsides. War of 1812. British cannonballs bounced off her sides. Hull was made of live oak. Toughest wood on earth.",
+      "npcReactionWrong": "Old Ironsides. War of 1812. That ship over there's the oldest commissioned warship still afloat. Show some respect.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "charlestown_q3",
+      "prompt": "How tall is the Bunker Hill Monument in feet?",
+      "choices": [
+        "221 feet",
+        "189 feet",
+        "255 feet",
+        "200 feet"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "221 feet. 294 steps. No elevator. Sully used to race me up there. Lost every time but never stopped trying.",
+      "npcReactionWrong": "221 feet. You see that obelisk up there? I've climbed it a hundred times. 294 steps, no elevator.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "charlestown_q4",
+      "prompt": "What famous order did Colonel Prescott give to the colonial troops at Bunker Hill?",
+      "choices": [
+        "Don't fire until you see the whites of their eyes",
+        "Hold the line at all costs",
+        "Fire at will when they reach the trenches",
+        "Save your powder for the officers"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Don't fire until you see the whites of their eyes. Ammunition was scarce. Every shot had to count.",
+      "npcReactionWrong": "Don't fire until you see the whites of their eyes. Every kid learns that in school. You shoulda known.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "charlestown_q5",
+      "prompt": "The Charlestown Navy Yard built warships for the U.S. Navy for how many years before closing?",
+      "choices": [
+        "174 years (1800-1974)",
+        "150 years (1820-1970)",
+        "125 years (1850-1975)",
+        "200 years (1775-1975)"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "1800 to 1974. 174 years. My grandfather worked here. My father worked here. Then they said we weren't needed anymore.",
+      "npcReactionWrong": "174 years. 1800 to 1974. This yard built ships for almost two centuries. Then the government closed us down.",
+      "difficulty": "normal"
+    }
+  ],
+  "alternateQuestions": [
+    {
+      "id": "charlestown_alt1",
+      "prompt": "What type of ship is the USS Constitution classified as?",
+      "choices": [
+        "Frigate",
+        "Battleship",
+        "Destroyer",
+        "Cruiser"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "A frigate. Wooden-hulled, three-masted heavy frigate. Old Ironsides isn't a battleship.",
+      "npcReactionWrong": "A frigate. Not a battleship or a destroyer. Know your ships.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "charlestown_alt2",
+      "prompt": "What 2010 film about a bank robbery was set and filmed in Charlestown?",
+      "choices": [
+        "The Town",
+        "The Departed",
+        "Gone Baby Gone",
+        "Black Mass"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The Town. Hollywood came to Charlestown once. Made a movie about bank robbers. They got some things right.",
+      "npcReactionWrong": "The Town. Ben Affleck. Bank robbers. Hollywood nonsense, mostly. But they filmed it here.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "charlestown_alt3",
+      "prompt": "The Bunker Hill Monument was funded primarily by what method?",
+      "choices": [
+        "Private donations and fundraising",
+        "Federal government grant",
+        "Massachusetts state lottery",
+        "British war reparations"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Private donations. Sarah Josepha Hale helped—same woman who created Thanksgiving. Building that monument almost went broke twice.",
+      "npcReactionWrong": "Private fundraising. They begged for money for years. The government didn't pay for it. The people did.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "charlestown_alt4",
+      "prompt": "What bridge connects Charlestown to Boston's North End?",
+      "choices": [
+        "Charlestown Bridge",
+        "Longfellow Bridge",
+        "Harvard Bridge",
+        "Bunker Hill Bridge"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Charlestown Bridge. When you leave here and head back into Boston, that's the one you cross.",
+      "npcReactionWrong": "Charlestown Bridge. Also called the North Washington Street Bridge. Gets you to the North End.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "charlestown_alt5",
+      "prompt": "Who commanded the British forces at the Battle of Bunker Hill?",
+      "choices": [
+        "General William Howe",
+        "General Thomas Gage",
+        "General Henry Clinton",
+        "General John Burgoyne"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "General William Howe. The British won the battle but paid a heavy price. Howe led them up that hill three times.",
+      "npcReactionWrong": "William Howe. The British won but lost a thousand men. Pyrrhic victory, they call it.",
+      "difficulty": "hard"
+    }
+  ],
+  "redemptionChallenge": {
+    "type": "timeline",
+    "instructions": "Put these Revolutionary War events in the correct chronological order.",
+    "items": [
+      { "event": "Boston Massacre", "year": 1770, "order": 1 },
+      { "event": "Boston Tea Party", "year": 1773, "order": 2 },
+      { "event": "Paul Revere's Ride", "year": 1775, "order": 3 },
+      { "event": "Battle of Bunker Hill", "year": 1775, "order": 4 },
+      { "event": "Declaration of Independence", "year": 1776, "order": 5 }
+    ],
+    "passThreshold": 5,
+    "npcPassResponse": "You got it right. Most people mess up Revere's Ride and Bunker Hill. They happened the same year, different months.",
+    "npcFailResponse": "You put the Declaration before Bunker Hill. The whole point of the battle was we hadn't declared anything yet. Read a book."
+  }
+}

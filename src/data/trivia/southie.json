@@ -1,0 +1,186 @@
+{
+  "locationId": "southie",
+  "questions": [
+    {
+      "id": "southie_q1",
+      "prompt": "What 1974 federal court order sparked years of violent protests in South Boston?",
+      "choices": [
+        "Court-ordered school desegregation and busing",
+        "Public housing integration mandate",
+        "Neighborhood rezoning for development",
+        "Highway construction through Southie"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Sully lived through '74. Said it tore the neighborhood apart. But we survived. We always do.",
+      "npcReactionWrong": "You don't know about the busing crisis? And you want to own a bar in Southie?",
+      "difficulty": "normal"
+    },
+    {
+      "id": "southie_q2",
+      "prompt": "What is the name of the famous St. Patrick's Day parade route that runs through South Boston?",
+      "choices": [
+        "The South Boston St. Patrick's Day Parade along Broadway",
+        "The Shamrock March down Dorchester Avenue",
+        "The Celtic Walk through East Broadway",
+        "The Irish Pride Parade along West Broadway"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Every March, this neighborhood becomes the center of the universe. Been running since 1901.",
+      "npcReactionWrong": "Broadway, kid. The parade's been running since 1901. Sully never missed one.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "southie_q3",
+      "prompt": "South Boston is surrounded by water on three sides. Which of these is NOT a Southie beach?",
+      "choices": [
+        "Carson Beach",
+        "L Street Beach",
+        "Revere Beach",
+        "M Street Beach"
+      ],
+      "correctIndex": 2,
+      "npcReactionCorrect": "Carson, L Street, M Street... take your pick. Sully swam at all of 'em. In January.",
+      "npcReactionWrong": "Revere Beach is up north. Carson, L Street, M Street, Pleasure Bay - those are ours.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "southie_q4",
+      "prompt": "What was the name of the notorious gangster who ran South Boston's criminal underworld for decades?",
+      "choices": [
+        "Whitey Bulger",
+        "John Connolly",
+        "Kevin Weeks",
+        "Howie Winter"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Whitey. Everyone knew. Nobody talked. That's how things worked back then.",
+      "npcReactionWrong": "Whitey Bulger. And if Sully were here, he'd tell you he never met the man. Whether that's true... well.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "southie_q5",
+      "prompt": "What do locals call the L Street Brownies?",
+      "choices": [
+        "The winter swimming club who swims year-round",
+        "A famous bakery's signature dessert",
+        "The local youth hockey team",
+        "The neighborhood watch group"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "They've been doing it since 1902. Sully did it once. Said never again.",
+      "npcReactionWrong": "L Street Brownies. They've been jumping in the ocean every day since 1902. Even in February.",
+      "difficulty": "normal"
+    }
+  ],
+  "alternateQuestions": [
+    {
+      "id": "southie_alt1",
+      "prompt": "What movie filmed in South Boston won the Academy Award for Best Picture in 2007?",
+      "choices": [
+        "The Departed",
+        "Good Will Hunting",
+        "Mystic River",
+        "Gone Baby Gone"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Sully hated it. Said they 'got the accent wrong.' Watched it twelve times.",
+      "npcReactionWrong": "The Departed. Hollywood came here, butchered the accent, won an Oscar.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "southie_alt2",
+      "prompt": "What year did South Boston officially become part of the City of Boston?",
+      "choices": [
+        "1804",
+        "1776",
+        "1850",
+        "1822"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "1804. We weren't always Boston's. Some days, we still don't feel like it.",
+      "npcReactionWrong": "1804. Southie wasn't always Boston. Got annexed like everybody else eventually.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "southie_alt3",
+      "prompt": "What major convention center opened in South Boston in 2004?",
+      "choices": [
+        "Boston Convention and Exhibition Center",
+        "Hynes Convention Center",
+        "World Trade Center Boston",
+        "Seaport Conference Hall"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The BCEC. Changed everything. Brought suits and conferences. Not sure that's better.",
+      "npcReactionWrong": "Boston Convention and Exhibition Center. Something changed Southie in 2004. Not everyone likes it.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "southie_alt4",
+      "prompt": "What holiday, unique to Boston, coincidentally falls on St. Patrick's Day and celebrates the British evacuation in 1776?",
+      "choices": [
+        "Evacuation Day",
+        "Liberation Day",
+        "Freedom Day",
+        "Revolution Day"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Evacuation Day. March 17, 1776. Washington put cannons on Dorchester Heights and the British left. We get two holidays in one.",
+      "npcReactionWrong": "Evacuation Day. Same day as St. Patrick's Day. Coincidence? Maybe. Good excuse for a longer celebration? Definitely.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "southie_alt5",
+      "prompt": "What is the name of the peninsula in South Boston that includes Castle Island and a popular beach?",
+      "choices": [
+        "Pleasure Bay",
+        "Carson Bay",
+        "Sullivan's Point",
+        "Marine Park"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Pleasure Bay. Castle Island, the lagoon, the walkway. Sully walked it every Sunday morning. Said it cleared his head.",
+      "npcReactionWrong": "Pleasure Bay. Best views in the city if you know where to look. And it's free.",
+      "difficulty": "normal"
+    }
+  ],
+  "redemptionChallenge": {
+    "type": "pronunciation",
+    "instructions": "Select the correct Boston pronunciation for each street name.",
+    "items": [
+      {
+        "word": "Worcester",
+        "choices": ["Wor-chest-er", "Woo-ster", "Wor-ses-ter"],
+        "correctIndex": 1
+      },
+      {
+        "word": "Gloucester",
+        "choices": ["Glaw-ster", "Glou-chest-er", "Gloss-ter"],
+        "correctIndex": 2
+      },
+      {
+        "word": "Quincy",
+        "choices": ["Kwin-see", "Quin-zee", "Kwin-zee"],
+        "correctIndex": 2
+      },
+      {
+        "word": "Tremont",
+        "choices": ["Tree-mont", "Treh-mont", "Tray-mont"],
+        "correctIndex": 1
+      },
+      {
+        "word": "Copley",
+        "choices": ["Cop-lee", "Cope-lee", "Cah-plee"],
+        "correctIndex": 0
+      },
+      {
+        "word": "Faneuil",
+        "choices": ["Fan-yool", "Fan-el", "Fah-noo-eel"],
+        "correctIndex": 1
+      }
+    ],
+    "passThreshold": 4,
+    "npcPassResponse": "Alright, alright. You sound like you might actually belong here. Let's try this again.",
+    "npcFailResponse": "You said 'Wor-chester.' Get out. Come back when you can talk like a human being."
+  }
+}

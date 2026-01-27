@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1a2744"/>
+
+  <!-- Water - Charles River and Harbor -->
+  <path d="M0 200 Q150 180 300 200 Q450 220 600 180 Q700 160 800 180 L800 350 Q650 380 500 360 Q350 340 200 370 Q100 390 0 370 Z" fill="#0d1829" opacity="0.6"/>
+
+  <!-- Harbor area -->
+  <path d="M500 400 Q550 380 650 400 Q750 420 800 400 L800 600 L450 600 Q480 500 500 400" fill="#0d1829" opacity="0.5"/>
+
+  <!-- Land masses - stylized Boston neighborhoods -->
+
+  <!-- Cambridge/Charlestown area (north) -->
+  <path d="M50 50 Q200 30 350 80 Q400 100 350 180 Q300 200 200 180 Q100 160 50 100 Z" fill="#243552" opacity="0.4"/>
+
+  <!-- Beacon Hill/Downtown area -->
+  <path d="M300 220 Q400 200 500 230 Q550 260 520 320 Q480 360 400 350 Q320 340 300 280 Z" fill="#243552" opacity="0.5"/>
+
+  <!-- Back Bay area -->
+  <path d="M150 300 Q250 280 300 320 Q350 360 300 400 Q250 430 180 410 Q120 390 150 340 Z" fill="#243552" opacity="0.4"/>
+
+  <!-- South Boston -->
+  <path d="M550 400 Q650 380 700 430 Q740 480 700 530 Q650 570 580 550 Q520 520 520 470 Q520 420 550 400" fill="#243552" opacity="0.5"/>
+
+  <!-- Dorchester area -->
+  <path d="M650 520 Q720 510 780 550 L800 600 L600 600 Q630 560 650 520" fill="#243552" opacity="0.4"/>
+
+  <!-- Fenway area -->
+  <path d="M100 380 Q150 360 200 390 Q250 420 220 470 Q180 510 130 490 Q80 460 100 420 Z" fill="#243552" opacity="0.4"/>
+
+  <!-- Grid lines for urban feel -->
+  <g stroke="#3d5a80" stroke-width="0.5" opacity="0.2">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="100" y1="0" x2="100" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/>
+    <line x1="700" y1="0" x2="700" y2="600"/>
+  </g>
+
+  <!-- Major roads hint -->
+  <g stroke="#c9a227" stroke-width="1.5" opacity="0.15">
+    <!-- Mass Ave approximation -->
+    <path d="M200 50 Q250 150 300 300 Q350 450 400 550" fill="none"/>
+    <!-- Route 93 approximation -->
+    <path d="M450 0 Q470 150 500 300 Q530 450 550 600" fill="none"/>
+    <!-- Route 90 (Mass Pike) -->
+    <path d="M0 350 Q200 330 400 340 Q600 350 800 330" fill="none"/>
+  </g>
+
+  <!-- Decorative dots for urban areas -->
+  <g fill="#c9a227" opacity="0.1">
+    <circle cx="350" cy="280" r="3"/>
+    <circle cx="380" cy="300" r="2"/>
+    <circle cx="320" cy="310" r="2"/>
+    <circle cx="400" cy="320" r="3"/>
+    <circle cx="440" cy="290" r="2"/>
+    <circle cx="360" cy="250" r="2"/>
+  </g>
+</svg>

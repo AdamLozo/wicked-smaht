@@ -1,0 +1,163 @@
+{
+  "locationId": "downtown",
+  "questions": [
+    {
+      "id": "downtown_q1",
+      "prompt": "How many official stops are on the Freedom Trail?",
+      "choices": [
+        "16",
+        "12",
+        "18",
+        "14"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Sixteen. Sixteen places where history happened. Most tourists quit after ten. Sully walked all sixteen every year. Called it 'paying respects.'",
+      "npcReactionWrong": "Sixteen. You've walked the Freedom Trail, right? Most people don't finish it.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "downtown_q2",
+      "prompt": "Faneuil Hall has been called 'The Cradle of Liberty.' What was its original purpose when built in 1742?",
+      "choices": [
+        "Marketplace and meeting hall",
+        "Colonial courthouse",
+        "Church and assembly building",
+        "British military headquarters"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "A marketplace. Meat, produce, goods. The upstairs was for town meetings. Liberty came later. Commerce came first. Always does.",
+      "npcReactionWrong": "A marketplace. Ground floor was markets, upstairs was public meetings. Peter Faneuil funded it.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "downtown_q3",
+      "prompt": "The Boston Massacre occurred in 1770 outside what building?",
+      "choices": [
+        "The Old State House",
+        "Faneuil Hall",
+        "Old South Meeting House",
+        "King's Chapel"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Outside the Old State House. King Street. March 5, 1770. Crispus Attucks was the first to fall. First martyr of the Revolution.",
+      "npcReactionWrong": "The Old State House. Five colonists died. State Street now, used to be King Street.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "downtown_q4",
+      "prompt": "What symbol sits atop Faneuil Hall, and what does it represent?",
+      "choices": [
+        "A grasshopper - symbol of commerce",
+        "An eagle - symbol of freedom",
+        "A whale - symbol of maritime trade",
+        "A codfish - symbol of the fishing industry"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "A grasshopper. Weathervane. Shem Drowne made it in 1742. During the Revolution, they used it to test if someone was a real Bostonian or a British spy.",
+      "npcReactionWrong": "A grasshopper. Look at the top of Faneuil Hall. Most people don't notice. It's been there since 1742.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "downtown_q5",
+      "prompt": "The Old North Church, where signal lanterns were hung, is located in which Boston neighborhood?",
+      "choices": [
+        "North End",
+        "Downtown",
+        "Beacon Hill",
+        "Charlestown"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "North End. Christ Church, most people call it Old North Church. Still standing. Still active. You can visit any Sunday.",
+      "npcReactionWrong": "North End. One if by land, two if by sea. Everyone knows the poem, not everyone knows where the church is.",
+      "difficulty": "normal"
+    }
+  ],
+  "alternateQuestions": [
+    {
+      "id": "downtown_alt1",
+      "prompt": "Boston Common is the oldest public park in the United States. What year was it established?",
+      "choices": [
+        "1634",
+        "1676",
+        "1776",
+        "1700"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "1634. Boston Common's been public land longer than America's been a country. Think about that.",
+      "npcReactionWrong": "1634. The oldest public park in America. Before the Pilgrims' grandchildren were born.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "downtown_alt2",
+      "prompt": "What cemetery along the Freedom Trail contains the graves of Paul Revere, Samuel Adams, and John Hancock?",
+      "choices": [
+        "Granary Burying Ground",
+        "Copp's Hill Burying Ground",
+        "King's Chapel Burying Ground",
+        "Central Burying Ground"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Granary Burying Ground. Revere, Adams, Hancock—all buried in the same place. Patriots' Row.",
+      "npcReactionWrong": "Granary Burying Ground. The who's who of the Revolution, all in one cemetery.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "downtown_alt3",
+      "prompt": "What was dumped into Boston Harbor during the Tea Party, and how many chests?",
+      "choices": [
+        "342 chests of tea",
+        "200 chests of tea",
+        "500 chests of tea",
+        "100 chests of tea"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "342 chests. British East India Company tea. Dumped in the harbor. Worth a fortune then. Worth more now as a symbol.",
+      "npcReactionWrong": "342 chests of tea. The Tea Party threw cargo overboard. Exactly how much? 342 chests.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "downtown_alt4",
+      "prompt": "The Old South Meeting House was the starting point for what famous event?",
+      "choices": [
+        "The Boston Tea Party",
+        "The Boston Massacre",
+        "Paul Revere's Ride",
+        "The Declaration reading"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The Tea Party. December 16, 1773. Colonists gathered there, got angry, marched to the harbor. The rest is history.",
+      "npcReactionWrong": "Old South Meeting House is famous for one night. The Tea Party started there before they marched to the harbor.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "downtown_alt5",
+      "prompt": "What is the name of the marketplace complex adjacent to Faneuil Hall?",
+      "choices": [
+        "Quincy Market",
+        "Boston Market",
+        "Haymarket",
+        "Faneuil Marketplace"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Quincy Market. Faneuil Hall's just one building. The big market hall next door is Quincy Market. Named for Mayor Josiah Quincy.",
+      "npcReactionWrong": "Quincy Market. People confuse them all the time. Faneuil Hall is the historic building. Quincy Market is the long hall.",
+      "difficulty": "normal"
+    }
+  ],
+  "redemptionChallenge": {
+    "type": "photo_id",
+    "instructions": "Identify 5 of 7 Freedom Trail stops from photographs.",
+    "items": [
+      { "image": "old_state_house.jpg", "answer": "Old State House", "hints": ["brick building", "balcony", "lion and unicorn"] },
+      { "image": "old_north_church.jpg", "answer": "Old North Church", "hints": ["white steeple", "church"] },
+      { "image": "state_house.jpg", "answer": "Massachusetts State House", "hints": ["gold dome", "on hill"] },
+      { "image": "granary.jpg", "answer": "Granary Burying Ground", "hints": ["cemetery", "slate headstones"] },
+      { "image": "revere_statue.jpg", "answer": "Paul Revere Statue", "hints": ["bronze", "horseback"] },
+      { "image": "faneuil_hall.jpg", "answer": "Faneuil Hall", "hints": ["red brick", "grasshopper weathervane"] },
+      { "image": "bunker_hill.jpg", "answer": "Bunker Hill Monument", "hints": ["tall obelisk", "granite"] }
+    ],
+    "passThreshold": 5,
+    "npcPassResponse": "Not bad. Most tourists can't tell one old building from another. Sully would've named all sixteen sites, the years they were built, and who died there.",
+    "npcFailResponse": "You thought that was the State House? That was Faneuil Hall! The crowd has spoken. They want you to try again."
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "locationId": "seaport",
+  "questions": [
+    {
+      "id": "seaport_q1",
+      "prompt": "The Big Dig was the most expensive highway project in U.S. history. What was the approximate final cost?",
+      "choices": [
+        "Approximately $15 billion",
+        "Approximately $5 billion",
+        "Approximately $25 billion",
+        "Approximately $8 billion"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Almost fifteen billion dollars. Originally budgeted at two billion. Cost overruns, corruption, mistakes. But it worked. Mostly.",
+      "npcReactionWrong": "The Big Dig changed everything. Twenty years of construction. Almost fifteen billion dollars. Think about that number.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "seaport_q2",
+      "prompt": "What highway did the Big Dig bury underground, and what greenspace was built above it?",
+      "choices": [
+        "Central Artery (I-93) / Rose Kennedy Greenway",
+        "Massachusetts Turnpike / Seaport Boulevard Park",
+        "Route 1 / Harbor Walk",
+        "Interstate 90 / Atlantic Avenue Gardens"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The Central Artery. Now it's the Rose Kennedy Greenway. The highway used to divide the city. Now the park connects it.",
+      "npcReactionWrong": "They buried the Central Artery. Interstate 93. Put the Rose Kennedy Greenway on top. Named after JFK's mother.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "seaport_q3",
+      "prompt": "The Seaport District was previously known by what description due to its industrial past?",
+      "choices": [
+        "South Boston Waterfront / industrial warehouses and fishing",
+        "Boston Maritime District / shipbuilding yards",
+        "Harbor Industrial Zone / manufacturing plants",
+        "Seaport Innovation Center / technology campus"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "It was warehouses, fishing, industrial. South Boston Waterfront. Nobody wanted to live here. Now look at it. Sully barely recognized it at the end.",
+      "npcReactionWrong": "Before the condos and restaurants, this was all warehouses and fishing. Industrial waterfront. Completely transformed.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "seaport_q4",
+      "prompt": "What museum in the Seaport houses historic ships where you can reenact a famous protest?",
+      "choices": [
+        "Boston Tea Party Ships & Museum",
+        "New England Aquarium",
+        "Institute of Contemporary Art",
+        "Children's Museum"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The Tea Party Ships museum. They have replica ships. You can throw the tea. Every tourist does it. Sully did it three times.",
+      "npcReactionWrong": "The Boston Tea Party Ships museum. You can reenact throwing tea overboard. Tourist trap, but a fun one.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "seaport_q5",
+      "prompt": "What tunnel connects the Seaport to Logan Airport, and approximately how long is it?",
+      "choices": [
+        "Ted Williams Tunnel - about 1.6 miles",
+        "Sumner Tunnel - about 1 mile",
+        "Callahan Tunnel - about 0.8 miles",
+        "Big Dig Tunnel - about 2 miles"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Ted Williams Tunnel. About a mile and a half. Part of the Big Dig. Sully used to drive through it just to feel like he was underwater.",
+      "npcReactionWrong": "Ted Williams Tunnel. Named after the baseball legend. About 1.6 miles. Opened in 1995.",
+      "difficulty": "hard"
+    }
+  ],
+  "alternateQuestions": [
+    {
+      "id": "seaport_alt1",
+      "prompt": "The Institute of Contemporary Art moved to the Seaport in what year, helping spark development?",
+      "choices": [
+        "2006",
+        "2001",
+        "2010",
+        "1998"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "2006. One building changed everything here. The ICA was the catalyst.",
+      "npcReactionWrong": "2006. When the ICA moved to the waterfront, everything started to change.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "seaport_alt2",
+      "prompt": "What convention center anchors the Seaport District?",
+      "choices": [
+        "Boston Convention and Exhibition Center",
+        "Hynes Convention Center",
+        "World Trade Center Boston",
+        "Seaport World Trade Center"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Boston Convention and Exhibition Center. BCEC. Biggest in New England. Brought a lot of suits to this neighborhood.",
+      "npcReactionWrong": "The BCEC. Boston Convention and Exhibition Center. Massive. Brings people from everywhere.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "seaport_alt3",
+      "prompt": "The Seaport has been criticized for lacking what, compared to other Boston neighborhoods?",
+      "choices": [
+        "Affordability and economic diversity",
+        "Public transportation access",
+        "Green spaces and parks",
+        "Historical landmarks"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Affordability. Diversity. The Seaport is beautiful but expensive. Not everyone can afford to live here. That's the tradeoff.",
+      "npcReactionWrong": "Critics say it's too expensive, too exclusive. The Seaport looks beautiful but it's missing the soul of old Boston.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "seaport_alt4",
+      "prompt": "What major technology and pharmaceutical companies have headquarters or major offices in the Seaport?",
+      "choices": [
+        "Vertex Pharmaceuticals, Amazon",
+        "Google, Microsoft",
+        "Apple, Meta",
+        "Tesla, SpaceX"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Vertex, Amazon regional offices, a dozen others. The Seaport isn't just condos. It's become Boston's innovation district.",
+      "npcReactionWrong": "Big pharma, big tech. Vertex Pharmaceuticals has their headquarters here. Amazon has a big presence. Money follows money.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "seaport_alt5",
+      "prompt": "What body of water does the Seaport District border?",
+      "choices": [
+        "Boston Harbor",
+        "Massachusetts Bay",
+        "Charles River",
+        "Atlantic Ocean"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Boston Harbor. Fort Point Channel on one side. Basic geography, but you'd be surprised how many people don't know.",
+      "npcReactionWrong": "Boston Harbor. The Seaport is on the waterfront. That's the whole point. Water defines this neighborhood.",
+      "difficulty": "normal"
+    }
+  ],
+  "redemptionChallenge": {
+    "type": "rapid_fire",
+    "instructions": "Answer 6 of 10 questions covering all Boston neighborhoods. 15 seconds each.",
+    "items": [
+      { "question": "What year did the busing crisis begin in Southie?", "answer": "1974" },
+      { "question": "Who made the copper covering for the State House dome?", "answer": "Paul Revere's company" },
+      { "question": "What color is the lone seat in Fenway's right field?", "answer": "Red" },
+      { "question": "What is the only private street in Boston?", "answer": "Louisburg Square" },
+      { "question": "How many steps in the Bunker Hill Monument?", "answer": "294" },
+      { "question": "Name the Back Bay streets in order starting with A.", "answer": "Arlington, Berkeley, Clarendon..." },
+      { "question": "What are the 'three lies' about the John Harvard statue?", "answer": "Wrong date, face, and title" },
+      { "question": "What building style is most common in Dorchester?", "answer": "Triple-decker" },
+      { "question": "How many stops on the Freedom Trail?", "answer": "16" },
+      { "question": "What greenspace replaced the Central Artery?", "answer": "Rose Kennedy Greenway" }
+    ],
+    "passThreshold": 6,
+    "timePerQuestion": 15,
+    "npcPassResponse": "You know this city. Maybe you deserve what Sully left. Maybe you can handle the truth. Here's your last key.",
+    "npcFailResponse": "Sully believed in you. He was wrong. Or maybe you just need to pay closer attention. One more chance."
+  }
+}

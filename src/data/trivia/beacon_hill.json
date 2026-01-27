@@ -1,0 +1,163 @@
+{
+  "locationId": "beacon_hill",
+  "questions": [
+    {
+      "id": "beacon_hill_q1",
+      "prompt": "What items were placed in the Massachusetts State House cornerstone by Samuel Adams and Paul Revere?",
+      "choices": [
+        "Time capsule with coins, newspapers, and a silver plate",
+        "The original Declaration of Independence draft",
+        "Colonial currency and musket balls",
+        "A Bible and the state constitution"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "A time capsule. They opened it in 2014. No treasure. Sully was disappointed.",
+      "npcReactionWrong": "Coins, newspapers, a silver plate. Placed 1795, opened and resealed 2014. No buried treasure, sadly.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "beacon_hill_q2",
+      "prompt": "What is the nickname for the golden dome atop the Massachusetts State House, and who covered it in copper?",
+      "choices": [
+        "The Golden Dome - Paul Revere's company",
+        "The Beacon Top - Samuel Adams' workshop",
+        "The Liberty Crown - John Hancock's firm",
+        "The State Pinnacle - Charles Bulfinch himself"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The Golden Dome. Paul Revere's company did the copper in 1802. Gold leaf came later. Everything connects to that man.",
+      "npcReactionWrong": "Paul Revere's company covered it in copper. 1802. Gold leaf was added in 1874. History is layers.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "beacon_hill_q3",
+      "prompt": "What's the only remaining private street in Boston, located on Beacon Hill?",
+      "choices": [
+        "Louisburg Square",
+        "Acorn Street",
+        "Mount Vernon Street",
+        "Chestnut Street"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Louisburg Square. Most expensive real estate in Boston. Louisa May Alcott lived there. So did John Kerry.",
+      "npcReactionWrong": "Louisburg Square. Residents pay to maintain it themselves. Old money. Very old money.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "beacon_hill_q4",
+      "prompt": "The African Meeting House on Beacon Hill is the oldest what in America?",
+      "choices": [
+        "Oldest Black church building still standing",
+        "Oldest integrated school",
+        "Oldest abolitionist headquarters",
+        "Oldest Black-owned business"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Oldest Black church building still standing. Built 1806. Frederick Douglass spoke there. William Lloyd Garrison founded the Anti-Slavery Society there.",
+      "npcReactionWrong": "Oldest Black church building still standing in America. Built 1806. This neighborhood has more history than most cities.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "beacon_hill_q5",
+      "prompt": "Which Massachusetts governor went on to become a president known for his silence?",
+      "choices": [
+        "Calvin Coolidge",
+        "John Adams",
+        "John Hancock",
+        "Samuel Adams"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Calvin Coolidge. Silent Cal. Said less in four years than most politicians say in an hour.",
+      "npcReactionWrong": "Calvin Coolidge. Governor here, then Vice President, then President when Harding died. They called him Silent Cal.",
+      "difficulty": "hard"
+    }
+  ],
+  "alternateQuestions": [
+    {
+      "id": "beacon_hill_alt1",
+      "prompt": "What 19th-century social elite class dominated Beacon Hill and were nicknamed for their supposed ancestry?",
+      "choices": [
+        "Boston Brahmins",
+        "Beacon Aristocrats",
+        "Massachusetts Gentry",
+        "Hub Nobility"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Boston Brahmins. They thought they were American royalty. Some still do.",
+      "npcReactionWrong": "Boston Brahmins. The old families who lived here had a nickname. Thought they were better than everyone.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "beacon_hill_alt2",
+      "prompt": "The Massachusetts State House was designed by what architect?",
+      "choices": [
+        "Charles Bulfinch",
+        "H.H. Richardson",
+        "Louis Sullivan",
+        "Frederick Law Olmsted"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Charles Bulfinch. One of the most important buildings in American architecture. He got it right.",
+      "npcReactionWrong": "Charles Bulfinch. The father of American architecture, some say. This was his masterpiece.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "beacon_hill_alt3",
+      "prompt": "What color are the famous doors of Beacon Hill townhouses traditionally painted?",
+      "choices": [
+        "Black",
+        "Red",
+        "Green",
+        "White"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Black. Though some are purple, and there's a whole legend about what purple doors mean. Old money has its traditions.",
+      "npcReactionWrong": "Black. Walk down any street here, you'll see them. The traditional Beacon Hill door color.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "beacon_hill_alt4",
+      "prompt": "What is the name of the historic Black heritage trail that runs through Beacon Hill?",
+      "choices": [
+        "Black Heritage Trail",
+        "Freedom Path",
+        "Abolition Walk",
+        "Liberty Trail"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The Black Heritage Trail. Tells the story of Boston's free Black community. This neighborhood has more history than most cities.",
+      "npcReactionWrong": "Black Heritage Trail. There's a walking trail on this hill that tells a story most tourists don't know.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "beacon_hill_alt5",
+      "prompt": "What nickname is given to the narrow, cobblestone Acorn Street?",
+      "choices": [
+        "Most photographed street in America",
+        "The Colonial Corridor",
+        "Lamplight Lane",
+        "The Gaslit Path"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Most photographed street in America. Or so they claim. Tourists line up for pictures. We just try to get home.",
+      "npcReactionWrong": "They call it the most photographed street in America. Disputed, but tourists believe it. The cobblestones are original.",
+      "difficulty": "normal"
+    }
+  ],
+  "redemptionChallenge": {
+    "type": "unscramble",
+    "instructions": "Unscramble the letters to reveal Massachusetts governors' names. Get 5 of 7 correct.",
+    "items": [
+      { "scrambled": "TTMI YOENRM", "answer": "Mitt Romney" },
+      { "scrambled": "LAVNIC DGICELOO", "answer": "Calvin Coolidge" },
+      { "scrambled": "CHLEMIA SIUKKDA", "answer": "Michael Dukakis" },
+      { "scrambled": "NOJH CKAHNOD", "answer": "John Hancock" },
+      { "scrambled": "MALUSE SAMAD", "answer": "Samuel Adams" },
+      { "scrambled": "LERACHLI KAREB", "answer": "Charlie Baker" },
+      { "scrambled": "DVID CKATRIP", "answer": "Deval Patrick" }
+    ],
+    "passThreshold": 5,
+    "npcPassResponse": "Fine. You know your governors. Sully always said politicians were 'thieves in nice suits,' but he voted every election.",
+    "npcFailResponse": "You spelled Dukakis wrong. He ran for president and you can't spell his name. This is embarrassing for both of us."
+  }
+}

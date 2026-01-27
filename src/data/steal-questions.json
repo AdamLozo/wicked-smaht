@@ -1,0 +1,264 @@
+{
+  "stealQuestions": [
+    {
+      "id": "steal_southie_1",
+      "locationId": "southie",
+      "prompt": "What was the original name of the L Street Bathhouse before it was renamed after a local politician?",
+      "choices": [
+        "Columbia Point Bathhouse",
+        "South Boston Municipal Bath",
+        "Curley Community Center",
+        "Carson Beach Pavilion"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_southie_2",
+      "locationId": "southie",
+      "prompt": "In what year did the 'Southie is My Hometown' mural on East Broadway first get painted?",
+      "choices": [
+        "1976",
+        "1983",
+        "1991",
+        "1999"
+      ],
+      "correctIndex": 2,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_north_end_1",
+      "locationId": "north_end",
+      "prompt": "Which North End restaurant claims to have invented the 'lobster fra diavolo' dish in the 1950s?",
+      "choices": [
+        "Giacomo's",
+        "Neptune Oyster",
+        "Daily Catch",
+        "Lucia Ristorante"
+      ],
+      "correctIndex": 2,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_north_end_2",
+      "locationId": "north_end",
+      "prompt": "The Old North Church's steeple has been rebuilt how many times since its original 1723 construction?",
+      "choices": [
+        "Once",
+        "Twice",
+        "Three times",
+        "Four times"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_fenway_1",
+      "locationId": "fenway",
+      "prompt": "What is the exact height of the Green Monster in feet and inches?",
+      "choices": [
+        "36 feet, 8 inches",
+        "37 feet, 2 inches",
+        "38 feet, 4 inches",
+        "39 feet, 0 inches"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_fenway_2",
+      "locationId": "fenway",
+      "prompt": "Before becoming Fenway Park, what was the site primarily used for?",
+      "choices": [
+        "A horse racing track",
+        "A garbage dump",
+        "A textile mill",
+        "A public garden"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_beacon_hill_1",
+      "locationId": "beacon_hill",
+      "prompt": "The purple glass in some Beacon Hill windows is caused by what chemical reaction?",
+      "choices": [
+        "Lead oxidation from original paint",
+        "Manganese dioxide exposure to sunlight",
+        "Copper sulfate in the glass mixture",
+        "Iron deposits from Boston's water supply"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_beacon_hill_2",
+      "locationId": "beacon_hill",
+      "prompt": "What year was the last gas-powered streetlight on Beacon Hill converted to electric?",
+      "choices": [
+        "Never - gas lights remain",
+        "1958",
+        "1972",
+        "1985"
+      ],
+      "correctIndex": 0,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_charlestown_1",
+      "locationId": "charlestown",
+      "prompt": "How many steps are inside the Bunker Hill Monument to reach the top?",
+      "choices": [
+        "221 steps",
+        "267 steps",
+        "294 steps",
+        "312 steps"
+      ],
+      "correctIndex": 2,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_charlestown_2",
+      "locationId": "charlestown",
+      "prompt": "The USS Constitution earned its nickname 'Old Ironsides' during a battle against which ship?",
+      "choices": [
+        "HMS Leopard",
+        "HMS Guerriere",
+        "HMS Shannon",
+        "HMS Java"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_back_bay_1",
+      "locationId": "back_bay",
+      "prompt": "The reflecting pool at the Christian Science Plaza holds approximately how many gallons of water?",
+      "choices": [
+        "500,000 gallons",
+        "750,000 gallons",
+        "1,000,000 gallons",
+        "1,500,000 gallons"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_back_bay_2",
+      "locationId": "back_bay",
+      "prompt": "What architectural firm designed the original Copley Place mall that opened in 1984?",
+      "choices": [
+        "I.M. Pei & Partners",
+        "The Architects Collaborative",
+        "Skidmore, Owings & Merrill",
+        "Kevin Roche John Dinkeloo"
+      ],
+      "correctIndex": 2,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_cambridge_1",
+      "locationId": "cambridge",
+      "prompt": "What was MIT's original location before it moved to Cambridge in 1916?",
+      "choices": [
+        "Copley Square, Boston",
+        "Back Bay, Boston",
+        "Charlestown",
+        "Brookline"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_cambridge_2",
+      "locationId": "cambridge",
+      "prompt": "Harvard's oldest surviving building, Massachusetts Hall, was built in what year?",
+      "choices": [
+        "1636",
+        "1672",
+        "1720",
+        "1764"
+      ],
+      "correctIndex": 2,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_dorchester_1",
+      "locationId": "dorchester",
+      "prompt": "The Dorchester Heights monument commemorates the placement of cannons that forced the British to evacuate Boston. Where did those cannons originally come from?",
+      "choices": [
+        "Philadelphia armory",
+        "Fort Ticonderoga",
+        "West Point",
+        "Valley Forge"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_dorchester_2",
+      "locationId": "dorchester",
+      "prompt": "What former president was born in Dorchester in 1767?",
+      "choices": [
+        "John Adams",
+        "John Quincy Adams",
+        "None - this is a trick question",
+        "Calvin Coolidge"
+      ],
+      "correctIndex": 2,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_downtown_1",
+      "locationId": "downtown",
+      "prompt": "The grasshopper weathervane atop Faneuil Hall was created by what craftsman in 1742?",
+      "choices": [
+        "Paul Revere",
+        "Shem Drowne",
+        "Benjamin Franklin",
+        "Samuel Adams"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_downtown_2",
+      "locationId": "downtown",
+      "prompt": "How many bodies are estimated to be buried in the Granary Burying Ground?",
+      "choices": [
+        "About 2,300",
+        "About 5,000",
+        "About 8,000",
+        "About 12,000"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_seaport_1",
+      "locationId": "seaport",
+      "prompt": "The Boston Tea Party ships replica museum features how many pounds of tea thrown overboard during demonstrations?",
+      "choices": [
+        "92,000 pounds (replica of original)",
+        "100 pounds (symbolic)",
+        "0 pounds (virtual only)",
+        "500 pounds (edible tea)"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    },
+    {
+      "id": "steal_seaport_2",
+      "locationId": "seaport",
+      "prompt": "Before the Big Dig, the Central Artery that ran through the Seaport area was built in what decade?",
+      "choices": [
+        "1930s",
+        "1950s",
+        "1960s",
+        "1970s"
+      ],
+      "correctIndex": 1,
+      "difficulty": "expert"
+    }
+  ]
+}

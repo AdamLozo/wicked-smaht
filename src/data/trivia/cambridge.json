@@ -1,0 +1,164 @@
+{
+  "locationId": "cambridge",
+  "questions": [
+    {
+      "id": "cambridge_q1",
+      "prompt": "What was MIT's original location before moving to Cambridge in 1916?",
+      "choices": [
+        "Boston (Back Bay / Copley Square area)",
+        "Providence, Rhode Island",
+        "New Haven, Connecticut",
+        "Worcester, Massachusetts"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Back Bay. Copley Square area. They moved in 1916. Some say crossing the Charles was the best decision they ever made.",
+      "npcReactionWrong": "MIT wasn't always in Cambridge. Before they crossed the river, they were in Back Bay.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "cambridge_q2",
+      "prompt": "Harvard University was founded in what year, making it the oldest institution of higher education in the United States?",
+      "choices": [
+        "1636",
+        "1701",
+        "1692",
+        "1776"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "1636. Before the English Civil War. Before the Bill of Rights. Before everything. We've had time to cultivate our... reputation.",
+      "npcReactionWrong": "1636. Harvard predates the country by over a century. Think about that.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "cambridge_q3",
+      "prompt": "What is the name of the statue in Harvard Yard that tourists rub for luck, and what's ironic about it?",
+      "choices": [
+        "John Harvard statue - 'Statue of Three Lies' (wrong date, wrong face, wrong title)",
+        "Samuel Adams statue - he never attended Harvard",
+        "John Adams statue - it's actually John Quincy Adams",
+        "Charles Eliot statue - students call it bad luck"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Wrong date of founding, the model wasn't actually John Harvard, and Harvard wasn't the founder—just an early benefactor. But people keep rubbing that shoe.",
+      "npcReactionWrong": "The John Harvard statue. Three lies: wrong date, wrong person as model, wrong title. He wasn't the founder.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "cambridge_q4",
+      "prompt": "What famous artificial intelligence laboratory was founded at MIT in 1959?",
+      "choices": [
+        "MIT AI Lab",
+        "IBM Watson Lab",
+        "Bell Labs AI Division",
+        "Stanford AI Center"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The AI Lab. McCarthy. Minsky. They thought machines could think. Turns out they were right. Eventually.",
+      "npcReactionWrong": "MIT helped invent the future. In 1959, they started the AI Lab. Changed computing forever.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "cambridge_q5",
+      "prompt": "Cambridge was originally called what before being renamed after the English university?",
+      "choices": [
+        "Newtowne",
+        "Charles Village",
+        "Harvardshire",
+        "Bay Colony"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Newtowne. Renamed in 1638 to honor Cambridge University. Colonial ambition. Name a town after a school, hope some prestige rubs off.",
+      "npcReactionWrong": "Newtowne. Before they named this place Cambridge, flattering the English, it had another name.",
+      "difficulty": "hard"
+    }
+  ],
+  "alternateQuestions": [
+    {
+      "id": "cambridge_alt1",
+      "prompt": "What color is Harvard's official school color?",
+      "choices": [
+        "Crimson",
+        "Maroon",
+        "Cardinal Red",
+        "Scarlet"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Crimson. Even children know that. The Harvard Crimson. The color of old money.",
+      "npcReactionWrong": "Crimson. Even children know Harvard's color. Do you?",
+      "difficulty": "normal"
+    },
+    {
+      "id": "cambridge_alt2",
+      "prompt": "What is the name of the Harvard/MIT bridge that measures length in 'Smoots'?",
+      "choices": [
+        "Harvard Bridge",
+        "Longfellow Bridge",
+        "MIT Bridge",
+        "Charles River Bridge"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Harvard Bridge. The Smoot is named after Oliver Smoot, who was used as a measuring stick by his fraternity. The bridge is 364.4 Smoots plus or minus one ear.",
+      "npcReactionWrong": "Harvard Bridge. They measured it using a student named Smoot. MIT humor.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "cambridge_alt3",
+      "prompt": "What MIT tradition involves placing unusual objects on the Great Dome?",
+      "choices": [
+        "Hacks (MIT hacks/pranks)",
+        "Dome Drops",
+        "Skylarking",
+        "Crown Ceremonies"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Hacks. They've put a police car up there. R2-D2. A phone booth. Engineering as art. Or mischief. Same thing at MIT.",
+      "npcReactionWrong": "MIT hacks. Students put things where they don't belong. Police cars, fictional robots. It's tradition.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "cambridge_alt4",
+      "prompt": "What Cambridge-based software, developed by Dan Bricklin and Bob Frankston, introduced the first spreadsheet?",
+      "choices": [
+        "VisiCalc",
+        "Lotus 1-2-3",
+        "Microsoft Excel",
+        "SuperCalc"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "VisiCalc. Before Excel, before Lotus, there was VisiCalc. Changed business forever. Invented here.",
+      "npcReactionWrong": "VisiCalc. The first spreadsheet. Developed here in Cambridge. Every accountant owes them.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "cambridge_alt5",
+      "prompt": "Harvard Square is a hub of what public transit system?",
+      "choices": [
+        "MBTA Red Line",
+        "MBTA Green Line",
+        "MBTA Orange Line",
+        "MBTA Blue Line"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The Red Line. If you take the T to Harvard Square, you're on the Red Line. Simple geography.",
+      "npcReactionWrong": "Red Line. From Alewife through Cambridge to Boston. Harvard Square is one of the main stops.",
+      "difficulty": "normal"
+    }
+  ],
+  "redemptionChallenge": {
+    "type": "match_game",
+    "instructions": "Match the discovery, invention, or person with the correct institution (Harvard or MIT). Get 6 of 8 correct.",
+    "items": [
+      { "item": "Email (early development)", "answer": "MIT" },
+      { "item": "Facebook (founded in dorm)", "answer": "Harvard" },
+      { "item": "Eight U.S. presidents attended", "answer": "Harvard" },
+      { "item": "Noam Chomsky", "answer": "MIT" },
+      { "item": "Henry Kissinger", "answer": "Harvard" },
+      { "item": "Radar development (WWII)", "answer": "MIT" },
+      { "item": "Mark Zuckerberg", "answer": "Harvard" },
+      { "item": "Tim Berners-Lee (Web)", "answer": "MIT" }
+    ],
+    "passThreshold": 6,
+    "npcPassResponse": "Acceptable. Not impressive. Acceptable. Sully would have gotten them all wrong, but he would have argued about it for an hour. Miss that.",
+    "npcFailResponse": "Four wrong. Out of eight. Do you know the acceptance rate at either of these institutions? You wouldn't make the waitlist."
+  }
+}

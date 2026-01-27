@@ -1,0 +1,7 @@
+# Robots.txt for Wicked Smaht Boston
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wickedsmaht.netlify.app/sitemap.xml

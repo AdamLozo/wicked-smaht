@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Primary Meta Tags -->
+    <title>Wicked Smaht - Boston Trivia Game</title>
+    <meta name="title" content="Wicked Smaht - Boston Trivia Game" />
+    <meta name="description" content="Test your Boston knowledge in this wicked fun trivia game! Play as one of the O'Brien cousins and prove you're the smartest in the family." />
+    <meta name="author" content="Adam" />
+    <meta name="keywords" content="boston, trivia, game, massachusetts, quiz, family, fun" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wickedsmaht.netlify.app/" />
+    <meta property="og:title" content="Wicked Smaht - Boston Trivia Game" />
+    <meta property="og:description" content="Test your Boston knowledge in this wicked fun trivia game! Play as one of the O'Brien cousins and prove you're the smartest in the family." />
+    <meta property="og:image" content="/images/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://wickedsmaht.netlify.app/" />
+    <meta property="twitter:title" content="Wicked Smaht - Boston Trivia Game" />
+    <meta property="twitter:description" content="Test your Boston knowledge in this wicked fun trivia game! Play as one of the O'Brien cousins and prove you're the smartest in the family." />
+    <meta property="twitter:image" content="/images/og-image.png" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#c9a227" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Wicked Smaht" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Fonts - Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Prevent FOUC -->
+    <style>
+      html {
+        background-color: #1a2744;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; font-family: system-ui; background: #1a2744; color: #f5f0e1; min-height: 100vh;">
+        <h1>Wicked Smaht</h1>
+        <p>This game requires JavaScript to run. Please enable JavaScript in your browser settings.</p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

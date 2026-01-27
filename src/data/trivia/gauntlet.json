@@ -1,0 +1,291 @@
+{
+  "locationId": "gauntlet",
+  "description": "The final challenge - 10 questions from across all Boston neighborhoods",
+  "passThreshold": 7,
+  "timePerQuestion": 30,
+  "questions": [
+    {
+      "id": "gauntlet_q1",
+      "prompt": "What year did the Great Molasses Flood devastate the North End?",
+      "choices": ["1919", "1912", "1925", "1903"],
+      "correctIndex": 0,
+      "locationSource": "north_end",
+      "npcReactionCorrect": "That's it. January 15, 1919.",
+      "npcReactionWrong": "1919. The North End never forgets."
+    },
+    {
+      "id": "gauntlet_q2",
+      "prompt": "The Battle of Bunker Hill was actually fought primarily on what nearby hill?",
+      "choices": ["Breed's Hill", "Prospect Hill", "Copp's Hill", "Beacon Hill"],
+      "correctIndex": 0,
+      "locationSource": "charlestown",
+      "npcReactionCorrect": "Breed's Hill. History got the name wrong.",
+      "npcReactionWrong": "Breed's Hill. Classic Boston trick question."
+    },
+    {
+      "id": "gauntlet_q3",
+      "prompt": "What is the height of Fenway's Green Monster in feet?",
+      "choices": ["37 feet", "40 feet", "32 feet", "45 feet"],
+      "correctIndex": 0,
+      "locationSource": "fenway",
+      "npcReactionCorrect": "Thirty-seven feet, two inches. You know your park.",
+      "npcReactionWrong": "37 feet. Every Sox fan should know that."
+    },
+    {
+      "id": "gauntlet_q4",
+      "prompt": "What is the only remaining private street in Boston?",
+      "choices": ["Louisburg Square", "Acorn Street", "Mount Vernon Street", "Chestnut Street"],
+      "correctIndex": 0,
+      "locationSource": "beacon_hill",
+      "npcReactionCorrect": "Louisburg Square. Old money, older tradition.",
+      "npcReactionWrong": "Louisburg Square. The rich have their ways."
+    },
+    {
+      "id": "gauntlet_q5",
+      "prompt": "Back Bay's cross streets are arranged alphabetically. What comes after Arlington, Berkeley, Clarendon?",
+      "choices": ["Dartmouth", "Devon", "Douglas", "Dorset"],
+      "correctIndex": 0,
+      "locationSource": "back_bay",
+      "npcReactionCorrect": "Dartmouth. Then Exeter, Fairfield, Gloucester, Hereford.",
+      "npcReactionWrong": "Dartmouth. Sully used to sing them all."
+    },
+    {
+      "id": "gauntlet_q6",
+      "prompt": "What year was Harvard University founded?",
+      "choices": ["1636", "1701", "1692", "1776"],
+      "correctIndex": 0,
+      "locationSource": "cambridge",
+      "npcReactionCorrect": "1636. Older than the country itself.",
+      "npcReactionWrong": "1636. Predates America by over a century."
+    },
+    {
+      "id": "gauntlet_q7",
+      "prompt": "What iconic residential architecture style is most common in Dorchester?",
+      "choices": ["Triple-deckers", "Brownstones", "Victorian mansions", "Colonial saltboxes"],
+      "correctIndex": 0,
+      "locationSource": "dorchester",
+      "npcReactionCorrect": "Triple-deckers. Working-class Boston.",
+      "npcReactionWrong": "Triple-deckers. That's Dorchester."
+    },
+    {
+      "id": "gauntlet_q8",
+      "prompt": "How many official stops are on the Freedom Trail?",
+      "choices": ["16", "12", "18", "14"],
+      "correctIndex": 0,
+      "locationSource": "downtown",
+      "npcReactionCorrect": "Sixteen. Sully walked them all every year.",
+      "npcReactionWrong": "Sixteen stops. Most people quit at ten."
+    },
+    {
+      "id": "gauntlet_q9",
+      "prompt": "What greenspace replaced the Central Artery after the Big Dig?",
+      "choices": ["Rose Kennedy Greenway", "Boston Common Extension", "Harbor Park", "Atlantic Promenade"],
+      "correctIndex": 0,
+      "locationSource": "seaport",
+      "npcReactionCorrect": "Rose Kennedy Greenway. Named after JFK's mother.",
+      "npcReactionWrong": "The Rose Kennedy Greenway. The highway became a park."
+    },
+    {
+      "id": "gauntlet_q10",
+      "prompt": "What 1974 event sparked years of violent protests in South Boston?",
+      "choices": [
+        "Court-ordered school desegregation and busing",
+        "Public housing integration mandate",
+        "Highway construction project",
+        "Navy Yard closure"
+      ],
+      "correctIndex": 0,
+      "locationSource": "southie",
+      "npcReactionCorrect": "The busing crisis. Southie remembers.",
+      "npcReactionWrong": "Court-ordered busing. That year changed everything."
+    }
+  ],
+  "alternateQuestionsSetB": [
+    {
+      "id": "gauntlet_b1",
+      "prompt": "What was the name of the Irish gang that controlled South Boston's organized crime before the FBI's investigation?",
+      "choices": ["The Winter Hill Gang", "The Irish Mob", "The Southie Boys", "The Boston Brotherhood"],
+      "correctIndex": 0,
+      "locationSource": "southie",
+      "npcReactionCorrect": "Winter Hill Gang. Whitey Bulger's organization.",
+      "npcReactionWrong": "The Winter Hill Gang. Some names carry weight in Southie."
+    },
+    {
+      "id": "gauntlet_b2",
+      "prompt": "What company owned the tank that burst during the Great Molasses Flood?",
+      "choices": ["United States Industrial Alcohol Company", "Boston Sugar Refining", "American Molasses Corp", "New England Distillery"],
+      "correctIndex": 0,
+      "locationSource": "north_end",
+      "npcReactionCorrect": "USIA. They knew the tank was faulty. Twenty-one people paid the price.",
+      "npcReactionWrong": "United States Industrial Alcohol. Accountability came later. Not soon enough."
+    },
+    {
+      "id": "gauntlet_b3",
+      "prompt": "The Green Monster scoreboard at Fenway is operated how?",
+      "choices": ["Still manually operated", "Fully automated since 2000", "Hybrid electronic and manual", "LED replaced the original in 2010"],
+      "correctIndex": 0,
+      "locationSource": "fenway",
+      "npcReactionCorrect": "Still manual. Operators sit inside the wall. Some traditions don't change.",
+      "npcReactionWrong": "It's still operated by hand. People inside the wall changing the numbers. That's Fenway."
+    },
+    {
+      "id": "gauntlet_b4",
+      "prompt": "What 1850 law made Boston a key destination on the Underground Railroad?",
+      "choices": ["Fugitive Slave Act", "Compromise of 1850", "Kansas-Nebraska Act", "Missouri Compromise"],
+      "correctIndex": 0,
+      "locationSource": "beacon_hill",
+      "npcReactionCorrect": "Fugitive Slave Act. Boston's abolitionists fought it. The city became a sanctuary.",
+      "npcReactionWrong": "The Fugitive Slave Act made helping escaped slaves illegal everywhere. Boston resisted."
+    },
+    {
+      "id": "gauntlet_b5",
+      "prompt": "How many British soldiers died or were wounded at the Battle of Bunker Hill?",
+      "choices": ["About 1,000 (40% of engaged forces)", "About 500 (25%)", "About 200 (10%)", "About 1,500 (60%)"],
+      "correctIndex": 0,
+      "locationSource": "charlestown",
+      "npcReactionCorrect": "About a thousand casualties. Pyrrhic victory. The British won but paid in blood.",
+      "npcReactionWrong": "Forty percent casualties. One of the bloodiest battles of the war. The British learned respect."
+    },
+    {
+      "id": "gauntlet_b6",
+      "prompt": "What famous yellow and blue symbol marks the Boston Marathon finish line on Boylston Street?",
+      "choices": ["The painted finish stripe and unicorn logo", "A brass medallion in the sidewalk", "A flagpole with BAA banner", "A stone monument"],
+      "correctIndex": 0,
+      "locationSource": "back_bay",
+      "npcReactionCorrect": "The yellow and blue stripe. The unicorn. That spot is sacred ground.",
+      "npcReactionWrong": "The painted line. Every April, runners from around the world cross that stripe."
+    },
+    {
+      "id": "gauntlet_b7",
+      "prompt": "What MIT building is famous for its unusual, curving design by Frank Gehry?",
+      "choices": ["Stata Center", "Media Lab", "Infinite Corridor", "Green Building"],
+      "correctIndex": 0,
+      "locationSource": "cambridge",
+      "npcReactionCorrect": "Stata Center. Building 32. Looks like it's melting. That's Gehry.",
+      "npcReactionWrong": "The Stata Center. Frank Gehry's contribution to MIT. Love it or hate it."
+    },
+    {
+      "id": "gauntlet_b8",
+      "prompt": "John F. Kennedy's presidential library is located in Dorchester on what peninsula?",
+      "choices": ["Columbia Point", "Castle Island", "Thompson Island", "Spectacle Island"],
+      "correctIndex": 0,
+      "locationSource": "dorchester",
+      "npcReactionCorrect": "Columbia Point. The library overlooks the harbor. JFK's legacy, housed in Dorchester.",
+      "npcReactionWrong": "Columbia Point. The Kennedy Library. Worth the visit."
+    },
+    {
+      "id": "gauntlet_b9",
+      "prompt": "The Old South Meeting House was almost demolished in 1876. What saved it?",
+      "choices": ["A public fundraising campaign by preservationists", "Government intervention", "Purchase by a wealthy family", "Church protection status"],
+      "correctIndex": 0,
+      "locationSource": "downtown",
+      "npcReactionCorrect": "Public fundraising. One of America's first preservation campaigns. The people saved history.",
+      "npcReactionWrong": "Preservationists raised the money. The public saved Old South. Democracy in action."
+    },
+    {
+      "id": "gauntlet_b10",
+      "prompt": "What year did the Institute of Contemporary Art open its dramatic waterfront building?",
+      "choices": ["2006", "2010", "2001", "1998"],
+      "correctIndex": 0,
+      "locationSource": "seaport",
+      "npcReactionCorrect": "2006. The ICA building started the Seaport transformation.",
+      "npcReactionWrong": "2006. One building changed a whole neighborhood."
+    }
+  ],
+  "alternateQuestionsSetC": [
+    {
+      "id": "gauntlet_c1",
+      "prompt": "What Boston tradition coincidentally falls on St. Patrick's Day and celebrates the British evacuation in 1776?",
+      "choices": ["Evacuation Day", "Liberation Day", "Freedom Day", "Independence Day"],
+      "correctIndex": 0,
+      "locationSource": "southie",
+      "npcReactionCorrect": "Evacuation Day. March 17, 1776. Two holidays in one.",
+      "npcReactionWrong": "Evacuation Day. Same day as St. Patrick's Day. Convenient coincidence."
+    },
+    {
+      "id": "gauntlet_c2",
+      "prompt": "What famous phrase did Paul Revere shout during his midnight ride?",
+      "choices": ["He warned of 'Regulars' not 'The British are coming'", "The British are coming!", "To arms! To arms!", "The redcoats are here!"],
+      "correctIndex": 0,
+      "locationSource": "north_end",
+      "npcReactionCorrect": "He said 'Regulars.' Everyone was British then. The poem lied.",
+      "npcReactionWrong": "Trick question. He didn't shout 'The British are coming.' They were all British. He warned about the Regulars."
+    },
+    {
+      "id": "gauntlet_c3",
+      "prompt": "Fenway Park's 'Pesky Pole' is named after Johnny Pesky. What's unusual about the honor?",
+      "choices": ["He wasn't known for home runs - pole is only 302 feet away", "He never played for the Red Sox", "He asked for the naming", "It was originally an insult"],
+      "correctIndex": 0,
+      "locationSource": "fenway",
+      "npcReactionCorrect": "Pesky wasn't a power hitter. That pole is 302 feet away. Short distance, big name.",
+      "npcReactionWrong": "Johnny Pesky wasn't known for home runs. That's the joke."
+    },
+    {
+      "id": "gauntlet_c4",
+      "prompt": "What company provides the gas that still powers Beacon Hill's historic streetlights?",
+      "choices": ["National Grid", "Eversource", "Boston Gas", "Colonial Power"],
+      "correctIndex": 0,
+      "locationSource": "beacon_hill",
+      "npcReactionCorrect": "National Grid. They maintain the gas lamps as a historic feature.",
+      "npcReactionWrong": "National Grid keeps those lights burning. Gas lamps in the modern age. That's Beacon Hill."
+    },
+    {
+      "id": "gauntlet_c5",
+      "prompt": "The Charlestown Navy Yard built what famous World War II destroyer that's now a museum ship?",
+      "choices": ["USS Cassin Young", "USS Constitution", "USS Massachusetts", "USS Salem"],
+      "correctIndex": 0,
+      "locationSource": "charlestown",
+      "npcReactionCorrect": "USS Cassin Young. Destroyer. You can visit her at the Navy Yard.",
+      "npcReactionWrong": "Cassin Young. She's still there. WWII history, docked next to Old Ironsides."
+    },
+    {
+      "id": "gauntlet_c6",
+      "prompt": "The Mapparium at the Mary Baker Eddy Library shows the world as it appeared in what year?",
+      "choices": ["1935", "1950", "1920", "1945"],
+      "correctIndex": 0,
+      "locationSource": "back_bay",
+      "npcReactionCorrect": "1935. Frozen in time. The world has changed but the Mapparium hasn't.",
+      "npcReactionWrong": "1935. Walk through a globe showing how the world looked ninety years ago."
+    },
+    {
+      "id": "gauntlet_c7",
+      "prompt": "The Harry Elkins Widener Memorial Library at Harvard honors a victim of what disaster?",
+      "choices": ["The Titanic sinking", "The Lusitania sinking", "World War I", "The Spanish Flu"],
+      "correctIndex": 0,
+      "locationSource": "cambridge",
+      "npcReactionCorrect": "The Titanic. Harry Widener died on that ship. His mother built the library.",
+      "npcReactionWrong": "Harry Widener died on the Titanic. His book collection became the library's foundation."
+    },
+    {
+      "id": "gauntlet_c8",
+      "prompt": "What major Dorchester avenue was proposed to be renamed after Martin Luther King Jr.?",
+      "choices": ["Blue Hill Avenue", "Dorchester Avenue", "Columbia Road", "Geneva Avenue"],
+      "correctIndex": 0,
+      "locationSource": "dorchester",
+      "npcReactionCorrect": "Blue Hill Avenue. The proposal sparked debate. Names carry weight.",
+      "npcReactionWrong": "Blue Hill Avenue. Long street, long history, proposed new name."
+    },
+    {
+      "id": "gauntlet_c9",
+      "prompt": "Boston Common was used for what military purpose during the Revolutionary War?",
+      "choices": ["British troop encampment", "Colonial training ground", "Prisoner holding", "Supply depot"],
+      "correctIndex": 0,
+      "locationSource": "downtown",
+      "npcReactionCorrect": "British camp. Before the siege and evacuation. Redcoats on our Common.",
+      "npcReactionWrong": "The British camped there before Washington drove them out."
+    },
+    {
+      "id": "gauntlet_c10",
+      "prompt": "What shipping or industrial company had warehouses in the Seaport that are now converted to offices?",
+      "choices": ["Hood (milk), Gillette, various maritime companies", "General Electric", "Ford Motor Company", "Standard Oil"],
+      "correctIndex": 0,
+      "locationSource": "seaport",
+      "npcReactionCorrect": "Hood. Gillette. Maritime companies. Industrial past, tech future.",
+      "npcReactionWrong": "Old warehouses became new offices. That's the Seaport story."
+    }
+  ],
+  "sullyIntro": "If you've made it this far, you've met my people. The ones who mattered. The ones who put up with me. Now here's the final test. Ten questions. One for each place that made me. Get seven right and the box opens. I believe in you. That's why you're here. Don't make me wrong.",
+  "sullyPass": "You did it. You actually did it. The bar is yours. Take care of it. Take care of my people. And remember—Boston isn't just a city. It's a promise.",
+  "sullyFail": "Not quite. But I got plenty wrong too. The box stays closed for now. But you can try again. I believe in second chances. That's what the bar was about.",
+  "retryPenalty": -100
+}

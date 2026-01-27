@@ -1,0 +1,92 @@
+{
+  "southie": {
+    "id": "southie",
+    "name": "South Boston",
+    "npc": "rita",
+    "unlockRequirement": null,
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "pronunciation"
+  },
+  "north_end": {
+    "id": "north_end",
+    "name": "North End",
+    "npc": "enzo",
+    "unlockRequirement": ["southie"],
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "memory_match"
+  },
+  "fenway": {
+    "id": "fenway",
+    "name": "Fenway-Kenmore",
+    "npc": "tommy",
+    "unlockRequirement": ["southie"],
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "speed_naming"
+  },
+  "beacon_hill": {
+    "id": "beacon_hill",
+    "name": "Beacon Hill",
+    "npc": "trish",
+    "unlockRequirement": ["southie", "north_end", "fenway"],
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "unscramble"
+  },
+  "charlestown": {
+    "id": "charlestown",
+    "name": "Charlestown",
+    "npc": "eddie",
+    "unlockRequirement": ["southie"],
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "timeline"
+  },
+  "back_bay": {
+    "id": "back_bay",
+    "name": "Back Bay",
+    "npc": "miles",
+    "unlockRequirement": ["southie", "north_end", "fenway"],
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "spot_errors"
+  },
+  "cambridge": {
+    "id": "cambridge",
+    "name": "Cambridge",
+    "npc": "simon",
+    "unlockRequirement": ["southie", "north_end", "fenway"],
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "match_game"
+  },
+  "dorchester": {
+    "id": "dorchester",
+    "name": "Dorchester",
+    "npc": "mary_catherine",
+    "unlockRequirement": ["beacon_hill", "back_bay", "cambridge", "charlestown"],
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "quote_completion"
+  },
+  "downtown": {
+    "id": "downtown",
+    "name": "Downtown",
+    "npc": "jerome",
+    "unlockRequirement": ["beacon_hill", "back_bay", "cambridge", "charlestown"],
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "photo_id"
+  },
+  "seaport": {
+    "id": "seaport",
+    "name": "Seaport",
+    "npc": "elena",
+    "unlockRequirement": ["dorchester", "downtown"],
+    "triviaCount": 5,
+    "parTime": 300,
+    "redemptionType": "rapid_fire"
+  }
+}

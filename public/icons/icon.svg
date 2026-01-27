@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="#1a2744"/>
+
+  <!-- Key symbol -->
+  <g transform="translate(256, 256)">
+    <!-- Key head (circle with hole) -->
+    <circle cx="-60" cy="-40" r="70" fill="none" stroke="#c9a227" stroke-width="24"/>
+    <circle cx="-60" cy="-40" r="28" fill="#1a2744"/>
+
+    <!-- Key shaft -->
+    <rect x="-10" y="-52" width="150" height="24" rx="12" fill="#c9a227"/>
+
+    <!-- Key teeth -->
+    <rect x="80" y="-28" width="16" height="36" rx="4" fill="#c9a227"/>
+    <rect x="105" y="-28" width="16" height="48" rx="4" fill="#c9a227"/>
+    <rect x="130" y="-28" width="16" height="32" rx="4" fill="#c9a227"/>
+  </g>
+
+  <!-- "WS" text -->
+  <text x="256" y="380"
+        font-family="Georgia, serif"
+        font-size="120"
+        font-weight="bold"
+        fill="#f5f0e1"
+        text-anchor="middle">WS</text>
+
+  <!-- Decorative border -->
+  <rect x="16" y="16" width="480" height="480" rx="56"
+        fill="none" stroke="#c9a227" stroke-width="4" opacity="0.3"/>
+</svg>

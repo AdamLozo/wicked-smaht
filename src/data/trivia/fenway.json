@@ -1,0 +1,177 @@
+{
+  "locationId": "fenway",
+  "questions": [
+    {
+      "id": "fenway_q1",
+      "prompt": "What year did Fenway Park open, making it the oldest active Major League Baseball stadium?",
+      "choices": [
+        "1912",
+        "1901",
+        "1918",
+        "1908"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "April 20, 1912. Same week the Titanic sank. Stadium's survived everything since.",
+      "npcReactionWrong": "1912. April 20th. This park's been standing longer than your grandparents. Show some respect.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "fenway_q2",
+      "prompt": "What's the name of the lone red seat in Fenway's right field bleachers, and what does it mark?",
+      "choices": [
+        "Ted Williams' seat - marks the landing spot of his 502-foot home run",
+        "Babe Ruth's seat - marks his first Red Sox home run",
+        "Carl Yastrzemski's seat - marks his Triple Crown season",
+        "David Ortiz's seat - marks his 500th career home run"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Ted Williams. June 9, 1946. Longest home run in Fenway history. Guy whose head it hit got a free lifetime pass.",
+      "npcReactionWrong": "Ted Williams. 502 feet. Section 42, Row 37, Seat 21. Only red seat in the whole park. You shoulda known that.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "fenway_q3",
+      "prompt": "Before the Red Sox finally won the World Series in 2004, when was their last championship?",
+      "choices": [
+        "1918",
+        "1946",
+        "1967",
+        "1986"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "1918. Eighty-six years. Sully cried in '04. Said he was crying for his father. Then he cried again in '07, '13, and '18.",
+      "npcReactionWrong": "1918. Eighty-six years of suffering. You want to talk about pain? That was pain.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "fenway_q4",
+      "prompt": "What is the height of the Green Monster (left field wall) in feet?",
+      "choices": [
+        "37 feet",
+        "40 feet",
+        "32 feet",
+        "45 feet"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Thirty-seven feet, two inches. Built in 1912. Wasn't always green—they painted it in 1947.",
+      "npcReactionWrong": "Thirty-seven feet. Everyone knows the Green Monster. Not everyone knows exactly how tall it is.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "fenway_q5",
+      "prompt": "What song has become Fenway's unofficial anthem, played during the 8th inning?",
+      "choices": [
+        "Sweet Caroline by Neil Diamond",
+        "Dirty Water by The Standells",
+        "Shipping Up to Boston by Dropkick Murphys",
+        "Tessie by Dropkick Murphys"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Sweet Caroline. Started in 2002. Sully said it was 'sentimental garbage.' He sang it every time.",
+      "npcReactionWrong": "Sweet Caroline. Middle of the 8th, whole park starts singing. Neil Diamond himself has sung it here.",
+      "difficulty": "normal"
+    }
+  ],
+  "alternateQuestions": [
+    {
+      "id": "fenway_alt1",
+      "prompt": "What was the nickname given to the supposed curse that prevented the Red Sox from winning after trading Babe Ruth?",
+      "choices": [
+        "The Curse of the Bambino",
+        "The Sultan's Curse",
+        "The Babe's Revenge",
+        "The Boston Hex"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The Curse of the Bambino. Broken in 2004. We don't talk about the curse years anymore. Or we talk about them all the time.",
+      "npcReactionWrong": "The Curse of the Bambino. They said this team was cursed. Had a name for it and everything.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "fenway_alt2",
+      "prompt": "What Red Sox player had the last .400 batting average in a single season (1941)?",
+      "choices": [
+        "Ted Williams",
+        "Babe Ruth",
+        "Carl Yastrzemski",
+        "Wade Boggs"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Ted Williams. .406. Nobody's done it since. Nobody will.",
+      "npcReactionWrong": "Ted Williams. Nobody's hit .400 since 1941. The last guy to do it was a legend.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "fenway_alt3",
+      "prompt": "The triangle in center field at Fenway has what unique feature?",
+      "choices": [
+        "It has the deepest point in fair territory in the majors",
+        "It's the only grass-free zone in the outfield",
+        "It contains a hidden door to the bullpen",
+        "It has special drainage for the sprinkler system"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Deepest point in fair territory. Over 420 feet in the corners. Balls go there to die.",
+      "npcReactionWrong": "The triangle out there is the deepest corner in baseball. Outfielders hate it. Pitchers love it.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "fenway_alt4",
+      "prompt": "What is the only number retired by the Red Sox for a player who never played for them?",
+      "choices": [
+        "42 (Jackie Robinson)",
+        "3 (Babe Ruth)",
+        "7 (Mickey Mantle)",
+        "21 (Roberto Clemente)"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "42. Jackie Robinson. Retired across all of baseball. The Red Sox were the last team to integrate. That number reminds us.",
+      "npcReactionWrong": "42. Jackie Robinson's number. Retired league-wide. The Red Sox have a complicated history with that.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "fenway_alt5",
+      "prompt": "Who was the legendary left fielder known for playing off the Green Monster better than anyone?",
+      "choices": [
+        "Carl Yastrzemski (Yaz)",
+        "Ted Williams",
+        "Jim Rice",
+        "Manny Ramirez"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Yaz. Knew every bounce off that wall. Played left field for over twenty years. Nobody did it better.",
+      "npcReactionWrong": "Carl Yastrzemski. They called him Yaz. Played left field like he was born there. Knew every bounce off the Monster.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "fenway_alt6",
+      "prompt": "Fenway Park is located on what street, which was renamed in 2018?",
+      "choices": [
+        "4 Jersey Street (formerly Yawkey Way)",
+        "1 Fenway Boulevard (formerly Lansdowne Street)",
+        "100 Van Ness Street (formerly Ipswich Road)",
+        "25 Brookline Avenue (formerly Kenmore Way)"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Jersey Street. Used to be Yawkey Way. They changed it in 2018. The Yawkey name... complicated history.",
+      "npcReactionWrong": "4 Jersey Street now. They renamed it from Yawkey Way. Some names carry too much weight.",
+      "difficulty": "hard"
+    }
+  ],
+  "redemptionChallenge": {
+    "type": "speed_naming",
+    "instructions": "Name 7 Red Sox players (any era) in 30 seconds.",
+    "validAnswers": [
+      "Ted Williams", "Carl Yastrzemski", "Yaz", "David Ortiz", "Big Papi",
+      "Pedro Martinez", "Carlton Fisk", "Jim Rice", "Wade Boggs", "Roger Clemens",
+      "Manny Ramirez", "Dustin Pedroia", "Curt Schilling", "Johnny Damon",
+      "Mookie Betts", "Nomar Garciaparra", "Mo Vaughn", "Babe Ruth",
+      "Tris Speaker", "Bobby Doerr", "Jason Varitek", "Kevin Youkilis",
+      "Jon Lester", "Rafael Devers", "Xander Bogaerts"
+    ],
+    "passThreshold": 7,
+    "timeLimit": 30,
+    "npcPassResponse": "Alright, you know your roster. Sully would've added some guys from the '67 team, but I'll take it.",
+    "npcFailResponse": "You named five. Five! My grandmother could name ten and she thought baseball was 'men standing around.' Try again."
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "rivalDialogue": {
+    "brendan": {
+      "personality": "Cocky but helpful cousin who texts too much. Uses lots of slang and emojis. Genuinely supportive underneath the bravado.",
+      "raceStart": [
+        "Oh it's ON now! Let's see what you got, cuz!",
+        "Race time! Hope you're ready to eat my dust!",
+        "Yo yo yo! Same question, same time. Let's gooo!"
+      ],
+      "raceWin": [
+        "YOOOO let's GO! Too slow, cuz!",
+        "Victory is MINE! Better luck next time!",
+        "Brendan: 1, You: 0! Get rekt!"
+      ],
+      "raceLoss": [
+        "Aight aight, you got that one. Won't happen again tho!",
+        "Okay okay, respect. But I'm coming for you!",
+        "Beginner's luck, cuz. Don't get cocky!"
+      ],
+      "stealAttempt": [
+        "Wait, are you trying to steal MY key?! Oh it's personal now!",
+        "Yo hold up, don't even THINK about taking what's mine!",
+        "Oh so THAT'S how it's gonna be? Game on!"
+      ],
+      "stealSuccess": [
+        "Bruh... I can't believe you actually did that 😤",
+        "Fine, take it. But this means WAR!",
+        "Okay that was actually impressive. Don't let it go to your head."
+      ],
+      "stealFail": [
+        "HA! Nice try but you can't touch this!",
+        "What did you THINK was gonna happen? 😂",
+        "My key stays with ME, cuz!"
+      ],
+      "playerLocationComplete": [
+        "Oh word? You finished that one? Aight, not bad!",
+        "Keep it up! But I'm still ahead... probably.",
+        "Nice work! Don't celebrate too hard tho, we got more to go!"
+      ],
+      "playerLocationFail": [
+        "Yo you good? That one was rough to watch...",
+        "Don't sweat it, happens to the best of us!",
+        "Shake it off, cuz! You got the next one!"
+      ],
+      "gauntletStart": [
+        "THE GAUNTLET! This is it, fam! Let's see who's really got what it takes!",
+        "Gauntlet time! May the best O'Brien win! (That's me btw 😎)",
+        "Final stretch! Time to show what we're made of!"
+      ],
+      "interruption": [
+        "Yo cuz! Just wanted to say you're killing it out there!",
+        "Quick check-in: don't forget to breathe lol",
+        "Bro I heard Maeve's doing good. We gotta step it up!",
+        "Remember that time we got lost in the North End? Good times.",
+        "Mom says hi. She also says she bet on you to win. No pressure!",
+        "This trivia is wild! Some of these questions are HARD.",
+        "You got this! Channel your inner O'Brien!",
+        "Just saw your score. Impressive! But I'm catching up!",
+        "Don't get distracted by my texts... okay that's exactly what this is doing. My bad! 😂",
+        "Fun fact: I totally knew that last answer. Would've crushed it."
+      ],
+      "cousinLifelineIntro": [
+        "Aight lemme think about this one...",
+        "Oh snap, you need help? I gotchu!",
+        "Okay okay, let me use my big brain for a sec...",
+        "Help mode activated! Let's figure this out!"
+      ],
+      "cousinLifelineResponse": [
+        "I'm like 60% sure it's {answer}. Maybe 70%? Just go with it!",
+        "Okay hear me out - I think it's {answer}. Trust me bro!",
+        "My gut says {answer}. And my gut is usually right... ish.",
+        "Pretty sure it's {answer}! Don't @ me if I'm wrong tho 😅"
+      ]
+    },
+    "maeve": {
+      "personality": "Smarter older cousin who sends voice memos. More reserved and analytical. Genuinely cares but shows it subtly.",
+      "raceStart": [
+        "A race? Interesting. Let's see how this plays out.",
+        "Same question, head to head. I accept this challenge.",
+        "May the more prepared cousin win."
+      ],
+      "raceWin": [
+        "That was close. Well played.",
+        "I had a feeling about that one. Good effort though.",
+        "Preparation meets opportunity. Better luck next time."
+      ],
+      "raceLoss": [
+        "Impressive. You've clearly been studying.",
+        "Well done. I underestimated you.",
+        "I'll remember this one. You earned that."
+      ],
+      "stealAttempt": [
+        "An opportunistic move. Let's see if you can back it up.",
+        "Trying to steal from me? Bold strategy.",
+        "I suppose turnabout is fair play. Show me what you've got."
+      ],
+      "stealSuccess": [
+        "Well played. I'll earn it back.",
+        "That hurt, but I respect the move.",
+        "Consider me properly motivated now."
+      ],
+      "stealFail": [
+        "Nice try, but you'll have to do better than that.",
+        "My preparation paid off there.",
+        "Perhaps stick to earning your own keys?"
+      ],
+      "playerLocationComplete": [
+        "Nicely done. You're showing real knowledge.",
+        "Another key earned. The competition tightens.",
+        "Solid performance. I expected nothing less from family."
+      ],
+      "playerLocationFail": [
+        "That was a tough location. Don't be too hard on yourself.",
+        "We all have our off moments. Regroup and refocus.",
+        "Remember: this is a marathon, not a sprint."
+      ],
+      "gauntletStart": [
+        "The gauntlet. This is what we've been building toward.",
+        "Ten questions. Everything on the line. Let's do this properly.",
+        "May we all represent the O'Brien name with dignity."
+      ],
+      "interruption": [
+        "Just checking in. How are you holding up?",
+        "Quick tip: the North End questions are mostly food history. Trust your instincts.",
+        "I know we're competing, but... good luck. Genuinely.",
+        "Brendan keeps texting me updates about you. He's actually rooting for you.",
+        "Take your time with the harder questions. Rushing leads to mistakes.",
+        "You're doing better than you probably think.",
+        "Remember our study sessions? This is what they were for.",
+        "Cambridge has some tricky MIT questions. Be careful.",
+        "I respect how seriously you're taking this.",
+        "Win or lose, this has been fun. In its own way."
+      ],
+      "cousinLifelineIntro": [
+        "Let me think about this carefully...",
+        "Hmm, interesting question. Give me a moment.",
+        "I want to give you an accurate answer. Let me consider...",
+        "Processing... okay, here's my analysis."
+      ],
+      "cousinLifelineResponse": [
+        "I'm fairly confident it's {answer}. The reasoning is solid.",
+        "Based on what I know, {answer} seems most likely.",
+        "I'd go with {answer}, but let me think on it more...",
+        "My educated guess is {answer}. I'll call you back if I reconsider."
+      ],
+      "cousinLifelineCallback": [
+        "Wait - I thought about it more. I think it might actually be {answer}.",
+        "Okay, update: after more consideration, {answer} is probably right.",
+        "I second-guessed myself and I think {answer} is the better answer.",
+        "Correction incoming: {answer}. I'm more confident about this now."
+      ]
+    }
+  },
+  "systemMessages": {
+    "raceDetected": "RACE DETECTED! You and {rival} arrived at the same location!",
+    "stealAvailable": "{rival} failed at {location}! You have 20 minutes to attempt a steal.",
+    "stealExpired": "Steal opportunity at {location} has expired.",
+    "rivalCompleted": "{rival} just completed {location} and earned a key!",
+    "rivalFailed": "{rival} failed at {location}. Opportunity incoming...",
+    "playerAhead": "You're currently in the lead! Keep it up!",
+    "playerBehind": "You're falling behind! Time to pick up the pace!",
+    "gauntletUnlocked": "The Gauntlet is now unlocked! All three cousins are ready!"
+  },
+  "locationSpecific": {
+    "southie": {
+      "brendan": "Southie is MY territory, cuz! This is where I grew up!",
+      "maeve": "Ah, Southie. So many memories from visiting grandma."
+    },
+    "north_end": {
+      "brendan": "All those pizzas are finally paying off! I know this place!",
+      "maeve": "The Italian heritage questions should be interesting."
+    },
+    "fenway": {
+      "brendan": "RED SOX BABY! This is gonna be easy mode for me!",
+      "maeve": "Sports trivia. Brendan's probably confident here."
+    },
+    "beacon_hill": {
+      "brendan": "Fancy neighborhood = fancy questions. I'm nervous ngl",
+      "maeve": "Historical and architectural. Right up my alley."
+    },
+    "charlestown": {
+      "brendan": "Bunker Hill! Revolutionary War stuff! ...I slept through that class 😅",
+      "maeve": "The historical significance here is remarkable."
+    },
+    "back_bay": {
+      "brendan": "Back Bay vibes. Lots of shopping here. Not much trivia knowledge tho.",
+      "maeve": "Beautiful architecture. I've studied this area extensively."
+    },
+    "cambridge": {
+      "brendan": "Harvard and MIT territory. Big brain required. I'm sweating.",
+      "maeve": "Academic questions? Finally, my element."
+    },
+    "dorchester": {
+      "brendan": "Dot! Got some family out here. Let's see what I remember!",
+      "maeve": "Diverse neighborhood with rich history. Interesting section."
+    },
+    "downtown": {
+      "brendan": "Downtown crossing! Freedom Trail stuff! I did that walk once!",
+      "maeve": "The heart of Boston's history. I'm ready for this."
+    },
+    "seaport": {
+      "brendan": "Seaport is all new and fancy now. Modern Boston questions maybe?",
+      "maeve": "The transformation of this area has been fascinating."
+    }
+  }
+}

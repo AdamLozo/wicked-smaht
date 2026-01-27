@@ -1,0 +1,172 @@
+{
+  "locationId": "back_bay",
+  "questions": [
+    {
+      "id": "back_bay_q1",
+      "prompt": "Back Bay was originally what geographic feature before being filled in over several decades?",
+      "choices": [
+        "Tidal marshland and mudflats",
+        "A deep freshwater lake",
+        "Rocky coastline with cliffs",
+        "Dense forest and farmland"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Tidal flats. Swamp. They filled it in starting in the 1850s. Every building you see is standing on garbage and gravel.",
+      "npcReactionWrong": "This whole neighborhood is built on lies. Literally. There was nothing here but marsh and mud.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "back_bay_q2",
+      "prompt": "The Boston Public Library in Copley Square opened its current building in what year?",
+      "choices": [
+        "1895",
+        "1854",
+        "1912",
+        "1876"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "1895. Though the library itself started in 1854. That building has murals by John Singer Sargent. Free to see. Free to use. Imagine.",
+      "npcReactionWrong": "1895. The library in Copley Square—the building, not the institution. First publicly supported municipal library in America.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "back_bay_q3",
+      "prompt": "What architectural style defines most of Back Bay's brownstone townhouses?",
+      "choices": [
+        "Victorian / French Academic style",
+        "Georgian Colonial",
+        "Art Deco",
+        "Federal style"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Victorian. French Academic influence. They planned the whole thing at once. That's why the streets go in alphabetical order.",
+      "npcReactionWrong": "Victorian with French influence. The brownstones here all look similar. That's not an accident.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "back_bay_q4",
+      "prompt": "Back Bay's cross streets are arranged alphabetically. What is the correct sequence from east to west?",
+      "choices": [
+        "Arlington, Berkeley, Clarendon, Dartmouth...",
+        "Adams, Boylston, Commonwealth, Dartmouth...",
+        "Beacon, Charles, Dartmouth, Exeter...",
+        "Appleton, Berkeley, Cambridge, Dover..."
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Arlington, Berkeley, Clarendon, Dartmouth... all the way to Hereford. Sully used to sing them to remember.",
+      "npcReactionWrong": "Arlington, Berkeley, Clarendon, Dartmouth, Exeter, Fairfield, Gloucester, Hereford. Then Massachusetts Ave.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "back_bay_q5",
+      "prompt": "Trinity Church in Copley Square was designed by what famous architect?",
+      "choices": [
+        "Henry Hobson Richardson",
+        "Charles Bulfinch",
+        "Frederick Law Olmsted",
+        "Louis Sullivan"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "H.H. Richardson. They named a whole style after him: Richardsonian Romanesque. The man was a genius. Died at 47.",
+      "npcReactionWrong": "Henry Hobson Richardson. Trinity Church—that's the one reflected in the Hancock Tower. An architectural masterpiece.",
+      "difficulty": "hard"
+    }
+  ],
+  "alternateQuestions": [
+    {
+      "id": "back_bay_alt1",
+      "prompt": "What is the name of the skyscraper that reflects Trinity Church in its glass facade?",
+      "choices": [
+        "John Hancock Tower",
+        "Prudential Tower",
+        "One Boston Place",
+        "Federal Reserve Building"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "John Hancock Tower. 200 Clarendon Street now, officially. There's a famous photograph—old church reflected in modern glass.",
+      "npcReactionWrong": "John Hancock Tower. That reflection is one of the most photographed views in Boston.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "back_bay_alt2",
+      "prompt": "The Boston Marathon finishes on what Back Bay street?",
+      "choices": [
+        "Boylston Street",
+        "Commonwealth Avenue",
+        "Newbury Street",
+        "Beacon Street"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Boylston Street. Near Copley Square. Every April, runners from all over the world cross that line.",
+      "npcReactionWrong": "Boylston Street. The finish line is sacred ground in this city.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "back_bay_alt3",
+      "prompt": "How many years did it take to fill in Back Bay?",
+      "choices": [
+        "Approximately 30-40 years (1857-1890s)",
+        "About 10 years (1880-1890)",
+        "Over 60 years (1830-1890)",
+        "Just 5 years (1855-1860)"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Thirty to forty years. They didn't build this neighborhood overnight. Trainloads of gravel from Needham. Day after day after day.",
+      "npcReactionWrong": "The landfill project took decades. Starting in 1857, running into the 1890s. That's dedication. Or stubbornness.",
+      "difficulty": "hard"
+    },
+    {
+      "id": "back_bay_alt4",
+      "prompt": "What major thoroughfare runs through the center of Back Bay with a central mall and promenade?",
+      "choices": [
+        "Commonwealth Avenue",
+        "Boylston Street",
+        "Newbury Street",
+        "Beacon Street"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "Commonwealth Avenue. The grand boulevard. Walking path down the middle. Modeled after the Champs-Élysées. We aim high.",
+      "npcReactionWrong": "Commonwealth Avenue. There's a grand boulevard with a walking path down the middle. That's the one.",
+      "difficulty": "normal"
+    },
+    {
+      "id": "back_bay_alt5",
+      "prompt": "What is the name of the large public greenspace where Back Bay meets Beacon Hill?",
+      "choices": [
+        "Boston Public Garden",
+        "Boston Common",
+        "Esplanade",
+        "Copley Square"
+      ],
+      "correctIndex": 0,
+      "npcReactionCorrect": "The Public Garden. Swan boats. Flower beds. At the east end of Commonwealth Ave. Don't confuse it with the Common.",
+      "npcReactionWrong": "Boston Public Garden. That's where the swan boats are. The Common is next door. Different parks.",
+      "difficulty": "normal"
+    }
+  ],
+  "redemptionChallenge": {
+    "type": "spot_errors",
+    "instructions": "Four images of Boston buildings are shown. One has been digitally altered. Identify which building has the architectural error.",
+    "sets": [
+      {
+        "images": [
+          { "name": "Trinity Church", "altered": false },
+          { "name": "Boston Public Library", "altered": false },
+          { "name": "John Hancock Tower", "altered": true, "error": "extra floor added" },
+          { "name": "Old South Church", "altered": false }
+        ]
+      },
+      {
+        "images": [
+          { "name": "Copley Plaza Hotel", "altered": true, "error": "dome removed" },
+          { "name": "Prudential Tower", "altered": false },
+          { "name": "Newbury Street brownstone", "altered": false },
+          { "name": "First Church of Christ, Scientist", "altered": false }
+        ]
+      }
+    ],
+    "passThreshold": 1,
+    "npcPassResponse": "Good eye. Most people can't spot a forgery, architectural or otherwise. Sully had the eye too. Miss that old crook.",
+    "npcFailResponse": "You thought that building looked correct? That building? My professional reputation is insulted. Study harder."
+  }
+}

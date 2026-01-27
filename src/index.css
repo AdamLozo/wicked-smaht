@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Boston-themed color palette */
+@theme {
+  --color-boston-navy: #0a1628;
+  --color-boston-brick: #8b4513;
+  --color-boston-gold: #d4a84b;
+  --color-boston-cream: #f5f0e1;
+  --color-boston-green: #2d5a3d;
+  --color-southie-blue: #1e3a5f;
+  --color-fenway-green: #0c3823;
+
+  --font-family-display: Georgia, serif;
+  --font-family-body: system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-boston-navy text-boston-cream;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: var(--font-family-body);
+  }
+
+  /* Keyboard focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-boston-gold ring-offset-2 ring-offset-boston-navy;
+  }
+
+  /* Button-specific focus - more visible */
+  button:focus-visible,
+  [role="button"]:focus-visible {
+    @apply ring-boston-gold ring-offset-boston-navy shadow-lg shadow-boston-gold/30;
+  }
+
+  /* Skip link styling */
+  .skip-link:focus {
+    @apply fixed top-4 left-4 z-50 bg-boston-gold text-boston-navy px-4 py-2 rounded-lg;
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    *:focus-visible {
+      outline: 3px solid currentColor !important;
+      outline-offset: 2px !important;
+    }
+  }
+}

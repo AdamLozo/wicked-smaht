@@ -1,0 +1,283 @@
+{
+  "polaroids": [
+    {
+      "id": "southie_1",
+      "location": "southie",
+      "image": "/assets/images/polaroids/southie_1.png",
+      "caption": "First night I owned the place. Sold four beers. Drank three myself. Rita told me the sign was crooked. She wasn't wrong. March 12, 1987.",
+      "title": "Opening Night",
+      "triggerType": "environment",
+      "triggerCondition": "click_budweiser_sign"
+    },
+    {
+      "id": "southie_2",
+      "location": "southie",
+      "image": "/assets/images/polaroids/southie_2.png",
+      "caption": "Tuesday night. Nothing special happening. Just everybody exactly where they belonged. That was the whole point. 1998.",
+      "title": "The Regulars",
+      "triggerType": "dialogue_branch",
+      "triggerCondition": "rita_old_days_complete"
+    },
+    {
+      "id": "southie_3",
+      "location": "southie",
+      "image": "/assets/images/polaroids/southie_3.png",
+      "caption": "Thirty-seven years behind this bar. Some nights I still can't believe any of it happened. Other nights I can't remember what I was before. October 2024.",
+      "title": "Last Call",
+      "triggerType": "environment",
+      "triggerCondition": "jukebox_dirty_water"
+    },
+    {
+      "id": "north_end_1",
+      "location": "north_end",
+      "image": "/assets/images/polaroids/north_end_1.png",
+      "caption": "Enzo bet me I couldn't eat ten cannoli. I ate fourteen. Threw up in the harbor. Won thirty bucks. Best day of 1993.",
+      "title": "The Feast",
+      "triggerType": "environment",
+      "triggerCondition": "click_cannoli_display"
+    },
+    {
+      "id": "north_end_2",
+      "location": "north_end",
+      "image": "/assets/images/polaroids/north_end_2.png",
+      "caption": "Enzo tried to teach me to cut prosciutto. Said I held the knife 'like a Protestant.' Never did learn. 1999.",
+      "title": "The Butcher's Lesson",
+      "triggerType": "dialogue_branch",
+      "triggerCondition": "enzo_teaching_sully"
+    },
+    {
+      "id": "north_end_3",
+      "location": "north_end",
+      "image": "/assets/images/polaroids/north_end_3.png",
+      "caption": "Rosa died on a Tuesday. I closed the bar and sat with Enzo for three days. Didn't say anything. Some things you can't fix with words. 2008.",
+      "title": "After Rosa",
+      "triggerType": "environment",
+      "triggerCondition": "find_rosa_memorial"
+    },
+    {
+      "id": "fenway_1",
+      "location": "fenway",
+      "image": "/assets/images/polaroids/fenway_1.png",
+      "caption": "October 27, 2004. Eighty-six years. I watched with a man I never met before and never saw again. We cried together for six innings. Still don't know his name. Don't need to.",
+      "title": "The Impossible",
+      "triggerType": "environment",
+      "triggerCondition": "click_2004_ticket"
+    },
+    {
+      "id": "fenway_2",
+      "location": "fenway",
+      "image": "/assets/images/polaroids/fenway_2.png",
+      "caption": "Tommy sold me this ticket for three hundred bucks. I never used it. Didn't need to be there. The believing was the point. Still have it.",
+      "title": "The Ticket",
+      "triggerType": "dialogue_branch",
+      "triggerCondition": "tommy_unused_ticket"
+    },
+    {
+      "id": "fenway_3",
+      "location": "fenway",
+      "image": "/assets/images/polaroids/fenway_3.png",
+      "caption": "Dad took me to one game. Just one. 1970. Yaz hit a double. Dad said baseball was 'a waste of time.' But he took me. That was something. Only photo I have with him.",
+      "title": "Teddy Ballgame",
+      "triggerType": "environment",
+      "triggerCondition": "find_child_glove"
+    },
+    {
+      "id": "beacon_hill_1",
+      "location": "beacon_hill",
+      "image": "/assets/images/polaroids/beacon_hill_1.png",
+      "caption": "Married Trish Harrington on the hottest day of 1984. She said 'I do' and I thought, 'How did I get this lucky?' Still wonder. July 14, 1984.",
+      "title": "The Wedding",
+      "triggerType": "environment",
+      "triggerCondition": "click_wedding_photo"
+    },
+    {
+      "id": "beacon_hill_2",
+      "location": "beacon_hill",
+      "image": "/assets/images/polaroids/beacon_hill_2.png",
+      "caption": "She cared so much about things I didn't understand. Politics. Policy. 'Making a difference.' I just wanted her to be happy. Turns out that wasn't enough. November 1990.",
+      "title": "Election Night",
+      "triggerType": "dialogue_branch",
+      "triggerCondition": "trish_what_sully_didnt_understand"
+    },
+    {
+      "id": "beacon_hill_3",
+      "location": "beacon_hill",
+      "image": "/assets/images/polaroids/beacon_hill_3.png",
+      "caption": "Trish and I signed the papers on a Tuesday. She said we'd stay friends. I said okay. We meant it. Turns out that was the only thing we got right. 1991.",
+      "title": "The Divorce",
+      "triggerType": "environment",
+      "triggerCondition": "find_wedding_gift_book"
+    },
+    {
+      "id": "charlestown_1",
+      "location": "charlestown",
+      "image": "/assets/images/polaroids/charlestown_1.png",
+      "caption": "Eddie got me a job at the yard for six months in '86. Worst worker they ever had. But Eddie vouched for me. That meant something there. Means something still.",
+      "title": "The Yard",
+      "triggerType": "environment",
+      "triggerCondition": "click_worker_badge"
+    },
+    {
+      "id": "charlestown_2",
+      "location": "charlestown",
+      "image": "/assets/images/polaroids/charlestown_2.png",
+      "caption": "Eddie pulled strings to get me on the turnaround cruise. Oldest warship still sailing. I felt like a kid again. Told Eddie he was my best friend. He grunted. That's Eddie for 'I love you too.' 2009.",
+      "title": "Old Ironsides",
+      "triggerType": "dialogue_branch",
+      "triggerCondition": "eddie_constitution_cruise"
+    },
+    {
+      "id": "charlestown_3",
+      "location": "charlestown",
+      "image": "/assets/images/polaroids/charlestown_3.png",
+      "caption": "294 steps. Eddie used to race me when we were younger. Last time we climbed it, neither of us could make it to the top. We lied and said we did. That's friendship. 2020.",
+      "title": "The Monument",
+      "triggerType": "environment",
+      "triggerCondition": "find_monument_frame"
+    },
+    {
+      "id": "back_bay_1",
+      "location": "back_bay",
+      "image": "/assets/images/polaroids/back_bay_1.png",
+      "caption": "Mickey Ashworth, 1980. Three blocks from my house. Scrappiest kid in Southie. Said he was gonna be somebody. Turns out he meant somebody else. Can't blame him.",
+      "title": "The Reinvention",
+      "triggerType": "environment",
+      "triggerCondition": "click_southie_frame"
+    },
+    {
+      "id": "back_bay_2",
+      "location": "back_bay",
+      "image": "/assets/images/polaroids/back_bay_2.png",
+      "caption": "Some things find new homes through unconventional means. Miles never asked where things came from. I never asked where they went. Worked for thirty years. Some friendships are built on what you don't say.",
+      "title": "The Acquisition",
+      "triggerType": "environment",
+      "triggerCondition": "find_hidden_safe"
+    },
+    {
+      "id": "back_bay_3",
+      "location": "back_bay",
+      "image": "/assets/images/polaroids/back_bay_3.png",
+      "caption": "Miles said if I was gonna help him with 'acquisitions,' I needed to learn what made things valuable. Sent me to the library. Read poetry for the first time. Didn't understand most of it. Understood enough. 2005.",
+      "title": "The Library",
+      "triggerType": "dialogue_branch",
+      "triggerCondition": "miles_what_sully_learned"
+    },
+    {
+      "id": "cambridge_1",
+      "location": "cambridge",
+      "image": "/assets/images/polaroids/cambridge_1.png",
+      "caption": "Professor here was explaining German philosophy to some guys who didn't want to hear it. I intervened. He asked how to thank me. I said 'buy me a beer and never mention Wittgenstein again.' He bought the beer. 2010.",
+      "title": "The Rescue",
+      "triggerType": "environment",
+      "triggerCondition": "click_stained_book"
+    },
+    {
+      "id": "cambridge_2",
+      "location": "cambridge",
+      "image": "/assets/images/polaroids/cambridge_2.png",
+      "caption": "Simon invited me to a lecture. I fell asleep in ten minutes. He said I summarized Kierkegaard better in my sleep than most of his students do awake. Think he was being nice. 2013.",
+      "title": "The Lecture",
+      "triggerType": "dialogue_branch",
+      "triggerCondition": "simon_what_sully_taught"
+    },
+    {
+      "id": "cambridge_3",
+      "location": "cambridge",
+      "image": "/assets/images/polaroids/cambridge_3.png",
+      "caption": "We wrote actual letters. For years. About life, meaning, all that stuff. Simon said I was 'a natural philosopher.' I said he was 'a good drinking buddy for a Harvard guy.' Both meant the same thing. 2018.",
+      "title": "The Letters",
+      "triggerType": "environment",
+      "triggerCondition": "find_letter_bundle"
+    },
+    {
+      "id": "dorchester_1",
+      "location": "dorchester",
+      "image": "/assets/images/polaroids/dorchester_1.png",
+      "caption": "Margaret, Mary Catherine, me. Summer of 1962. Mama took this picture. Before Patrick. Before everything. We thought life would always be like that. Simple. Together. 1962.",
+      "title": "The Kids",
+      "triggerType": "environment",
+      "triggerCondition": "click_facedown_photo"
+    },
+    {
+      "id": "dorchester_2",
+      "location": "dorchester",
+      "image": "/assets/images/polaroids/dorchester_2.png",
+      "caption": "I wasn't there. Couldn't be there. Told myself I was keeping the bar running, sending money, helping from a distance. Lies I told myself so I could sleep. She asked for me. I didn't come. Never forgave myself. 1994.",
+      "title": "Mama",
+      "triggerType": "environment",
+      "triggerCondition": "find_unsent_letter"
+    },
+    {
+      "id": "dorchester_3",
+      "location": "dorchester",
+      "image": "/assets/images/polaroids/dorchester_3.png",
+      "caption": "Twenty years of letters. Apologies. Explanations. Stories about the bar, the city, what I wished I'd said. Never sent a single one. Told myself I would. Tomorrow. Always tomorrow. Now there's no more tomorrows. She'll find these when I'm gone. I hope she understands. 2024.",
+      "title": "The Letters Never Sent",
+      "triggerType": "trivia_bonus",
+      "triggerCondition": "dorchester_all_polaroids"
+    },
+    {
+      "id": "downtown_1",
+      "location": "downtown",
+      "image": "/assets/images/polaroids/downtown_1.png",
+      "caption": "Walked the Freedom Trail every year on St. Patrick's Day. Sixteen stops. Most people quit after ten. I did all sixteen. Called it 'paying respects.' This city earned it. 1995.",
+      "title": "The Trail",
+      "triggerType": "environment",
+      "triggerCondition": "click_freedom_trail_map"
+    },
+    {
+      "id": "downtown_2",
+      "location": "downtown",
+      "image": "/assets/images/polaroids/downtown_2.png",
+      "caption": "Found this guy performing to no one. Sat and listened for an hour. His words made me feel something I couldn't name. Offered him a couch, a meal, a place to figure things out. He stayed six months. Best investment I ever made. 2015.",
+      "title": "The Performer",
+      "triggerType": "dialogue_branch",
+      "triggerCondition": "jerome_how_met_sully"
+    },
+    {
+      "id": "downtown_3",
+      "location": "downtown",
+      "image": "/assets/images/polaroids/downtown_3.png",
+      "caption": "Jerome wrote this for me. Said it was about the bar. Think it was about more than that. He recites it every Friday night. I pretend I don't know what it means. Easier that way. 2019.",
+      "title": "The Poem",
+      "triggerType": "environment",
+      "triggerCondition": "find_napkin_frame"
+    },
+    {
+      "id": "seaport_1",
+      "location": "seaport",
+      "image": "/assets/images/polaroids/seaport_1.png",
+      "caption": "Walked through the Seaport for the first time in years. Didn't recognize any of it. Used to be warehouses and fishermen. Now it's condos and tech companies. City keeps changing. I stopped changing. Not sure which of us got it right. 2019.",
+      "title": "The New City",
+      "triggerType": "environment",
+      "triggerCondition": "click_construction_photo"
+    },
+    {
+      "id": "seaport_2",
+      "location": "seaport",
+      "image": "/assets/images/polaroids/seaport_2.png",
+      "caption": "Met Elena when she came asking about 'authentic' Boston businesses. She saw through me in ten minutes. First person in forty years who did. Started talking and didn't stop for three years. 2020.",
+      "title": "Elena",
+      "triggerType": "dialogue_branch",
+      "triggerCondition": "elena_first_conversation"
+    },
+    {
+      "id": "seaport_3",
+      "location": "seaport",
+      "image": "/assets/images/polaroids/seaport_3.png",
+      "caption": "Elena asked why I never left. Started over somewhere else. After Mom. After Trish. After Mary Catherine stopped talking to me. I could've gone anywhere. But I couldn't abandon Boston. Not again. Not after abandoning my mother. This city was my penance. And my home. 2022.",
+      "title": "The Choice",
+      "triggerType": "trivia_bonus",
+      "triggerCondition": "seaport_all_polaroids"
+    },
+    {
+      "id": "bonus_31",
+      "location": "gauntlet",
+      "image": "/assets/images/polaroids/bonus_31.png",
+      "caption": "The letter I finally wrote. The one I was going to send. Found it in his pocket when he died. Still sealed. Still undelivered. Some tomorrows never come. But now you know. He tried. At the end, he tried. — Elena, 2024.",
+      "title": "The Letter",
+      "triggerType": "redemption_reward",
+      "triggerCondition": "perfect_ending"
+    }
+  ]
+}

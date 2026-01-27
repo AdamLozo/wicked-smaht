@@ -1,0 +1,157 @@
+{
+  "players": {
+    "danny": {
+      "id": "danny",
+      "name": "Danny O'Brien",
+      "portrait": "/assets/images/portraits/danny.png",
+      "voiceProfile": { "rate": 1.0, "pitch": 1.0 },
+      "perk": {
+        "id": "local_favor",
+        "name": "Local Favor",
+        "description": "One free hint per location from sympathetic NPCs"
+      },
+      "description": "Earnest underdog, self-deprecating humor"
+    },
+    "colleen": {
+      "id": "colleen",
+      "name": "Colleen O'Brien",
+      "portrait": "/assets/images/portraits/colleen.png",
+      "voiceProfile": { "rate": 1.05, "pitch": 1.1 },
+      "perk": {
+        "id": "no_nonsense",
+        "name": "No Nonsense",
+        "description": "Skips NPC small talk, time bonus"
+      },
+      "description": "Sharp-tongued realist, dry wit"
+    },
+    "fitz": {
+      "id": "fitz",
+      "name": "Fitz O'Brien",
+      "portrait": "/assets/images/portraits/fitz.png",
+      "voiceProfile": { "rate": 1.1, "pitch": 0.95 },
+      "perk": {
+        "id": "deep_cut",
+        "name": "Deep Cut",
+        "description": "Bonus points for optional hard questions"
+      },
+      "description": "Conspiracy theorist, enthusiastic oddball"
+    },
+    "meg": {
+      "id": "meg",
+      "name": "Meg O'Brien",
+      "portrait": "/assets/images/portraits/meg.png",
+      "voiceProfile": { "rate": 0.95, "pitch": 1.15 },
+      "perk": {
+        "id": "ringer",
+        "name": "Ringer",
+        "description": "Redemption challenges have one fewer question"
+      },
+      "description": "Former overachiever, burnt out, deadpan"
+    }
+  },
+  "npcs": {
+    "rita": {
+      "id": "rita",
+      "name": "Rita Flanagan",
+      "location": "southie",
+      "portrait": "/assets/images/portraits/rita.png",
+      "voiceProfile": { "rate": 0.95, "pitch": 1.1 },
+      "description": "Barfly at The Southie Standard, Sully's oldest friend"
+    },
+    "enzo": {
+      "id": "enzo",
+      "name": "Enzo Marcello",
+      "location": "north_end",
+      "portrait": "/assets/images/portraits/enzo.png",
+      "voiceProfile": { "rate": 0.85, "pitch": 0.9 },
+      "description": "Retired butcher, former bookie, Italian-American patriarch"
+    },
+    "tommy": {
+      "id": "tommy",
+      "name": "Tommy Brennan",
+      "location": "fenway",
+      "portrait": "/assets/images/portraits/tommy.png",
+      "voiceProfile": { "rate": 1.1, "pitch": 1.0 },
+      "description": "Former scalper, memorabilia dealer, Red Sox fanatic"
+    },
+    "trish": {
+      "id": "trish",
+      "name": "Trish Harrington",
+      "location": "beacon_hill",
+      "portrait": "/assets/images/portraits/trish.png",
+      "voiceProfile": { "rate": 0.9, "pitch": 1.15 },
+      "description": "State House aide, Sully's ex-wife"
+    },
+    "eddie": {
+      "id": "eddie",
+      "name": "Eddie Walsh",
+      "location": "charlestown",
+      "portrait": "/assets/images/portraits/eddie.png",
+      "voiceProfile": { "rate": 0.8, "pitch": 0.85 },
+      "description": "Retired dockworker, man of few words"
+    },
+    "miles": {
+      "id": "miles",
+      "name": "Miles Ashworth",
+      "location": "back_bay",
+      "portrait": "/assets/images/portraits/miles.png",
+      "voiceProfile": { "rate": 0.95, "pitch": 1.05 },
+      "description": "Antiques dealer, secretly Mickey from Southie"
+    },
+    "simon": {
+      "id": "simon",
+      "name": "Simon Hartley",
+      "location": "cambridge",
+      "portrait": "/assets/images/portraits/simon.png",
+      "voiceProfile": { "rate": 0.85, "pitch": 1.0 },
+      "description": "Harvard philosophy professor"
+    },
+    "mary_catherine": {
+      "id": "mary_catherine",
+      "name": "Mary Catherine O'Brien",
+      "location": "dorchester",
+      "portrait": "/assets/images/portraits/mary_catherine.png",
+      "voiceProfile": { "rate": 0.9, "pitch": 1.1 },
+      "description": "Sully's estranged sister"
+    },
+    "jerome": {
+      "id": "jerome",
+      "name": "Jerome Washington",
+      "location": "downtown",
+      "portrait": "/assets/images/portraits/jerome.png",
+      "voiceProfile": { "rate": 1.0, "pitch": 0.95 },
+      "description": "Street performer, spoken word artist"
+    },
+    "elena": {
+      "id": "elena",
+      "name": "Elena Santos",
+      "location": "seaport",
+      "portrait": "/assets/images/portraits/elena.png",
+      "voiceProfile": { "rate": 0.9, "pitch": 1.1 },
+      "description": "Mysterious woman, Sully's confidante"
+    },
+    "sully": {
+      "id": "sully",
+      "name": "Sully O'Brien",
+      "portrait": "/assets/images/portraits/sully.png",
+      "voiceProfile": { "rate": 0.85, "pitch": 0.9 },
+      "description": "Your late great-uncle, bar owner"
+    }
+  },
+  "rivals": {
+    "brendan": {
+      "id": "brendan",
+      "name": "Brendan O'Brien",
+      "portrait": "/assets/images/portraits/brendan.png",
+      "voiceProfile": { "rate": 1.15, "pitch": 1.0 },
+      "personality": "Loud, overconfident, takes shortcuts"
+    },
+    "maeve": {
+      "id": "maeve",
+      "name": "Maeve O'Brien",
+      "portrait": "/assets/images/portraits/maeve.png",
+      "voiceProfile": { "rate": 0.95, "pitch": 1.2 },
+      "personality": "Polished, manipulative, underestimates player"
+    }
+  }
+}

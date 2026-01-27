@@ -1,0 +1,918 @@
+{
+  "npcHints": {
+    "southie": {
+      "npcId": "rita",
+      "locationId": "southie",
+      "hints": [
+        {
+          "questionId": "southie_q1",
+          "text": "Oh, come on. Everyone in Southie knows this. 1974. Courts, judges, buses. Think about what tore this neighborhood apart.",
+          "audioFile": "/assets/audio/hints/rita_southie_q1.mp3"
+        },
+        {
+          "questionId": "southie_q2",
+          "text": "March 17th. Broadway. Been running since before your grandmother was born. Biggest parade in Boston.",
+          "audioFile": "/assets/audio/hints/rita_southie_q2.mp3"
+        },
+        {
+          "questionId": "southie_q3",
+          "text": "Carson, L Street, M Street. Those are our beaches. That other one's up north. Way north.",
+          "audioFile": "/assets/audio/hints/rita_southie_q3.mp3"
+        },
+        {
+          "questionId": "southie_q4",
+          "text": "Everyone knew who ran things around here. I never said his name. Nobody did. First name starts with W.",
+          "audioFile": "/assets/audio/hints/rita_southie_q4.mp3"
+        },
+        {
+          "questionId": "southie_q5",
+          "text": "Crazy people who swim in the ocean year-round. L Street Bathhouse. They've been doing it since 1902.",
+          "audioFile": "/assets/audio/hints/rita_southie_q5.mp3"
+        },
+        {
+          "questionId": "southie_alt1",
+          "text": "Scorsese film. DiCaprio. Nicholson. Won Best Picture. Everyone in Hollywood wanted to play a gangster from Southie.",
+          "audioFile": "/assets/audio/hints/rita_southie_alt1.mp3"
+        },
+        {
+          "questionId": "southie_alt2",
+          "text": "March 17th is convenient, isn't it? St. Patrick's Day AND Evacuation Day. State holiday. Banks close.",
+          "audioFile": "/assets/audio/hints/rita_southie_alt2.mp3"
+        },
+        {
+          "questionId": "southie_alt3",
+          "text": "Castle Island has a fort. Named after a Revolutionary War hero. Think about independence.",
+          "audioFile": "/assets/audio/hints/rita_southie_alt3.mp3"
+        },
+        {
+          "questionId": "southie_alt4",
+          "text": "We're not 'Townies' - that's Charlestown. Think about what you call THIS neighborhood.",
+          "audioFile": "/assets/audio/hints/rita_southie_alt4.mp3"
+        },
+        {
+          "questionId": "southie_alt5",
+          "text": "Three floors. Three families. Working-class architecture. Hyphenated name.",
+          "audioFile": "/assets/audio/hints/rita_southie_alt5.mp3"
+        }
+      ]
+    },
+    "north_end": {
+      "npcId": "enzo",
+      "locationId": "north_end",
+      "hints": [
+        {
+          "questionId": "north_end_q1",
+          "text": "The lanterns. Old North Church. 'One if by land, two if by sea.' Every schoolkid knows this.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_q1.mp3"
+        },
+        {
+          "questionId": "north_end_q2",
+          "text": "Mike's Pastry. Been there since the 1940s. Modern came later. The cannoli war started early.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_q2.mp3"
+        },
+        {
+          "questionId": "north_end_q3",
+          "text": "This neighborhood is OLD. Before the Common was a park. Early 1630s. Think about that.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_q3.mp3"
+        },
+        {
+          "questionId": "north_end_q4",
+          "text": "Famous patriot. Silversmith. Midnight ride. His house is still here. You've probably walked past it.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_q4.mp3"
+        },
+        {
+          "questionId": "north_end_q5",
+          "text": "Religious festivals all summer. They carry the saint through the streets. August is the big one. The Fishermen's Feast.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_q5.mp3"
+        },
+        {
+          "questionId": "north_end_alt1",
+          "text": "1919. January. Something sweet killed over 20 people. A tank burst. The cleanup took forever.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_alt1.mp3"
+        },
+        {
+          "questionId": "north_end_alt2",
+          "text": "The copper on the State House dome. Paul Revere's company did that work. He wasn't just a rider.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_alt2.mp3"
+        },
+        {
+          "questionId": "north_end_alt3",
+          "text": "Before my people came here, it was Irish. Before the Irish? Think about the original colonists.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_alt3.mp3"
+        },
+        {
+          "questionId": "north_end_alt4",
+          "text": "The tunnel under the harbor. Named after a senator who served for decades. Tip of the hat.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_alt4.mp3"
+        },
+        {
+          "questionId": "north_end_alt5",
+          "text": "They buried the Central Artery. The park on top is named after JFK's mother. Irish matriarch.",
+          "audioFile": "/assets/audio/hints/enzo_north_end_alt5.mp3"
+        }
+      ]
+    },
+    "fenway": {
+      "npcId": "tommy",
+      "locationId": "fenway",
+      "hints": [
+        {
+          "questionId": "fenway_q1",
+          "text": "The wall in left field. Green as grass. Higher than you'd think. 37-something feet.",
+          "audioFile": "/assets/audio/hints/tommy_fenway_q1.mp3"
+        },
+        {
+          "questionId": "fenway_q2",
+          "text": "April 1912. Fenway opened. Same week something sank in the Atlantic. Big news week.",
+          "audioFile": "/assets/audio/hints/tommy_fenway_q2.mp3"
+        },
+        {
+          "questionId": "fenway_q3",
+          "text": "There's one red seat in the right field bleachers. Ted Williams hit one there. Longest ever at Fenway.",
+          "audioFile": "/assets/audio/hints/tommy_fenway_q3.mp3"
+        },
+        {
+          "questionId": "fenway_q4",
+          "text": "Before 2004, there was the Curse. Started when they sold a certain player to the Yankees. Big guy. Home runs.",
+          "audioFile": "/assets/audio/hints/tommy_fenway_q4.mp3"
+        },
+        {
+          "questionId": "fenway_q5",
+          "text": "The scoreboard on the Monster. No computers. Metal plates. Numbers by hand. Old school.",
+          "audioFile": "/assets/audio/hints/tommy_fenway_q5.mp3"
+        },
+        {
+          "questionId": "fenway_alt1",
+          "text": "Teddy Ballgame. Greatest hitter ever. Played his whole career in Boston. Didn't go anywhere else.",
+          "audioFile": "/assets/audio/hints/tommy_fenway_alt1.mp3"
+        },
+        {
+          "questionId": "fenway_alt2",
+          "text": "The triangle in center field. Deepest part of the park. Over 400 feet. Weird angles.",
+          "audioFile": "/assets/audio/hints/tommy_fenway_alt2.mp3"
+        },
+        {
+          "questionId": "fenway_alt3",
+          "text": "One seat. Red. Right field. Marks where Ted Williams hit one 502 feet.",
+          "audioFile": "/assets/audio/hints/tommy_fenway_alt3.mp3"
+        },
+        {
+          "questionId": "fenway_alt4",
+          "text": "Eighth inning tradition. Neil Diamond song. 'So good! So good!' Everyone sings along.",
+          "audioFile": "/assets/audio/hints/tommy_fenway_alt4.mp3"
+        },
+        {
+          "questionId": "fenway_alt5",
+          "text": "The Green Monster has an official name. Named after the owner who built it. Not just 'the wall.'",
+          "audioFile": "/assets/audio/hints/tommy_fenway_alt5.mp3"
+        }
+      ]
+    },
+    "beacon_hill": {
+      "npcId": "trish",
+      "locationId": "beacon_hill",
+      "hints": [
+        {
+          "questionId": "beacon_hill_q1",
+          "text": "The dome's been multiple things. Wood, copper, gold. Paul Revere's company did the copper. 1802.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_q1.mp3"
+        },
+        {
+          "questionId": "beacon_hill_q2",
+          "text": "The gaslights are real. Original 1800s. City maintains them. Protected by law.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_q2.mp3"
+        },
+        {
+          "questionId": "beacon_hill_q3",
+          "text": "One private street. Square-shaped name. Most exclusive address in Boston.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_q3.mp3"
+        },
+        {
+          "questionId": "beacon_hill_q4",
+          "text": "The architect who designed the State House. Famous name. Bulfinch. Half the important buildings in Boston.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_q4.mp3"
+        },
+        {
+          "questionId": "beacon_hill_q5",
+          "text": "African Meeting House. Underground Railroad. Free Black community. Important history up here.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_q5.mp3"
+        },
+        {
+          "questionId": "beacon_hill_alt1",
+          "text": "The brick sidewalks are protected by law. Can't pave over them. Historic district rules.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_alt1.mp3"
+        },
+        {
+          "questionId": "beacon_hill_alt2",
+          "text": "The name tells you. 'Beacon.' What's a beacon for? Warning people. Think colonial times.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_alt2.mp3"
+        },
+        {
+          "questionId": "beacon_hill_alt3",
+          "text": "The Cheers bar is based on a real place. Different name in real life. Bull and Finch.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_alt3.mp3"
+        },
+        {
+          "questionId": "beacon_hill_alt4",
+          "text": "Look at the top of the State House. There's something up there. Pinecone shape. Symbol of something.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_alt4.mp3"
+        },
+        {
+          "questionId": "beacon_hill_alt5",
+          "text": "Some windows turned purple from the sun. Certain minerals in the old glass. Distinctive feature.",
+          "audioFile": "/assets/audio/hints/trish_beacon_hill_alt5.mp3"
+        }
+      ]
+    },
+    "charlestown": {
+      "npcId": "eddie",
+      "locationId": "charlestown",
+      "hints": [
+        {
+          "questionId": "charlestown_q1",
+          "text": "The battle wasn't actually on Bunker Hill. Different hill nearby. Starts with B too.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_q1.mp3"
+        },
+        {
+          "questionId": "charlestown_q2",
+          "text": "USS Constitution. Oldest commissioned warship still afloat. Cannonballs bounced off. Nickname is metal-related.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_q2.mp3"
+        },
+        {
+          "questionId": "charlestown_q3",
+          "text": "The monument has stairs inside. A lot of them. No elevator. 294 of them.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_q3.mp3"
+        },
+        {
+          "questionId": "charlestown_q4",
+          "text": "Charlestown was settled before Boston proper. Very early. 1620s. Think about that.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_q4.mp3"
+        },
+        {
+          "questionId": "charlestown_q5",
+          "text": "People from Charlestown have a nickname. Not Southies. Something about living in THE Town.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_q5.mp3"
+        },
+        {
+          "questionId": "charlestown_alt1",
+          "text": "Famous order from the battle. Something about waiting. Eyes. Whites of them.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_alt1.mp3"
+        },
+        {
+          "questionId": "charlestown_alt2",
+          "text": "Navy Yard used to build ships. Closed in the 70s. Now it's condos and the Constitution.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_alt2.mp3"
+        },
+        {
+          "questionId": "charlestown_alt3",
+          "text": "There's the obelisk and a lodge. Lodge has the museum. Obelisk is just the monument.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_alt3.mp3"
+        },
+        {
+          "questionId": "charlestown_alt4",
+          "text": "Ben Affleck movie. Bank robbers. Nuns. Fenway Park heist. Set right here.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_alt4.mp3"
+        },
+        {
+          "questionId": "charlestown_alt5",
+          "text": "Constitution fires its cannons every day. Twice. Sunrise and sunset. Military tradition.",
+          "audioFile": "/assets/audio/hints/eddie_charlestown_alt5.mp3"
+        }
+      ]
+    },
+    "back_bay": {
+      "npcId": "miles",
+      "locationId": "back_bay",
+      "hints": [
+        {
+          "questionId": "back_bay_q1",
+          "text": "This entire neighborhood used to be water. Mudflats. Tidal marsh. The name tells you.",
+          "audioFile": "/assets/audio/hints/miles_back_bay_q1.mp3"
+        },
+        {
+          "questionId": "back_bay_q2",
+          "text": "The library in Copley Square. Opened in 1895. First free public library in a major American city.",
+          "audioFile": "/assets/audio/hints/miles_back_bay_q2.mp3"
+        },
+        {
+          "questionId": "back_bay_q3",
+          "text": "The brownstones all look similar. Victorian. French Academic influence. Planned neighborhood.",
+          "audioFile": "/assets/audio/hints/miles_back_bay_q3.mp3"
+        },
+        {
+          "questionId": "back_bay_q4",
+          "text": "The streets go in alphabetical order. Start at the Public Garden. A, B, C, D...",
+          "audioFile": "/assets/audio/hints/miles_back_bay_q4.mp3"
+        },
+        {
+          "questionId": "back_bay_q5",
+          "text": "Trinity Church. Beautiful building. The architect's style has his name in it. Richardsonian.",
+          "audioFile": "/assets/audio/hints/miles_back_bay_q5.mp3"
+        },
+        {
+          "questionId": "back_bay_alt1",
+          "text": "The tall glass building reflects Trinity Church. Famous photograph. Everyone calls it Hancock something.",
+          "audioFile": "/assets/audio/hints/miles_back_bay_alt1.mp3"
+        },
+        {
+          "questionId": "back_bay_alt2",
+          "text": "The Boston Marathon finishes in Back Bay. Main street near the library. Starts with B.",
+          "audioFile": "/assets/audio/hints/miles_back_bay_alt2.mp3"
+        },
+        {
+          "questionId": "back_bay_alt3",
+          "text": "They filled in Back Bay over decades. Started before the Civil War. Trainloads of gravel from Needham.",
+          "audioFile": "/assets/audio/hints/miles_back_bay_alt3.mp3"
+        },
+        {
+          "questionId": "back_bay_alt4",
+          "text": "Grand boulevard with a walking path down the middle. 'Commonwealth' something. Modeled after the Champs-Elysees.",
+          "audioFile": "/assets/audio/hints/miles_back_bay_alt4.mp3"
+        },
+        {
+          "questionId": "back_bay_alt5",
+          "text": "Where Back Bay meets Beacon Hill. Not the Common - the other one. Swan boats. Flower beds.",
+          "audioFile": "/assets/audio/hints/miles_back_bay_alt5.mp3"
+        }
+      ]
+    },
+    "cambridge": {
+      "npcId": "simon",
+      "locationId": "cambridge",
+      "hints": [
+        {
+          "questionId": "cambridge_q1",
+          "text": "MIT moved to Cambridge in 1916. Before that, it was in Boston proper. Near Copley Square.",
+          "audioFile": "/assets/audio/hints/simon_cambridge_q1.mp3"
+        },
+        {
+          "questionId": "cambridge_q2",
+          "text": "Harvard is the oldest university in America. 1630s. Before the country existed.",
+          "audioFile": "/assets/audio/hints/simon_cambridge_q2.mp3"
+        },
+        {
+          "questionId": "cambridge_q3",
+          "text": "The statue in Harvard Yard. 'Three Lies.' Wrong date, wrong face, wrong title. Everyone rubs the shoe.",
+          "audioFile": "/assets/audio/hints/simon_cambridge_q3.mp3"
+        },
+        {
+          "questionId": "cambridge_q4",
+          "text": "MIT started an AI lab in 1959. McCarthy and Minsky. Changed computing forever.",
+          "audioFile": "/assets/audio/hints/simon_cambridge_q4.mp3"
+        },
+        {
+          "questionId": "cambridge_q5",
+          "text": "Cambridge had a different name before. 'Newtowne.' Then they renamed it after the English university.",
+          "audioFile": "/assets/audio/hints/simon_cambridge_q5.mp3"
+        },
+        {
+          "questionId": "cambridge_alt1",
+          "text": "Harvard's color. Not just 'red.' A specific shade. Sounds like a type of crime.",
+          "audioFile": "/assets/audio/hints/simon_cambridge_alt1.mp3"
+        },
+        {
+          "questionId": "cambridge_alt2",
+          "text": "The bridge measured in unusual units. A student's body length. MIT prank from the 50s.",
+          "audioFile": "/assets/audio/hints/simon_cambridge_alt2.mp3"
+        },
+        {
+          "questionId": "cambridge_alt3",
+          "text": "MIT students put things on the dome. Police cars, R2-D2. They call them 'hacks.'",
+          "audioFile": "/assets/audio/hints/simon_cambridge_alt3.mp3"
+        },
+        {
+          "questionId": "cambridge_alt4",
+          "text": "First spreadsheet software. Before Excel. Before Lotus. Two-word name. Developed here.",
+          "audioFile": "/assets/audio/hints/simon_cambridge_alt4.mp3"
+        },
+        {
+          "questionId": "cambridge_alt5",
+          "text": "Harvard Square has a T stop. What color line? Think geography. Charles River.",
+          "audioFile": "/assets/audio/hints/simon_cambridge_alt5.mp3"
+        }
+      ]
+    },
+    "dorchester": {
+      "npcId": "mary_catherine",
+      "locationId": "dorchester",
+      "hints": [
+        {
+          "questionId": "dorchester_q1",
+          "text": "JFK wasn't born in Dorchester. Nearby, but not quite. Technically a different town. Starts with B.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_q1.mp3"
+        },
+        {
+          "questionId": "dorchester_q2",
+          "text": "Dorchester is the biggest neighborhood in Boston. About one-sixth of the whole city.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_q2.mp3"
+        },
+        {
+          "questionId": "dorchester_q3",
+          "text": "The housing style here. Three floors, three families. Has a hyphenated name.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_q3.mp3"
+        },
+        {
+          "questionId": "dorchester_q4",
+          "text": "Dorchester Heights. Washington put cannons there. British saw them and left. No battle.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_q4.mp3"
+        },
+        {
+          "questionId": "dorchester_q5",
+          "text": "Cape Verde has one of its biggest American communities here. Very diverse neighborhood.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_q5.mp3"
+        },
+        {
+          "questionId": "dorchester_alt1",
+          "text": "Locals abbreviate the name. Three letters. Starts with D. We don't say the whole thing.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_alt1.mp3"
+        },
+        {
+          "questionId": "dorchester_alt2",
+          "text": "Dorchester was its own town before. Boston annexed it. Happened around 1870.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_alt2.mp3"
+        },
+        {
+          "questionId": "dorchester_alt3",
+          "text": "Famous coffee chain started nearby. Quincy, technically. 'America runs on' this brand.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_alt3.mp3"
+        },
+        {
+          "questionId": "dorchester_alt4",
+          "text": "Every June, there's a parade. Dot Day. Celebrating the neighborhood.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_alt4.mp3"
+        },
+        {
+          "questionId": "dorchester_alt5",
+          "text": "Oldest wooden building in Boston is here. Built in the 1600s. Family name starts with B.",
+          "audioFile": "/assets/audio/hints/mary_catherine_dorchester_alt5.mp3"
+        }
+      ]
+    },
+    "downtown": {
+      "npcId": "jerome",
+      "locationId": "downtown",
+      "hints": [
+        {
+          "questionId": "downtown_q1",
+          "text": "The Freedom Trail has a specific number of stops. More than a dozen. Most people lose count.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_q1.mp3"
+        },
+        {
+          "questionId": "downtown_q2",
+          "text": "Faneuil Hall started as a marketplace. Ground floor for goods. Upstairs for meetings.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_q2.mp3"
+        },
+        {
+          "questionId": "downtown_q3",
+          "text": "Boston Massacre. Outside the OLD State House. King Street, now State Street.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_q3.mp3"
+        },
+        {
+          "questionId": "downtown_q4",
+          "text": "On top of Faneuil Hall. Weathervane. Not an eagle, not a whale. An insect. Green.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_q4.mp3"
+        },
+        {
+          "questionId": "downtown_q5",
+          "text": "Old North Church. 'One if by land.' Which neighborhood is it IN? Not Downtown. Think geography.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_q5.mp3"
+        },
+        {
+          "questionId": "downtown_alt1",
+          "text": "Boston Common. Oldest public park in America. 1630s. Before anything else.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_alt1.mp3"
+        },
+        {
+          "questionId": "downtown_alt2",
+          "text": "Revolutionary heroes in one cemetery. Starts with G. Revere, Adams, Hancock - all there.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_alt2.mp3"
+        },
+        {
+          "questionId": "downtown_alt3",
+          "text": "The Tea Party. How many chests? Exact number. Over 300. Under 400.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_alt3.mp3"
+        },
+        {
+          "questionId": "downtown_alt4",
+          "text": "Before they threw the tea, they gathered somewhere. Meeting house. 'Old South' something.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_alt4.mp3"
+        },
+        {
+          "questionId": "downtown_alt5",
+          "text": "The big market hall next to Faneuil. Named after a mayor. Starts with Q.",
+          "audioFile": "/assets/audio/hints/jerome_downtown_alt5.mp3"
+        }
+      ]
+    },
+    "seaport": {
+      "npcId": "elena",
+      "locationId": "seaport",
+      "hints": [
+        {
+          "questionId": "seaport_q1",
+          "text": "Big Dig. Most expensive highway project ever. Started at $2 billion. Ended at... much more.",
+          "audioFile": "/assets/audio/hints/elena_seaport_q1.mp3"
+        },
+        {
+          "questionId": "seaport_q2",
+          "text": "They buried the Central Artery. I-93. The park on top is named after JFK's mother.",
+          "audioFile": "/assets/audio/hints/elena_seaport_q2.mp3"
+        },
+        {
+          "questionId": "seaport_q3",
+          "text": "This used to be industrial. Warehouses. Fishing. South Boston Waterfront. Nobody lived here.",
+          "audioFile": "/assets/audio/hints/elena_seaport_q3.mp3"
+        },
+        {
+          "questionId": "seaport_q4",
+          "text": "There's a museum where you reenact the Tea Party. Throw tea in the harbor. Replica ships.",
+          "audioFile": "/assets/audio/hints/elena_seaport_q4.mp3"
+        },
+        {
+          "questionId": "seaport_q5",
+          "text": "Tunnel to the airport. Named after a baseball player. Ted Williams. About 1.6 miles.",
+          "audioFile": "/assets/audio/hints/elena_seaport_q5.mp3"
+        },
+        {
+          "questionId": "seaport_alt1",
+          "text": "The ICA moved here and changed everything. Art museum. Mid-2000s. Building over the water.",
+          "audioFile": "/assets/audio/hints/elena_seaport_alt1.mp3"
+        },
+        {
+          "questionId": "seaport_alt2",
+          "text": "Massive convention center here. BCEC. Biggest in New England.",
+          "audioFile": "/assets/audio/hints/elena_seaport_alt2.mp3"
+        },
+        {
+          "questionId": "seaport_alt3",
+          "text": "Critics say this neighborhood is missing something. Too expensive. Not enough diversity.",
+          "audioFile": "/assets/audio/hints/elena_seaport_alt3.mp3"
+        },
+        {
+          "questionId": "seaport_alt4",
+          "text": "Big companies here now. Vertex Pharmaceuticals. Amazon has a presence too.",
+          "audioFile": "/assets/audio/hints/elena_seaport_alt4.mp3"
+        },
+        {
+          "questionId": "seaport_alt5",
+          "text": "The Seaport borders water. Boston Harbor. Not the river.",
+          "audioFile": "/assets/audio/hints/elena_seaport_alt5.mp3"
+        }
+      ]
+    }
+  },
+  "sullyHints": {
+    "southie": [
+      {
+        "questionId": "southie_q1",
+        "theme": "busing_crisis",
+        "text": "1974. I was sixteen. The whole neighborhood went crazy. Judge Garrity made a ruling about schools. Suddenly everyone was throwing rocks at buses. Changed everything.",
+        "audioFile": "/assets/audio/hints/sully_southie_q1.mp3"
+      },
+      {
+        "questionId": "southie_q2",
+        "theme": "parade",
+        "text": "The parade. Broadway. March 17th. I marched in it fifty years straight. Never missed one until I got sick.",
+        "audioFile": "/assets/audio/hints/sully_southie_q2.mp3"
+      },
+      {
+        "questionId": "southie_q3",
+        "theme": "beaches",
+        "text": "Carson, L Street, M Street. Our beaches. Revere's up north. Different world. Swam at all of ours in January once.",
+        "audioFile": "/assets/audio/hints/sully_southie_q3.mp3"
+      },
+      {
+        "questionId": "southie_q4",
+        "theme": "whitey_bulger",
+        "text": "There was one man who ran everything in Southie. I never met him - at least, that's what I told people. Everyone knew. Nobody said it.",
+        "audioFile": "/assets/audio/hints/sully_southie_q4.mp3"
+      },
+      {
+        "questionId": "southie_q5",
+        "theme": "l_street_brownies",
+        "text": "L Street Brownies. Crazy bastards swim in the ocean in January. Been doing it since 1902. I did it once. Never again.",
+        "audioFile": "/assets/audio/hints/sully_southie_q5.mp3"
+      }
+    ],
+    "north_end": [
+      {
+        "questionId": "north_end_q1",
+        "theme": "old_north_church",
+        "text": "Old North Church. Two lanterns. 'One if by land, two if by sea.' Every Bostonian knows this. Paul Revere. Midnight ride.",
+        "audioFile": "/assets/audio/hints/sully_north_end_q1.mp3"
+      },
+      {
+        "questionId": "north_end_q2",
+        "theme": "mikes_pastry",
+        "text": "Mike's Pastry. 1946. Modern opened later. Don't let anyone tell you different. I knew the original Mike.",
+        "audioFile": "/assets/audio/hints/sully_north_end_q2.mp3"
+      },
+      {
+        "questionId": "north_end_q3",
+        "theme": "oldest_neighborhood",
+        "text": "Oldest residential neighborhood in Boston. Settled in the 1630s. Before the Common was even a park.",
+        "audioFile": "/assets/audio/hints/sully_north_end_q3.mp3"
+      },
+      {
+        "questionId": "north_end_q4",
+        "theme": "paul_revere",
+        "text": "Paul Revere. Silversmith. Patriot. His house is still standing in the North End. Walked past it a thousand times.",
+        "audioFile": "/assets/audio/hints/sully_north_end_q4.mp3"
+      },
+      {
+        "questionId": "north_end_q5",
+        "theme": "fishermens_feast",
+        "text": "The feasts. They carry the saint through the streets. Pin money to it. The Fishermen's Feast in August. Beautiful tradition.",
+        "audioFile": "/assets/audio/hints/sully_north_end_q5.mp3"
+      }
+    ],
+    "fenway": [
+      {
+        "questionId": "fenway_q1",
+        "theme": "green_monster",
+        "text": "The Green Monster. 37 feet tall. Looks taller when you're standing at home plate. Changes everything about left field.",
+        "audioFile": "/assets/audio/hints/sully_fenway_q1.mp3"
+      },
+      {
+        "questionId": "fenway_q2",
+        "theme": "opening_day",
+        "text": "April 1912. Fenway opened. Same week the Titanic went down. Both made headlines.",
+        "audioFile": "/assets/audio/hints/sully_fenway_q2.mp3"
+      },
+      {
+        "questionId": "fenway_q3",
+        "theme": "red_seat",
+        "text": "Section 42, Row 37, Seat 21. Red seat. Ted Williams hit one there in 1946. 502 feet. Unbelievable.",
+        "audioFile": "/assets/audio/hints/sully_fenway_q3.mp3"
+      },
+      {
+        "questionId": "fenway_q4",
+        "theme": "curse",
+        "text": "The Curse. Started in 1918 when they sold Ruth to the Yankees. Ended in 2004. I cried that night.",
+        "audioFile": "/assets/audio/hints/sully_fenway_q4.mp3"
+      },
+      {
+        "questionId": "fenway_q5",
+        "theme": "scoreboard",
+        "text": "Manual scoreboard. No electricity. They slide numbers in and out by hand. Been that way for over a century.",
+        "audioFile": "/assets/audio/hints/sully_fenway_q5.mp3"
+      }
+    ],
+    "beacon_hill": [
+      {
+        "questionId": "beacon_hill_q1",
+        "theme": "dome",
+        "text": "The dome was wood first. Then copper - Revere did that. Then gold leaf since 1874. Three versions.",
+        "audioFile": "/assets/audio/hints/sully_beacon_hill_q1.mp3"
+      },
+      {
+        "questionId": "beacon_hill_q2",
+        "theme": "gaslights",
+        "text": "Gas lamps. Real gas. Been there since the 1800s. City maintains them. Part of what makes the Hill special.",
+        "audioFile": "/assets/audio/hints/sully_beacon_hill_q2.mp3"
+      },
+      {
+        "questionId": "beacon_hill_q3",
+        "theme": "louisburg_square",
+        "text": "Louisburg Square. Private street. Residents own it. Most exclusive address in Boston. Money has money there.",
+        "audioFile": "/assets/audio/hints/sully_beacon_hill_q3.mp3"
+      },
+      {
+        "questionId": "beacon_hill_q4",
+        "theme": "bulfinch",
+        "text": "Charles Bulfinch. Designed the State House. Half the important buildings in early Boston. The man was a genius.",
+        "audioFile": "/assets/audio/hints/sully_beacon_hill_q4.mp3"
+      },
+      {
+        "questionId": "beacon_hill_q5",
+        "theme": "underground_railroad",
+        "text": "African Meeting House. Underground Railroad. Free Black community on Beacon Hill. Important history most people don't know.",
+        "audioFile": "/assets/audio/hints/sully_beacon_hill_q5.mp3"
+      }
+    ],
+    "charlestown": [
+      {
+        "questionId": "charlestown_q1",
+        "theme": "breeds_hill",
+        "text": "Bunker Hill battle was actually fought on Breed's Hill. They got the name wrong. Happens sometimes.",
+        "audioFile": "/assets/audio/hints/sully_charlestown_q1.mp3"
+      },
+      {
+        "questionId": "charlestown_q2",
+        "theme": "old_ironsides",
+        "text": "Old Ironsides. USS Constitution. Cannonballs bounced off the hull. That's where the nickname came from.",
+        "audioFile": "/assets/audio/hints/sully_charlestown_q2.mp3"
+      },
+      {
+        "questionId": "charlestown_q3",
+        "theme": "monument_steps",
+        "text": "294 steps in the monument. I climbed them once. Once was enough. No elevator. My knees still remember.",
+        "audioFile": "/assets/audio/hints/sully_charlestown_q3.mp3"
+      },
+      {
+        "questionId": "charlestown_q4",
+        "theme": "settlement",
+        "text": "Charlestown was settled in 1628. Before Boston proper. One of the oldest places in all of Massachusetts.",
+        "audioFile": "/assets/audio/hints/sully_charlestown_q4.mp3"
+      },
+      {
+        "questionId": "charlestown_q5",
+        "theme": "townies",
+        "text": "Townies. That's what they call people from Charlestown. Different from Southies. Don't mix them up.",
+        "audioFile": "/assets/audio/hints/sully_charlestown_q5.mp3"
+      }
+    ],
+    "back_bay": [
+      {
+        "questionId": "back_bay_q1",
+        "theme": "landfill",
+        "text": "Back Bay was a swamp. Tidal flats. They filled it in with gravel starting in the 1850s. Every building sits on landfill.",
+        "audioFile": "/assets/audio/hints/sully_back_bay_q1.mp3"
+      },
+      {
+        "questionId": "back_bay_q2",
+        "theme": "library",
+        "text": "Boston Public Library. 1895. The building in Copley Square. Murals inside by Sargent. Free to see. Free to use.",
+        "audioFile": "/assets/audio/hints/sully_back_bay_q2.mp3"
+      },
+      {
+        "questionId": "back_bay_q3",
+        "theme": "victorian",
+        "text": "Victorian brownstones. French Academic style. Rich people wanted it to look like Paris. It kind of does.",
+        "audioFile": "/assets/audio/hints/sully_back_bay_q3.mp3"
+      },
+      {
+        "questionId": "back_bay_q4",
+        "theme": "streets",
+        "text": "Arlington, Berkeley, Clarendon, Dartmouth, Exeter, Fairfield, Gloucester, Hereford. Alphabetical. Easy to remember.",
+        "audioFile": "/assets/audio/hints/sully_back_bay_q4.mp3"
+      },
+      {
+        "questionId": "back_bay_q5",
+        "theme": "richardson",
+        "text": "H.H. Richardson. Trinity Church. Richardsonian Romanesque - they named a whole style after him. Died at 47.",
+        "audioFile": "/assets/audio/hints/sully_back_bay_q5.mp3"
+      }
+    ],
+    "cambridge": [
+      {
+        "questionId": "cambridge_q1",
+        "theme": "mit_move",
+        "text": "MIT moved from Back Bay to Cambridge in 1916. Crossed the Charles River. Best decision they ever made.",
+        "audioFile": "/assets/audio/hints/sully_cambridge_q1.mp3"
+      },
+      {
+        "questionId": "cambridge_q2",
+        "theme": "harvard_age",
+        "text": "Harvard. 1636. Oldest college in America. Before there was an America. Think about that.",
+        "audioFile": "/assets/audio/hints/sully_cambridge_q2.mp3"
+      },
+      {
+        "questionId": "cambridge_q3",
+        "theme": "three_lies",
+        "text": "Statue of Three Lies. Wrong date, wrong face, wrong title. John Harvard wasn't the founder. Everyone rubs the shoe anyway.",
+        "audioFile": "/assets/audio/hints/sully_cambridge_q3.mp3"
+      },
+      {
+        "questionId": "cambridge_q4",
+        "theme": "ai_lab",
+        "text": "MIT AI Lab. 1959. McCarthy, Minsky. They thought machines could think. Turns out they were right.",
+        "audioFile": "/assets/audio/hints/sully_cambridge_q4.mp3"
+      },
+      {
+        "questionId": "cambridge_q5",
+        "theme": "newtowne",
+        "text": "Newtowne. That's what Cambridge was called before 1638. Then they renamed it after the English university. Ambitious.",
+        "audioFile": "/assets/audio/hints/sully_cambridge_q5.mp3"
+      }
+    ],
+    "dorchester": [
+      {
+        "questionId": "dorchester_q1",
+        "theme": "jfk_birthplace",
+        "text": "JFK was born in Brookline, not Dorchester. Common mistake. 83 Beals Street. You can visit the house.",
+        "audioFile": "/assets/audio/hints/sully_dorchester_q1.mp3"
+      },
+      {
+        "questionId": "dorchester_q2",
+        "theme": "size",
+        "text": "Dorchester is huge. One-sixth of Boston. Six square miles. People don't realize how big it is.",
+        "audioFile": "/assets/audio/hints/sully_dorchester_q2.mp3"
+      },
+      {
+        "questionId": "dorchester_q3",
+        "theme": "triple_decker",
+        "text": "Triple-deckers. Three floors, three families. That's how working people built this neighborhood. Smart design.",
+        "audioFile": "/assets/audio/hints/sully_dorchester_q3.mp3"
+      },
+      {
+        "questionId": "dorchester_q4",
+        "theme": "heights",
+        "text": "Dorchester Heights. Washington put cannons up there. British looked up, saw them, and left. March 17, 1776.",
+        "audioFile": "/assets/audio/hints/sully_dorchester_q4.mp3"
+      },
+      {
+        "questionId": "dorchester_q5",
+        "theme": "cape_verde",
+        "text": "Cape Verde. One of the biggest Cape Verdean communities in America is right here in Dorchester. Beautiful people.",
+        "audioFile": "/assets/audio/hints/sully_dorchester_q5.mp3"
+      }
+    ],
+    "downtown": [
+      {
+        "questionId": "downtown_q1",
+        "theme": "freedom_trail",
+        "text": "Sixteen stops on the Freedom Trail. Most tourists quit after ten. I walked all sixteen. Every year. Paid my respects.",
+        "audioFile": "/assets/audio/hints/sully_downtown_q1.mp3"
+      },
+      {
+        "questionId": "downtown_q2",
+        "theme": "faneuil_hall",
+        "text": "Faneuil Hall was a marketplace first. Ground floor for goods, upstairs for meetings. The liberty stuff came later.",
+        "audioFile": "/assets/audio/hints/sully_downtown_q2.mp3"
+      },
+      {
+        "questionId": "downtown_q3",
+        "theme": "massacre",
+        "text": "Boston Massacre. Outside the Old State House. March 5, 1770. Crispus Attucks was the first to fall.",
+        "audioFile": "/assets/audio/hints/sully_downtown_q3.mp3"
+      },
+      {
+        "questionId": "downtown_q4",
+        "theme": "grasshopper",
+        "text": "Grasshopper weathervane on Faneuil Hall. Shem Drowne made it in 1742. During the Revolution, it was a loyalty test.",
+        "audioFile": "/assets/audio/hints/sully_downtown_q4.mp3"
+      },
+      {
+        "questionId": "downtown_q5",
+        "theme": "old_north",
+        "text": "Old North Church is in the North End. Not Downtown. Different neighborhood. Common mistake.",
+        "audioFile": "/assets/audio/hints/sully_downtown_q5.mp3"
+      }
+    ],
+    "seaport": [
+      {
+        "questionId": "seaport_q1",
+        "theme": "big_dig",
+        "text": "Big Dig. Almost fifteen billion dollars. Started at two billion. Cost overruns, corruption. But it worked. Mostly.",
+        "audioFile": "/assets/audio/hints/sully_seaport_q1.mp3"
+      },
+      {
+        "questionId": "seaport_q2",
+        "theme": "greenway",
+        "text": "They buried the Central Artery. I-93. Rose Kennedy Greenway on top now. Named after JFK's mother.",
+        "audioFile": "/assets/audio/hints/sully_seaport_q2.mp3"
+      },
+      {
+        "questionId": "seaport_q3",
+        "theme": "transformation",
+        "text": "Used to be warehouses and fishing. South Boston Waterfront. Nobody wanted to live there. Look at it now.",
+        "audioFile": "/assets/audio/hints/sully_seaport_q3.mp3"
+      },
+      {
+        "questionId": "seaport_q4",
+        "theme": "tea_party_museum",
+        "text": "Tea Party Ships museum. You can throw tea in the harbor. Every tourist does it. I did it three times.",
+        "audioFile": "/assets/audio/hints/sully_seaport_q4.mp3"
+      },
+      {
+        "questionId": "seaport_q5",
+        "theme": "ted_williams_tunnel",
+        "text": "Ted Williams Tunnel. About 1.6 miles. Part of the Big Dig. Used to drive through just to feel like I was underwater.",
+        "audioFile": "/assets/audio/hints/sully_seaport_q5.mp3"
+      }
+    ]
+  },
+  "gauntletSullyReactions": [
+    {
+      "trigger": "lifeline_used",
+      "text": "Alright, I'll give you this one. But only one. You're on your own after this.",
+      "audioFile": "/assets/audio/hints/sully_gauntlet_lifeline.mp3"
+    },
+    {
+      "trigger": "halfway",
+      "text": "Halfway there, kid. Keep your head in it.",
+      "audioFile": "/assets/audio/hints/sully_gauntlet_halfway.mp3"
+    },
+    {
+      "trigger": "final_question",
+      "text": "Last one. Everything you've learned comes down to this.",
+      "audioFile": "/assets/audio/hints/sully_gauntlet_final.mp3"
+    },
+    {
+      "trigger": "streak_3",
+      "text": "Three in a row. You're finding your rhythm now.",
+      "audioFile": "/assets/audio/hints/sully_gauntlet_streak3.mp3"
+    },
+    {
+      "trigger": "streak_5",
+      "text": "Five straight. Maybe you did learn something from me after all.",
+      "audioFile": "/assets/audio/hints/sully_gauntlet_streak5.mp3"
+    },
+    {
+      "trigger": "wrong_answer",
+      "text": "Shake it off. Plenty of questions left.",
+      "audioFile": "/assets/audio/hints/sully_gauntlet_wrong.mp3"
+    }
+  ]
+}
