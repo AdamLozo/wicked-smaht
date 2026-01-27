@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DialogueBox, TriviaCard, Button, Portrait, ScoreDisplay } from '../components';
+import { DialogueBox, TriviaCard, Button, Portrait, ScoreDisplay, Polaroid } from '../components';
 import { RaceSplitScreen, StealChallengeScreen, BrendanTextOverlay, MaeveMemoPlayer } from '../components/rivals';
 import { useGame, useLifeline, useRival, useAudio } from '../contexts';
 import { useSFX } from '../hooks';
@@ -58,6 +58,9 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
   // Polaroid collection state
   const [showPolaroidNotification, setShowPolaroidNotification] = useState(false);
   const [collectedPolaroidTitle, setCollectedPolaroidTitle] = useState('');
+  const [collectedPolaroidImage, setCollectedPolaroidImage] = useState('');
+  const [collectedPolaroidCaption, setCollectedPolaroidCaption] = useState('');
+  const [showPolaroidModal, setShowPolaroidModal] = useState(false);
 
   // Get the current question and its hints
   const currentQuestion = trivia?.questions[questionIndex];
@@ -225,6 +228,8 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
             collectPolaroid(polaroidToCollect.id);
             addScore(SCORING.POLAROID_FOUND);
             setCollectedPolaroidTitle(polaroidToCollect.title || 'Memory');
+            setCollectedPolaroidImage(polaroidToCollect.image);
+            setCollectedPolaroidCaption(polaroidToCollect.caption);
             setShowPolaroidNotification(true);
             playSFX('polaroid');
           }
@@ -471,14 +476,14 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
 
       {/* Polaroid Collection Notification */}
       <AnimatePresence>
-        {showPolaroidNotification && (
+        {showPolaroidNotification && !showPolaroidModal && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: -20 }}
-            className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-boston-navy/95 backdrop-blur border-2 border-boston-gold rounded-lg p-4 shadow-lg shadow-boston-gold/20"
-            onAnimationComplete={() => {
-              setTimeout(() => setShowPolaroidNotification(false), 3000);
+            className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-boston-navy/95 backdrop-blur border-2 border-boston-gold rounded-lg p-4 shadow-lg shadow-boston-gold/20 cursor-pointer hover:border-boston-cream transition-colors"
+            onClick={() => {
+              setShowPolaroidModal(true);
             }}
           >
             <div className="flex items-center gap-3">
@@ -486,9 +491,47 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
               <div>
                 <p className="text-boston-gold font-display text-sm">Memory Found!</p>
                 <p className="text-boston-cream font-body">"{collectedPolaroidTitle}"</p>
-                <p className="text-boston-cream/50 text-xs mt-1">+{SCORING.POLAROID_FOUND} points</p>
+                <p className="text-boston-cream/50 text-xs mt-1">+{SCORING.POLAROID_FOUND} points · Tap to view</p>
               </div>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Polaroid Modal */}
+      <AnimatePresence>
+        {showPolaroidModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+            onClick={() => {
+              setShowPolaroidModal(false);
+              setShowPolaroidNotification(false);
+            }}
+          >
+            <motion.div
+              initial={{ scale: 0.8, rotate: -5 }}
+              animate={{ scale: 1, rotate: 0 }}
+              exit={{ scale: 0.8, rotate: 5 }}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-sm w-full"
+            >
+              <Polaroid
+                image={collectedPolaroidImage}
+                caption={collectedPolaroidCaption}
+                collected={true}
+              />
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="text-center text-boston-cream/50 text-sm mt-4"
+              >
+                Tap anywhere to close
+              </motion.p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
