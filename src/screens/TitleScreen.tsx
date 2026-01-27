@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../components';
-import { useAudio } from '../contexts';
+import { useAudio, useGame, useRival } from '../contexts';
 import { useSaveGame } from '../hooks/useSaveGame';
 import type { ScreenId } from '../types';
 
@@ -12,6 +12,8 @@ interface TitleScreenProps {
 export function TitleScreen({ onNavigate }: TitleScreenProps) {
   const { hasSave, deleteSave } = useSaveGame();
   const { playMusic, playSfx } = useAudio();
+  const { resetGame } = useGame();
+  const { resetRivals } = useRival();
   const saveExists = hasSave();
 
   // Play title music on mount
@@ -25,9 +27,14 @@ export function TitleScreen({ onNavigate }: TitleScreenProps) {
       // Confirm before overwriting
       if (confirm('This will erase your current progress. Continue?')) {
         deleteSave();
+        resetGame();
+        resetRivals();
         onNavigate('character_select');
       }
     } else {
+      // Reset state even if no save exists (in case of in-memory state from previous game)
+      resetGame();
+      resetRivals();
       onNavigate('character_select');
     }
   };
