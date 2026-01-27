@@ -219,9 +219,17 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <div className="p-4 flex justify-between items-center bg-boston-navy/80">
-        <div>
-          <h1 className="font-display text-xl text-boston-gold">{location.name}</h1>
-          <p className="text-boston-cream/70 text-sm">Speaking with {npc.name}</p>
+        <div className="flex items-center gap-4">
+          <button
+            onClick={() => onNavigate('map')}
+            className="text-boston-cream/50 hover:text-boston-cream"
+          >
+            &larr; Exit
+          </button>
+          <div>
+            <h1 className="font-display text-xl text-boston-gold">{location.name}</h1>
+            <p className="text-boston-cream/70 text-sm">Speaking with {npc.name}</p>
+          </div>
         </div>
         <ScoreDisplay score={state.score} keysCollected={state.keysCollected.length} compact />
       </div>
@@ -310,14 +318,6 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
           </div>
         )}
       </div>
-
-      {/* Exit Button */}
-      <button
-        onClick={() => onNavigate('map')}
-        className="absolute top-4 left-4 text-boston-cream/50 hover:text-boston-cream"
-      >
-        &larr; Exit
-      </button>
     </div>
   );
 }
