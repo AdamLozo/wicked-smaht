@@ -5,12 +5,12 @@
       "id": "back_bay_q1",
       "prompt": "Back Bay was originally what geographic feature before being filled in over several decades?",
       "choices": [
-        "Tidal marshland and mudflats",
+        "Dense forest and farmland",
         "A deep freshwater lake",
         "Rocky coastline with cliffs",
-        "Dense forest and farmland"
+        "Tidal marshland and mudflats"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "Tidal flats. Swamp. They filled it in starting in the 1850s. Every building you see is standing on garbage and gravel.",
       "npcReactionWrong": "This whole neighborhood is built on lies. Literally. There was nothing here but marsh and mud.",
       "difficulty": "hard"
@@ -19,12 +19,12 @@
       "id": "back_bay_q2",
       "prompt": "The Boston Public Library in Copley Square opened its current building in what year?",
       "choices": [
-        "1895",
-        "1854",
         "1912",
-        "1876"
+        "1854",
+        "1876",
+        "1895"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "1895. Though the library itself started in 1854. That building has murals by John Singer Sargent. Free to see. Free to use. Imagine.",
       "npcReactionWrong": "1895. The library in Copley Square—the building, not the institution. First publicly supported municipal library in America.",
       "difficulty": "normal"
@@ -33,12 +33,12 @@
       "id": "back_bay_q3",
       "prompt": "What architectural style defines most of Back Bay's brownstone townhouses?",
       "choices": [
-        "Victorian / French Academic style",
         "Georgian Colonial",
-        "Art Deco",
-        "Federal style"
+        "Federal style",
+        "Victorian / French Academic style",
+        "Art Deco"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "npcReactionCorrect": "Victorian. French Academic influence. They planned the whole thing at once. That's why the streets go in alphabetical order.",
       "npcReactionWrong": "Victorian with French influence. The brownstones here all look similar. That's not an accident.",
       "difficulty": "hard"
@@ -47,12 +47,12 @@
       "id": "back_bay_q4",
       "prompt": "Back Bay's cross streets are arranged alphabetically. What is the correct sequence from east to west?",
       "choices": [
-        "Arlington, Berkeley, Clarendon, Dartmouth...",
         "Adams, Boylston, Commonwealth, Dartmouth...",
+        "Arlington, Berkeley, Clarendon, Dartmouth...",
         "Beacon, Charles, Dartmouth, Exeter...",
         "Appleton, Berkeley, Cambridge, Dover..."
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "npcReactionCorrect": "Arlington, Berkeley, Clarendon, Dartmouth... all the way to Hereford. Sully used to sing them to remember.",
       "npcReactionWrong": "Arlington, Berkeley, Clarendon, Dartmouth, Exeter, Fairfield, Gloucester, Hereford. Then Massachusetts Ave.",
       "difficulty": "normal"
@@ -61,12 +61,12 @@
       "id": "back_bay_q5",
       "prompt": "Trinity Church in Copley Square was designed by what famous architect?",
       "choices": [
-        "Henry Hobson Richardson",
-        "Charles Bulfinch",
+        "Louis Sullivan",
         "Frederick Law Olmsted",
-        "Louis Sullivan"
+        "Charles Bulfinch",
+        "Henry Hobson Richardson"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "H.H. Richardson. They named a whole style after him: Richardsonian Romanesque. The man was a genius. Died at 47.",
       "npcReactionWrong": "Henry Hobson Richardson. Trinity Church—that's the one reflected in the Hancock Tower. An architectural masterpiece.",
       "difficulty": "hard"
@@ -77,12 +77,12 @@
       "id": "back_bay_alt1",
       "prompt": "What is the name of the skyscraper that reflects Trinity Church in its glass facade?",
       "choices": [
-        "John Hancock Tower",
-        "Prudential Tower",
+        "Federal Reserve Building",
         "One Boston Place",
-        "Federal Reserve Building"
+        "John Hancock Tower",
+        "Prudential Tower"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "npcReactionCorrect": "John Hancock Tower. 200 Clarendon Street now, officially. There's a famous photograph—old church reflected in modern glass.",
       "npcReactionWrong": "John Hancock Tower. That reflection is one of the most photographed views in Boston.",
       "difficulty": "normal"
@@ -92,9 +92,9 @@
       "prompt": "The Boston Marathon finishes on what Back Bay street?",
       "choices": [
         "Boylston Street",
+        "Beacon Street",
         "Commonwealth Avenue",
-        "Newbury Street",
-        "Beacon Street"
+        "Newbury Street"
       ],
       "correctIndex": 0,
       "npcReactionCorrect": "Boylston Street. Near Copley Square. Every April, runners from all over the world cross that line.",
@@ -106,8 +106,8 @@
       "prompt": "How many years did it take to fill in Back Bay?",
       "choices": [
         "Approximately 30-40 years (1857-1890s)",
-        "About 10 years (1880-1890)",
         "Over 60 years (1830-1890)",
+        "About 10 years (1880-1890)",
         "Just 5 years (1855-1860)"
       ],
       "correctIndex": 0,
@@ -119,12 +119,12 @@
       "id": "back_bay_alt4",
       "prompt": "What major thoroughfare runs through the center of Back Bay with a central mall and promenade?",
       "choices": [
+        "Newbury Street",
         "Commonwealth Avenue",
         "Boylston Street",
-        "Newbury Street",
         "Beacon Street"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "npcReactionCorrect": "Commonwealth Avenue. The grand boulevard. Walking path down the middle. Modeled after the Champs-Élysées. We aim high.",
       "npcReactionWrong": "Commonwealth Avenue. There's a grand boulevard with a walking path down the middle. That's the one.",
       "difficulty": "normal"
@@ -133,12 +133,12 @@
       "id": "back_bay_alt5",
       "prompt": "What is the name of the large public greenspace where Back Bay meets Beacon Hill?",
       "choices": [
-        "Boston Public Garden",
         "Boston Common",
         "Esplanade",
-        "Copley Square"
+        "Copley Square",
+        "Boston Public Garden"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "The Public Garden. Swan boats. Flower beds. At the east end of Commonwealth Ave. Don't confuse it with the Common.",
       "npcReactionWrong": "Boston Public Garden. That's where the swan boats are. The Common is next door. Different parks.",
       "difficulty": "normal"
@@ -150,18 +150,44 @@
     "sets": [
       {
         "images": [
-          { "name": "Trinity Church", "altered": false },
-          { "name": "Boston Public Library", "altered": false },
-          { "name": "John Hancock Tower", "altered": true, "error": "extra floor added" },
-          { "name": "Old South Church", "altered": false }
+          {
+            "name": "Trinity Church",
+            "altered": false
+          },
+          {
+            "name": "Boston Public Library",
+            "altered": false
+          },
+          {
+            "name": "John Hancock Tower",
+            "altered": true,
+            "error": "extra floor added"
+          },
+          {
+            "name": "Old South Church",
+            "altered": false
+          }
         ]
       },
       {
         "images": [
-          { "name": "Copley Plaza Hotel", "altered": true, "error": "dome removed" },
-          { "name": "Prudential Tower", "altered": false },
-          { "name": "Newbury Street brownstone", "altered": false },
-          { "name": "First Church of Christ, Scientist", "altered": false }
+          {
+            "name": "Copley Plaza Hotel",
+            "altered": true,
+            "error": "dome removed"
+          },
+          {
+            "name": "Prudential Tower",
+            "altered": false
+          },
+          {
+            "name": "Newbury Street brownstone",
+            "altered": false
+          },
+          {
+            "name": "First Church of Christ, Scientist",
+            "altered": false
+          }
         ]
       }
     ],

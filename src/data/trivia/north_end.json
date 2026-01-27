@@ -5,12 +5,12 @@
       "id": "north_end_q1",
       "prompt": "What year did the Great Molasses Flood devastate the North End, and approximately how fast did the wave travel?",
       "choices": [
-        "1919, approximately 35 mph",
+        "1903, approximately 15 mph",
         "1912, approximately 20 mph",
         "1925, approximately 45 mph",
-        "1903, approximately 15 mph"
+        "1919, approximately 35 mph"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "January 15, 1919. Thirty-five miles per hour. Two million gallons. They say you can still smell it on hot days.",
       "npcReactionWrong": "January 15, 1919. Thirty-five miles per hour. My grandfather survived something that sounds made up but killed 21 people.",
       "difficulty": "normal"
@@ -19,12 +19,12 @@
       "id": "north_end_q2",
       "prompt": "Paul Revere's house is the oldest remaining structure in downtown Boston. Around what year was it built?",
       "choices": [
-        "Around 1680",
         "Around 1720",
+        "Around 1775",
         "Around 1750",
-        "Around 1775"
+        "Around 1680"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "1680. Place has been standing since before the Witch Trials. Revere was its third owner.",
       "npcReactionWrong": "1680. His house was old even when he bought it. Everything in this neighborhood has layers.",
       "difficulty": "normal"
@@ -33,12 +33,12 @@
       "id": "north_end_q3",
       "prompt": "The Feast of Saint Anthony has been celebrated in the North End since what year?",
       "choices": [
-        "1919",
         "1895",
-        "1932",
-        "1950"
+        "1950",
+        "1919",
+        "1932"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "npcReactionCorrect": "1919. Same year as the molasses flood. We've been feasting ever since. Sully's record was fourteen cannoli.",
       "npcReactionWrong": "1919. Same year the molasses came. We start every tragedy with a feast. That's Italian.",
       "difficulty": "hard"
@@ -47,12 +47,12 @@
       "id": "north_end_q4",
       "prompt": "What famous church has a steeple where lanterns were hung to signal Paul Revere?",
       "choices": [
-        "Old North Church",
         "Trinity Church",
-        "Old South Meeting House",
-        "King's Chapel"
+        "King's Chapel",
+        "Old North Church",
+        "Old South Meeting House"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "npcReactionCorrect": "Old North Church. And before you ask—yes, the steeple's been rebuilt twice. Hurricanes.",
       "npcReactionWrong": "Old North Church. Christ Church is the official name. Everyone knows the poem, nobody knows the building.",
       "difficulty": "normal"
@@ -61,12 +61,12 @@
       "id": "north_end_q5",
       "prompt": "Before the North End became Boston's 'Little Italy,' what immigrant group primarily lived there?",
       "choices": [
-        "Irish immigrants",
         "German immigrants",
         "Portuguese immigrants",
-        "Polish immigrants"
+        "Polish immigrants",
+        "Irish immigrants"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "The Irish. Then the Jews. Then us Italians. This neighborhood's seen more flags than the UN.",
       "npcReactionWrong": "The Irish were here before us. Then came the Jews. Then my family in the 1890s. Layers, always layers.",
       "difficulty": "hard"
@@ -77,12 +77,12 @@
       "id": "north_end_alt1",
       "prompt": "What is the main street that runs through the heart of the North End?",
       "choices": [
-        "Hanover Street",
         "Salem Street",
-        "Prince Street",
-        "Fleet Street"
+        "Fleet Street",
+        "Hanover Street",
+        "Prince Street"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "npcReactionCorrect": "Hanover Street. Every restaurant tries to drag you in. Sully knew which ones to avoid.",
       "npcReactionWrong": "Hanover Street. There's one street where every tourist ends up. That's the one.",
       "difficulty": "normal"
@@ -91,12 +91,12 @@
       "id": "north_end_alt2",
       "prompt": "What famous North End pastry shop has a long-running rivalry over who has the best cannoli?",
       "choices": [
-        "Mike's Pastry",
-        "Maria's Pastry",
         "Bova's Bakery",
-        "Parziale's"
+        "Mike's Pastry",
+        "Parziale's",
+        "Maria's Pastry"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "npcReactionCorrect": "Mike's. Modern across the street. Been fighting for decades. Sully said both were overrated. He was wrong.",
       "npcReactionWrong": "Mike's Pastry. Their rival is Modern. There's a war in this neighborhood. Cannoli.",
       "difficulty": "normal"
@@ -119,12 +119,12 @@
       "id": "north_end_alt4",
       "prompt": "What cemetery in the North End overlooks Boston Harbor and was a British lookout point?",
       "choices": [
-        "Copp's Hill Burying Ground",
         "Granary Burying Ground",
         "King's Chapel Burying Ground",
-        "Central Burying Ground"
+        "Central Burying Ground",
+        "Copp's Hill Burying Ground"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "Copp's Hill. British soldiers watched Charlestown burn from there. You can still see bullet holes in some headstones. Target practice.",
       "npcReactionWrong": "Copp's Hill Burying Ground. The British used it as a lookout. Shot at the headstones for fun. History has layers of cruelty.",
       "difficulty": "normal"
@@ -148,14 +148,38 @@
     "type": "memory_match",
     "instructions": "Match the pasta shape to its correct Italian name. Match 6 of 8 pairs.",
     "items": [
-      { "shape": "Small ear-shaped", "name": "Orecchiette" },
-      { "shape": "Bow-tie", "name": "Farfalle" },
-      { "shape": "Little tubes", "name": "Penne" },
-      { "shape": "Corkscrew", "name": "Fusilli" },
-      { "shape": "Flat wide ribbons", "name": "Pappardelle" },
-      { "shape": "Thin angel hair", "name": "Capellini" },
-      { "shape": "Shell-shaped", "name": "Conchiglie" },
-      { "shape": "Small rice-shaped", "name": "Orzo" }
+      {
+        "shape": "Small ear-shaped",
+        "name": "Orecchiette"
+      },
+      {
+        "shape": "Bow-tie",
+        "name": "Farfalle"
+      },
+      {
+        "shape": "Little tubes",
+        "name": "Penne"
+      },
+      {
+        "shape": "Corkscrew",
+        "name": "Fusilli"
+      },
+      {
+        "shape": "Flat wide ribbons",
+        "name": "Pappardelle"
+      },
+      {
+        "shape": "Thin angel hair",
+        "name": "Capellini"
+      },
+      {
+        "shape": "Shell-shaped",
+        "name": "Conchiglie"
+      },
+      {
+        "shape": "Small rice-shaped",
+        "name": "Orzo"
+      }
     ],
     "passThreshold": 6,
     "npcPassResponse": "Okay, okay. You know your pasta. Maybe Sully taught you something after all.",

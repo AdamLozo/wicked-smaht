@@ -5,12 +5,12 @@
       "id": "dorchester_q1",
       "prompt": "John F. Kennedy was born in what Boston-area neighborhood?",
       "choices": [
-        "Brookline",
         "Dorchester",
         "South Boston",
-        "Jamaica Plain"
+        "Jamaica Plain",
+        "Brookline"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "Brookline. Not Dorchester. Not Boston proper. The Kennedys lived there until Joe started making real money.",
       "npcReactionWrong": "Brookline. Everyone claims JFK for Boston, but he was actually born in Brookline. 83 Beals Street.",
       "difficulty": "normal"
@@ -19,12 +19,12 @@
       "id": "dorchester_q2",
       "prompt": "Dorchester is the largest neighborhood in Boston by area. What fraction of Boston's total land does it represent?",
       "choices": [
+        "About one-eighth",
         "About one-sixth",
         "About one-quarter",
-        "About one-third",
-        "About one-eighth"
+        "About one-third"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "npcReactionCorrect": "About one-sixth. Six square miles. More people, more history, more everything than the neighborhoods tourists visit.",
       "npcReactionWrong": "One-sixth of Boston. Dorchester is bigger than people realize. This neighborhood has weight.",
       "difficulty": "hard"
@@ -33,12 +33,12 @@
       "id": "dorchester_q3",
       "prompt": "What iconic Boston residential architecture style is most common in Dorchester?",
       "choices": [
+        "Colonial saltboxes",
         "Triple-deckers",
         "Brownstones",
-        "Victorian mansions",
-        "Colonial saltboxes"
+        "Victorian mansions"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "npcReactionCorrect": "Triple-deckers. Built for working families. Grandparents on one floor, parents on another, rental income from the third. That's how people survived.",
       "npcReactionWrong": "Triple-deckers. Three floors, three families. You drive through Dorchester, you see the same house over and over.",
       "difficulty": "normal"
@@ -47,12 +47,12 @@
       "id": "dorchester_q4",
       "prompt": "The Dorchester Heights Monument commemorates what military achievement?",
       "choices": [
-        "Washington's fortification that forced British evacuation",
         "The first naval battle of the Revolution",
+        "Washington's fortification that forced British evacuation",
         "Paul Revere's midnight ride",
         "The Boston Massacre memorial"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "npcReactionCorrect": "Washington put cannons up there. British looked up, saw they were outgunned, and left. March 17, 1776. That's why we celebrate Evacuation Day.",
       "npcReactionWrong": "Washington's fortification. The British saw those cannons and evacuated Boston. No shots fired. Smart warfare.",
       "difficulty": "hard"
@@ -62,9 +62,9 @@
       "prompt": "What Caribbean country's diaspora has one of its largest U.S. communities in Dorchester?",
       "choices": [
         "Cape Verde",
-        "Jamaica",
+        "Puerto Rico",
         "Cuba",
-        "Puerto Rico"
+        "Jamaica"
       ],
       "correctIndex": 0,
       "npcReactionCorrect": "Cape Verde. Haiti too. Vietnam. This neighborhood has welcomed everyone. Sully used to say Dorchester was what America was supposed to be.",
@@ -77,12 +77,12 @@
       "id": "dorchester_alt1",
       "prompt": "What is the local nickname for Dorchester?",
       "choices": [
-        "Dot",
-        "The Dorch",
+        "Chester",
         "D-Town",
-        "Chester"
+        "The Dorch",
+        "Dot"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "npcReactionCorrect": "Dot. Locals don't say the full name. Just Dot.",
       "npcReactionWrong": "Dot. That's what we call this neighborhood. Simple.",
       "difficulty": "normal"
@@ -91,12 +91,12 @@
       "id": "dorchester_alt2",
       "prompt": "Dorchester was an independent town before being annexed by Boston in what year?",
       "choices": [
-        "1870",
         "1850",
-        "1890",
-        "1804"
+        "1870",
+        "1804",
+        "1890"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "npcReactionCorrect": "1870. Dorchester wasn't always part of Boston. When did the city swallow us up? 1870.",
       "npcReactionWrong": "1870. We were our own town once. Then Boston came calling.",
       "difficulty": "hard"
@@ -105,12 +105,12 @@
       "id": "dorchester_alt3",
       "prompt": "What famous bakery chain started near Dorchester in 1950?",
       "choices": [
+        "Bruegger's Bagels",
         "Dunkin' Donuts",
         "Au Bon Pain",
-        "Panera Bread",
-        "Bruegger's Bagels"
+        "Panera Bread"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "npcReactionCorrect": "Dunkin' Donuts. First store was in Quincy, but the company's roots are here. A coffee empire started in our backyard.",
       "npcReactionWrong": "Dunkin'. Started nearby in 1950. Now it's everywhere. Boston runs on Dunkin'.",
       "difficulty": "normal"
@@ -119,12 +119,12 @@
       "id": "dorchester_alt4",
       "prompt": "What major cultural event is held along Dorchester Avenue every summer?",
       "choices": [
-        "Dorchester Day (Dot Day) parade",
         "Caribbean Carnival",
         "Irish Heritage Festival",
+        "Dorchester Day (Dot Day) parade",
         "Dorchester Arts Fair"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "npcReactionCorrect": "Dot Day. Every June, this neighborhood throws its own parade. Been doing it for over a century.",
       "npcReactionWrong": "Dorchester Day parade. Dot Day. This neighborhood celebrates itself every June.",
       "difficulty": "normal"
@@ -134,8 +134,8 @@
       "prompt": "What historic site in Dorchester is the oldest standing wooden building in Boston?",
       "choices": [
         "The Blake House (built around 1648)",
-        "The Clap House (built around 1710)",
         "The Pierce House (built around 1683)",
+        "The Clap House (built around 1710)",
         "The Mather House (built around 1670)"
       ],
       "correctIndex": 0,
