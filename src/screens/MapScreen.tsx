@@ -107,19 +107,20 @@ export function MapScreen({ onNavigate }: MapScreenProps) {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               whileHover={status === 'unlocked' ? { scale: 1.1 } : {}}
+              whileTap={status === 'unlocked' ? { scale: 0.95 } : {}}
               onClick={() => handleLocationClick(id)}
               disabled={status === 'locked'}
               className={`
-                absolute w-12 h-12 -ml-6 -mt-6
-                rounded-full border-2
+                absolute w-8 h-8 -ml-4 -mt-4 md:w-12 md:h-12 md:-ml-6 md:-mt-6
+                rounded-full border-2 text-sm md:text-base
                 flex items-center justify-center
-                transition-all
+                transition-all touch-manipulation
                 ${status === 'completed'
                   ? 'bg-boston-green border-boston-green text-white'
                   : status === 'unlocked'
                     ? hasRival
-                      ? 'bg-red-600 border-red-400 text-white cursor-pointer hover:shadow-lg hover:shadow-red-500/50 animate-pulse'
-                      : 'bg-boston-gold border-boston-gold text-boston-navy cursor-pointer hover:shadow-lg hover:shadow-boston-gold/50'
+                      ? 'bg-red-600 border-red-400 text-white cursor-pointer active:shadow-lg active:shadow-red-500/50 md:hover:shadow-lg md:hover:shadow-red-500/50 animate-pulse'
+                      : 'bg-boston-gold border-boston-gold text-boston-navy cursor-pointer active:shadow-lg active:shadow-boston-gold/50 md:hover:shadow-lg md:hover:shadow-boston-gold/50'
                     : 'bg-gray-600 border-gray-500 text-gray-400 cursor-not-allowed opacity-50'}
               `}
               style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
@@ -138,23 +139,24 @@ export function MapScreen({ onNavigate }: MapScreenProps) {
           />
         ))}
 
-        {/* Location Labels */}
+        {/* Location Labels - hidden on very small screens to reduce clutter */}
         {Object.entries(locations).map(([id, location]) => {
           const pos = locationPositions[id];
           const status = getLocationStatus(id);
 
           // Position label to side if specified, otherwise below
           const labelStyle = pos.labelOffset === 'left'
-            ? { left: `${pos.x - 12}%`, top: `${pos.y}%` }
+            ? { left: `${pos.x - 10}%`, top: `${pos.y}%` }
             : pos.labelOffset === 'right'
-              ? { left: `${pos.x + 8}%`, top: `${pos.y}%` }
-              : { left: `${pos.x}%`, top: `${pos.y + 8}%` };
+              ? { left: `${pos.x + 6}%`, top: `${pos.y}%` }
+              : { left: `${pos.x}%`, top: `${pos.y + 6}%` };
 
           return (
             <div
               key={`label-${id}`}
               className={`
-                absolute text-xs font-body whitespace-nowrap
+                absolute text-[10px] md:text-xs font-body whitespace-nowrap
+                hidden sm:block
                 ${pos.labelOffset ? '' : 'text-center transform -translate-x-1/2'}
                 ${status === 'locked' ? 'text-gray-500' : 'text-boston-cream'}
               `}
@@ -167,7 +169,7 @@ export function MapScreen({ onNavigate }: MapScreenProps) {
       </div>
 
       {/* Bottom Actions */}
-      <div className="flex flex-wrap justify-center gap-4 mt-6">
+      <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-4 sm:mt-6">
         {canAttemptGauntlet && (
           <Button
             size="lg"

@@ -113,7 +113,7 @@ export function PhoneLocalModal({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80"
         onClick={isTypingComplete ? onClose : undefined}
         role="dialog"
         aria-modal="true"
@@ -128,10 +128,10 @@ export function PhoneLocalModal({
           className="relative w-full max-w-md"
         >
           {/* Phone frame */}
-          <div className="bg-gradient-to-b from-zinc-800 to-zinc-900 rounded-3xl p-3 shadow-2xl">
+          <div className="bg-gradient-to-b from-zinc-800 to-zinc-900 rounded-2xl sm:rounded-3xl p-2 sm:p-3 shadow-2xl">
             <div className="bg-boston-navy rounded-2xl overflow-hidden border border-boston-cream/10">
               {/* Phone header */}
-              <div className="bg-fenway-green/30 px-4 py-3 flex items-center justify-between">
+              <div className="bg-fenway-green/30 px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-boston-gold/20 flex items-center justify-center">
                     <svg className="w-4 h-4 text-boston-gold" fill="currentColor" viewBox="0 0 20 20">
@@ -157,7 +157,7 @@ export function PhoneLocalModal({
               </div>
 
               {/* Content */}
-              <div className="p-6 min-h-[200px] flex items-center justify-center">
+              <div className="p-4 sm:p-6 min-h-[180px] sm:min-h-[200px] flex items-center justify-center">
                 {isRinging ? (
                   <motion.div
                     animate={{ scale: [1, 1.1, 1], rotate: [0, 10, -10, 0] }}
@@ -227,7 +227,7 @@ export function PhoneLocalModal({
 
               {/* Footer */}
               {isConnected && (
-                <div className="px-6 pb-6">
+                <div className="px-4 pb-4 sm:px-6 sm:pb-6">
                   <Button
                     variant="secondary"
                     onClick={onClose}

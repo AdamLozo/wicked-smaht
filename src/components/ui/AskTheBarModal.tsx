@@ -93,7 +93,7 @@ export function AskTheBarModal({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70"
+        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/70"
         onClick={onClose}
         role="dialog"
         aria-modal="true"
@@ -108,10 +108,10 @@ export function AskTheBarModal({
           className="relative w-full max-w-lg bg-boston-navy border-2 border-boston-gold/50 rounded-xl overflow-hidden shadow-2xl"
         >
           {/* Header */}
-          <div className="bg-southie-blue/50 px-4 py-3 border-b border-boston-cream/20">
+          <div className="bg-southie-blue/50 px-3 sm:px-4 py-2 sm:py-3 border-b border-boston-cream/20">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-boston-cream/10 border-2 border-boston-gold/30">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-boston-cream/10 border-2 border-boston-gold/30">
                   {npcPortrait ? (
                     <img
                       src={npcPortrait}
@@ -137,7 +137,7 @@ export function AskTheBarModal({
                 )}
               </div>
               <div>
-                <h2 id="ask-bar-title" className="text-boston-gold font-display text-lg">
+                <h2 id="ask-bar-title" className="text-boston-gold font-display text-base sm:text-lg">
                   {npcName}
                 </h2>
                 <p className="text-boston-cream/50 text-xs">Ask the Bar</p>
@@ -147,7 +147,7 @@ export function AskTheBarModal({
 
           {/* Content */}
           <div
-            className="p-6 cursor-pointer min-h-[150px]"
+            className="p-4 sm:p-6 cursor-pointer min-h-[120px] sm:min-h-[150px]"
             onClick={handleClick}
           >
             {characterName && (
@@ -156,7 +156,7 @@ export function AskTheBarModal({
               </p>
             )}
 
-            <p className="text-boston-cream text-lg leading-relaxed">
+            <p className="text-boston-cream text-base sm:text-lg leading-relaxed">
               "{displayedText}
               {!isTypingComplete && (
                 <motion.span
@@ -177,7 +177,7 @@ export function AskTheBarModal({
           </div>
 
           {/* Footer */}
-          <div className="px-6 pb-6">
+          <div className="px-4 pb-4 sm:px-6 sm:pb-6">
             <Button
               variant="primary"
               onClick={onClose}

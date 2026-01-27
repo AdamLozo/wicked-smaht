@@ -56,11 +56,12 @@ function LifelineButton({
       onClick={onClick}
       disabled={isDisabled}
       className={`
-        relative flex flex-col items-center gap-1 p-3 rounded-lg
-        transition-all duration-200 min-w-[80px]
+        relative flex flex-col items-center gap-1 p-2 sm:p-3 rounded-lg
+        transition-all duration-200 min-w-[70px] sm:min-w-[80px]
+        touch-manipulation
         ${isDisabled
           ? 'bg-boston-navy/50 cursor-not-allowed opacity-50'
-          : 'bg-southie-blue hover:bg-southie-blue/80 cursor-pointer'
+          : 'bg-southie-blue active:bg-southie-blue/60 sm:hover:bg-southie-blue/80 cursor-pointer'
         }
         ${available ? 'ring-1 ring-boston-gold/30' : ''}
       `}

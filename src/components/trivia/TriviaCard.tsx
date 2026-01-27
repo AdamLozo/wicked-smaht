@@ -255,7 +255,7 @@ export function TriviaCard({
         className={`
           bg-boston-navy/80 backdrop-blur
           border border-boston-cream/20
-          rounded-lg p-6
+          rounded-lg p-3 sm:p-4 md:p-6
           ${className}
         `}
       >
@@ -272,12 +272,12 @@ export function TriviaCard({
         )}
 
         {/* Question */}
-        <h3 className="text-xl font-display text-boston-cream mb-6">
+        <h3 className="text-base sm:text-lg md:text-xl font-display text-boston-cream mb-4 sm:mb-6">
           {currentQuestion.prompt}
         </h3>
 
         {/* Choices */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 mb-4 sm:mb-6">
           {currentQuestion.choices.map((choice, index) => (
             <motion.button
               key={index}
@@ -286,9 +286,10 @@ export function TriviaCard({
               onClick={() => handleSelect(index)}
               disabled={revealed || eliminatedChoices.includes(index)}
               className={`
-                p-4 rounded border border-boston-cream/30
-                text-left font-body text-boston-cream
-                transition-all duration-200
+                p-3 sm:p-4 rounded border border-boston-cream/30
+                text-left font-body text-boston-cream text-sm sm:text-base
+                transition-all duration-200 touch-manipulation
+                min-h-[44px]
                 ${getChoiceStyle(index)}
               `}
             >
