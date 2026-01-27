@@ -97,7 +97,7 @@ export function TitleScreen({ onNavigate }: TitleScreenProps) {
           onClick={() => onNavigate('settings')}
           className="w-full"
         >
-          Settings
+          Sound Settings
         </Button>
       </motion.div>
 
