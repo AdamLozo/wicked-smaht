@@ -33,7 +33,7 @@ const createInitialRival = (id: 'brendan' | 'maeve'): RivalCharacter => ({
   score: 0,
   status: 'active',
   lastMoveTime: Date.now(),
-  nextMoveTime: Date.now() + 60000, // First move in 60 seconds
+  nextMoveTime: Date.now() + 180000, // First move in 3 minutes (after player has some progress)
 });
 
 const initialRaceState: RaceState = {
@@ -442,6 +442,9 @@ export function RivalProvider({ children }: RivalProviderProps) {
 
     // Don't move if rival is in a race or steal
     if (rival.status !== 'active') return;
+
+    // Don't start rival movement until player has completed at least 2 locations
+    if (gameState.completedLocations.length < 2) return;
 
     // Check if it's time to move
     if (Date.now() < rival.nextMoveTime) return;
