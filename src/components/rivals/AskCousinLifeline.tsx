@@ -2,8 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRival } from '../../contexts';
 import { Button } from '../ui/Button';
-import { BrendanTextOverlay, BRENDAN_LIFELINE_RESPONSES } from './BrendanTextOverlay';
-import { MaeveMemoPlayer, MAEVE_LIFELINE_RESPONSES } from './MaeveMemoPlayer';
+import { BRENDAN_LIFELINE_RESPONSES } from './BrendanTextOverlay';
+import { MAEVE_LIFELINE_RESPONSES } from './MaeveMemoPlayer';
 import type { CousinResponse } from '../../types';
 
 interface AskCousinLifelineProps {
@@ -18,7 +18,7 @@ interface AskCousinLifelineProps {
 export function AskCousinLifeline({
   isOpen,
   onClose,
-  questionPrompt,
+  questionPrompt: _questionPrompt,
   choices,
   correctIndex,
   onUseLifeline,
