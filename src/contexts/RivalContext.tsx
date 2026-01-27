@@ -681,7 +681,7 @@ export function RivalProvider({ children }: RivalProviderProps) {
   }, [canUseCousinCall]);
 
   const getCousinResponse = useCallback((
-    questionId: string,
+    _questionId: string,
     choices: string[],
     correctIndex: number
   ): CousinResponse => {
