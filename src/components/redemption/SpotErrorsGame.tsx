@@ -164,7 +164,7 @@ export function SpotErrorsGame({
           Architectural Eye
         </h2>
         <p className="text-boston-cream/70">
-          Find the error in this description. Click to select.
+          Find the error in this description. Click the <span className="text-boston-gold underline">underlined text</span> to select.
         </p>
       </div>
 
@@ -186,7 +186,7 @@ export function SpotErrorsGame({
               key={i}
               onClick={() => handleSelectSegment(segment.errorIndex)}
               className={`
-                ${segment.isError ? 'cursor-pointer hover:bg-boston-gold/20 rounded px-1' : ''}
+                ${segment.isError ? 'cursor-pointer hover:bg-boston-gold/30 rounded px-1 underline decoration-boston-gold/50 decoration-dotted underline-offset-2' : ''}
                 ${segment.isError && selectedErrors.includes(currentBuilding.errors[segment.errorIndex]?.text)
                   ? 'bg-red-500/30 text-red-200'
                   : ''}
