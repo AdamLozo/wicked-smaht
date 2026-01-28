@@ -492,32 +492,20 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
           </motion.div>
         )}
 
-        {/* Dialogue Box */}
+        {/* Dialogue Box - auto-advances since there are no choices during dialogue */}
         <AnimatePresence>
-          {(phase === 'intro_dialogue' || phase === 'success_dialogue' || phase === 'failure_dialogue') && (() => {
-            const currentDialogue = phase === 'intro_dialogue'
-              ? introDialogue
-              : phase === 'success_dialogue'
-                ? successDialogue
-                : failureDialogue;
-            // Auto-advance if this is the last line in a single-line sequence
-            const isSingleLineSequence = currentDialogue.length === 1;
-            const isLastLine = dialogueIndex === currentDialogue.length - 1;
-            const shouldAutoAdvance = isSingleLineSequence || isLastLine;
-
-            return (
-              <DialogueBox
-                text={getCurrentDialogue()?.text || ''}
-                speakerName={getCurrentSpeaker()?.name || 'Unknown'}
-                speakerPortrait={getCurrentSpeaker()?.portrait}
-                speakerId={getCurrentDialogue()?.speakerId}
-                audioFile={getCurrentDialogue()?.audioFile}
-                onComplete={handleDialogueAdvance}
-                autoAdvance={shouldAutoAdvance}
-                autoAdvanceDelay={1500}
-              />
-            );
-          })()}
+          {(phase === 'intro_dialogue' || phase === 'success_dialogue' || phase === 'failure_dialogue') && (
+            <DialogueBox
+              text={getCurrentDialogue()?.text || ''}
+              speakerName={getCurrentSpeaker()?.name || 'Unknown'}
+              speakerPortrait={getCurrentSpeaker()?.portrait}
+              speakerId={getCurrentDialogue()?.speakerId}
+              audioFile={getCurrentDialogue()?.audioFile}
+              onComplete={handleDialogueAdvance}
+              autoAdvance={true}
+              autoAdvanceDelay={500}
+            />
+          )}
         </AnimatePresence>
 
         {/* Progress Indicator */}

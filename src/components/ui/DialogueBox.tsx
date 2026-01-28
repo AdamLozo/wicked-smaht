@@ -65,13 +65,13 @@ export function DialogueBox({
     };
   }, [text, typingSpeed, audioFile, speakerId, playVoice, stopVoice]);
 
-  // Auto-advance after completion
+  // Auto-advance after both typing AND voice are complete
   useEffect(() => {
-    if (isComplete && autoAdvance && onComplete) {
+    if (isComplete && !isSpeaking && autoAdvance && onComplete) {
       const timer = setTimeout(onComplete, autoAdvanceDelay);
       return () => clearTimeout(timer);
     }
-  }, [isComplete, autoAdvance, autoAdvanceDelay, onComplete]);
+  }, [isComplete, isSpeaking, autoAdvance, autoAdvanceDelay, onComplete]);
 
   const handleClick = () => {
     if (!isComplete) {
