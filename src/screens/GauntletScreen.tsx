@@ -33,11 +33,11 @@ export function GauntletScreen({ onNavigate }: GauntletScreenProps) {
   }, [enterGauntlet, playMusic]);
 
   const introDialogue: DialogueLine[] = [
-    { speaker: 'narrator', text: "The bar falls silent. A spotlight illuminates the brass puzzle box on the counter.", audioFile: 'sully_gauntlet_intro_1.mp3' },
-    { speaker: 'npc', speakerId: 'sully', text: "So. You made it this far.", audioFile: 'sully_gauntlet_intro_2.mp3' },
-    { speaker: 'npc', speakerId: 'sully', text: "Ten questions. One from each neighborhood. Thirty seconds each.", audioFile: 'sully_gauntlet_intro_3.mp3' },
-    { speaker: 'npc', speakerId: 'sully', text: "Get seven right, and the bar is yours.", audioFile: 'sully_gauntlet_intro_4.mp3' },
-    { speaker: 'npc', speakerId: 'sully', text: "Let's see what you're made of, kid.", audioFile: 'sully_gauntlet_intro_5.mp3' },
+    { speaker: 'narrator', speakerId: 'narrator', text: "The bar falls silent. A spotlight illuminates the brass puzzle box on the counter." },
+    { speaker: 'npc', speakerId: 'sully', text: "So. You made it this far.", audioFile: 'sully_gauntlet_intro_1.mp3' },
+    { speaker: 'npc', speakerId: 'sully', text: "Ten questions. One from each neighborhood. Thirty seconds each.", audioFile: 'sully_gauntlet_intro_2.mp3' },
+    { speaker: 'npc', speakerId: 'sully', text: "Get seven right, and the bar is yours.", audioFile: 'sully_gauntlet_intro_3.mp3' },
+    { speaker: 'npc', speakerId: 'sully', text: "Let's see what you're made of, kid.", audioFile: 'sully_gauntlet_intro_4.mp3' },
   ];
 
   const handleIntroAdvance = useCallback(() => {
@@ -114,6 +114,8 @@ export function GauntletScreen({ onNavigate }: GauntletScreenProps) {
             speakerId={introDialogue[dialogueIndex].speakerId}
             audioFile={introDialogue[dialogueIndex].audioFile}
             onComplete={handleIntroAdvance}
+            autoAdvance={true}
+            autoAdvanceDelay={500}
           />
         )}
 

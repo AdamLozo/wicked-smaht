@@ -630,3 +630,7 @@ elena,reaction,seaport_q4_correct,"The Tea Party Ships museum. They have replica
 elena,reaction,seaport_q4_wrong,"The Boston Tea Party Ships museum. You can reenact throwing tea overboard. Tourist trap, but a fun one.",elena_reaction_seaport_q4_wrong.mp3,103
 elena,reaction,seaport_q5_correct,"Ted Williams Tunnel. About a mile and a half. Part of the Big Dig. Sully used to drive through it just to feel like he was underwater.",elena_reaction_seaport_q5_correct.mp3,133
 elena,reaction,seaport_q5_wrong,"Ted Williams Tunnel. Named after the baseball legend. About 1.6 miles. Opened in 1995.",elena_reaction_seaport_q5_wrong.mp3,86
+sully,gauntlet,intro_1,"So. You made it this far.",sully_gauntlet_intro_1.mp3,26
+sully,gauntlet,intro_2,"Ten questions. One from each neighborhood. Thirty seconds each.",sully_gauntlet_intro_2.mp3,62
+sully,gauntlet,intro_3,"Get seven right, and the bar is yours.",sully_gauntlet_intro_3.mp3,39
+sully,gauntlet,intro_4,"Let's see what you're made of, kid.",sully_gauntlet_intro_4.mp3,36

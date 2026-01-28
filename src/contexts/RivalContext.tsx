@@ -409,6 +409,7 @@ export function RivalProvider({ children }: RivalProviderProps) {
   const { state: gameState, addScore } = useGame();
   const movementTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const stealExpiryTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const lastInterruptionTimeRef = useRef<number>(0);
 
   // Get all locations for rival movement logic
   const allLocations = getAllLocations();
@@ -654,6 +655,12 @@ export function RivalProvider({ children }: RivalProviderProps) {
   }, []);
 
   const triggerRandomInterruption = useCallback(() => {
+    // Prevent duplicate interruptions within 30 seconds
+    const now = Date.now();
+    if (now - lastInterruptionTimeRef.current < 30000) {
+      return;
+    }
+
     // 30% chance of Brendan text, 20% chance of Maeve memo
     const roll = Math.random();
 
@@ -679,6 +686,7 @@ export function RivalProvider({ children }: RivalProviderProps) {
         text: messageText,
         type: 'text',
       });
+      lastInterruptionTimeRef.current = now;
     } else if (roll < 0.5) {
       // Maeve voice memo
       const maeveTexts = [
@@ -708,6 +716,7 @@ export function RivalProvider({ children }: RivalProviderProps) {
         text: messageText,
         type: 'voice_memo',
       });
+      lastInterruptionTimeRef.current = now;
     }
     // 50% chance: no interruption
   }, [showInterruption, addChatMessage]);

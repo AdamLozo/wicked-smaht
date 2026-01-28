@@ -4,7 +4,7 @@ import { DialogueBox, TriviaCard, TriviaInterlude, Button, Portrait, ScoreDispla
 import { RaceSplitScreen, StealChallengeScreen, BrendanTextOverlay, MaeveMemoPlayer } from '../components/rivals';
 import { useGame, useLifeline, useRival, useAudio } from '../contexts';
 import { useSFX } from '../hooks';
-import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation, getRandomIntroDialogue, getRandomSuccessDialogue, getRandomFailureDialogue, getUncollectedPolaroidByType, getRandomUncollectedPolaroid, getInterludeForQuestion } from '../data';
+import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation, getRandomIntroDialogue, getRandomSuccessDialogue, getRandomFailureDialogue, getRandomUncollectedPolaroid, getInterludeForQuestion } from '../data';
 import type { ScreenId, LocationPhase, DialogueLine, Character, TriviaQuestion, StealQuestion, InterludeContent } from '../types';
 
 interface LocationScreenProps {
@@ -254,25 +254,37 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     } else {
       // End of trivia
       if (newCorrectCount >= GAME_CONSTANTS.PASSING_THRESHOLD) {
-        // Award polaroid on success
-        const polaroidToCollect = getRandomUncollectedPolaroid(locationId, state.collectedPolaroids);
-        if (polaroidToCollect) {
-          collectPolaroid(polaroidToCollect.id);
-          addScore(SCORING.POLAROID_FOUND);
-          setCollectedPolaroidTitle(polaroidToCollect.title || 'Memory');
-          setCollectedPolaroidImage(polaroidToCollect.image);
-          setCollectedPolaroidCaption(polaroidToCollect.caption);
-          setShowPolaroidNotification(true);
-          playSFX('polaroid');
+        // Award polaroids on success - collect all uncollected for this location
+        const polaroidsToCollect: { id: string; title?: string; image: string; caption: string }[] = [];
+        let currentCollected = [...state.collectedPolaroids];
+
+        // Collect up to 3 polaroids for this location (all available)
+        for (let i = 0; i < 3; i++) {
+          const polaroid = getRandomUncollectedPolaroid(locationId, currentCollected);
+          if (polaroid) {
+            polaroidsToCollect.push(polaroid);
+            currentCollected.push(polaroid.id);
+          }
         }
 
-        // Perfect score bonus: award trivia_bonus polaroid if available
-        if (newCorrectCount === trivia.questions.length) {
-          const bonusPolaroid = getUncollectedPolaroidByType(locationId, 'trivia_bonus', state.collectedPolaroids);
-          if (bonusPolaroid && bonusPolaroid.id !== polaroidToCollect?.id) {
-            collectPolaroid(bonusPolaroid.id);
-            addScore(SCORING.POLAROID_FOUND);
+        // Award all collected polaroids
+        polaroidsToCollect.forEach(polaroid => {
+          collectPolaroid(polaroid.id);
+          addScore(SCORING.POLAROID_FOUND);
+        });
+
+        // Show notification for first polaroid (or count if multiple)
+        if (polaroidsToCollect.length > 0) {
+          const firstPolaroid = polaroidsToCollect[0];
+          if (polaroidsToCollect.length === 1) {
+            setCollectedPolaroidTitle(firstPolaroid.title || 'Memory');
+          } else {
+            setCollectedPolaroidTitle(`${polaroidsToCollect.length} Memories Found!`);
           }
+          setCollectedPolaroidImage(firstPolaroid.image);
+          setCollectedPolaroidCaption(firstPolaroid.caption);
+          setShowPolaroidNotification(true);
+          playSFX('polaroid');
         }
 
         setPhase('success_dialogue');

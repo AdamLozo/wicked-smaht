@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '../components';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button, Polaroid } from '../components';
 import { useGame, useAudio } from '../contexts';
+import { polaroids, locations } from '../data';
 import type { ScreenId } from '../types';
 
 interface EndingScreenProps {
@@ -11,6 +12,15 @@ interface EndingScreenProps {
 export function EndingScreen({ onNavigate }: EndingScreenProps) {
   const { state, endingType, resetGame } = useGame();
   const { playMusic } = useAudio();
+  const [showMissedPolaroids, setShowMissedPolaroids] = useState(false);
+
+  // Calculate missed polaroids
+  const missedPolaroids = polaroids.filter(p => !state.collectedPolaroids.includes(p.id));
+  const missedByLocation = missedPolaroids.reduce((acc, p) => {
+    if (!acc[p.location]) acc[p.location] = [];
+    acc[p.location].push(p);
+    return acc;
+  }, {} as Record<string, typeof polaroids>);
 
   // Play victory music on mount (all endings are victories)
   useEffect(() => {
@@ -139,7 +149,7 @@ export function EndingScreen({ onNavigate }: EndingScreenProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3 }}
-          className="flex gap-4 justify-center"
+          className="flex flex-wrap gap-4 justify-center"
         >
           <Button onClick={handleNewGame}>
             Play Again
@@ -147,6 +157,11 @@ export function EndingScreen({ onNavigate }: EndingScreenProps) {
           <Button variant="outline" onClick={() => onNavigate('collection')}>
             View Polaroids
           </Button>
+          {missedPolaroids.length > 0 && (
+            <Button variant="outline" onClick={() => setShowMissedPolaroids(true)}>
+              Missed Memories ({missedPolaroids.length})
+            </Button>
+          )}
         </motion.div>
 
         {/* Credits hint */}
@@ -164,6 +179,72 @@ export function EndingScreen({ onNavigate }: EndingScreenProps) {
           </motion.p>
         )}
       </motion.div>
+
+      {/* Missed Polaroids Modal */}
+      <AnimatePresence>
+        {showMissedPolaroids && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 z-50 overflow-y-auto"
+            onClick={() => setShowMissedPolaroids(false)}
+          >
+            <div
+              className="min-h-screen p-4 md:p-8"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="flex justify-between items-center mb-8 sticky top-0 bg-black/80 backdrop-blur-sm py-4 -mx-4 px-4 md:-mx-8 md:px-8">
+                <div>
+                  <h2 className="font-display text-2xl md:text-3xl text-boston-gold">
+                    Memories You Missed
+                  </h2>
+                  <p className="text-boston-cream/70">
+                    {missedPolaroids.length} polaroid{missedPolaroids.length !== 1 ? 's' : ''} left to discover
+                  </p>
+                </div>
+                <Button variant="outline" onClick={() => setShowMissedPolaroids(false)}>
+                  Close
+                </Button>
+              </div>
+
+              {/* Polaroids by Location */}
+              {Object.entries(locations).map(([locationId, location]) => {
+                const locationMissed = missedByLocation[locationId] || [];
+                if (locationMissed.length === 0) return null;
+
+                return (
+                  <div key={locationId} className="mb-8">
+                    <h3 className="font-display text-xl text-boston-cream mb-4">
+                      {location.name}
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                      {locationMissed.map((polaroid, index) => (
+                        <motion.div
+                          key={polaroid.id}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.05 }}
+                        >
+                          <Polaroid
+                            image={polaroid.image}
+                            caption={polaroid.caption}
+                            collected={true}
+                          />
+                          <p className="text-boston-cream/50 text-xs mt-2 text-center italic">
+                            {polaroid.title}
+                          </p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
