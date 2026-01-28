@@ -40,7 +40,16 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     : null;
 
   const { play: playSFX } = useSFX();
-  const { playMusic } = useAudio();
+  const { playMusic, playVoice } = useAudio();
+
+  // Helper to generate reaction audio filename
+  // Pattern: {npc}_reaction_{location}_q{num}_{correct|wrong}.mp3
+  const getReactionAudioFile = useCallback((qIndex: number, isCorrect: boolean): string => {
+    const npcId = npc.id.toLowerCase();
+    const locId = locationId.toLowerCase();
+    const result = isCorrect ? 'correct' : 'wrong';
+    return `${npcId}_reaction_${locId}_q${qIndex + 1}_${result}.mp3`;
+  }, [npc.id, locationId]);
 
   // Location state machine
   const [phase, setPhase] = useState<LocationPhase>('entering');
@@ -194,7 +203,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     }
   }, [phase, dialogueIndex, introDialogue.length, successDialogue.length, failureDialogue.length, locationId, onNavigate]);
 
-  const handleAnswer = useCallback((correct: boolean) => {
+  const handleAnswer = useCallback(async (correct: boolean) => {
     if (!trivia) return;
 
     const question = trivia.questions[questionIndex];
@@ -210,7 +219,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
       addScore(SCORING.WRONG_ANSWER);
     }
 
-    // Show reaction
+    // Show reaction and play voice
     setLastReaction(correct ? question.npcReactionCorrect : question.npcReactionWrong);
     setShowReaction(true);
 
@@ -219,57 +228,62 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
       setCorrectCount(newCorrectCount);
     }
 
-    // After reaction, show interlude or move to next question/end
-    setTimeout(() => {
-      setShowReaction(false);
+    // Play reaction voice and wait for it to complete
+    const reactionAudioFile = getReactionAudioFile(questionIndex, correct);
+    await playVoice(npc.id, reactionAudioFile);
 
-      if (questionIndex < trivia.questions.length - 1) {
-        // Not the last question - show interlude before next question
-        const nextIndex = questionIndex + 1;
-        const interlude = getInterludeForQuestion(locationId, questionIndex);
+    // Small buffer after voice completes
+    await new Promise(resolve => setTimeout(resolve, 300));
 
-        if (interlude) {
-          setCurrentInterlude(interlude);
-          setPendingQuestionIndex(nextIndex);
-          setShowInterlude(true);
-        } else {
-          // No interlude available, advance directly
-          setQuestionIndex(nextIndex);
-        }
+    // After voice completes, hide reaction and advance
+    setShowReaction(false);
+
+    if (questionIndex < trivia.questions.length - 1) {
+      // Not the last question - show interlude before next question
+      const nextIndex = questionIndex + 1;
+      const interlude = getInterludeForQuestion(locationId, questionIndex);
+
+      if (interlude) {
+        setCurrentInterlude(interlude);
+        setPendingQuestionIndex(nextIndex);
+        setShowInterlude(true);
       } else {
-        // End of trivia
-        if (newCorrectCount >= GAME_CONSTANTS.PASSING_THRESHOLD) {
-          // Award polaroid on success
-          const polaroidToCollect = getRandomUncollectedPolaroid(locationId, state.collectedPolaroids);
-          if (polaroidToCollect) {
-            collectPolaroid(polaroidToCollect.id);
-            addScore(SCORING.POLAROID_FOUND);
-            setCollectedPolaroidTitle(polaroidToCollect.title || 'Memory');
-            setCollectedPolaroidImage(polaroidToCollect.image);
-            setCollectedPolaroidCaption(polaroidToCollect.caption);
-            setShowPolaroidNotification(true);
-            playSFX('polaroid');
-          }
-
-          // Perfect score bonus: award trivia_bonus polaroid if available
-          if (newCorrectCount === trivia.questions.length) {
-            const bonusPolaroid = getUncollectedPolaroidByType(locationId, 'trivia_bonus', state.collectedPolaroids);
-            if (bonusPolaroid && bonusPolaroid.id !== polaroidToCollect?.id) {
-              collectPolaroid(bonusPolaroid.id);
-              addScore(SCORING.POLAROID_FOUND);
-            }
-          }
-
-          setPhase('success_dialogue');
-          setDialogueIndex(0);
-        } else {
-          failLocation(locationId);
-          setPhase('failure_dialogue');
-          setDialogueIndex(0);
-        }
+        // No interlude available, advance directly
+        setQuestionIndex(nextIndex);
       }
-    }, 1000);
-  }, [trivia, questionIndex, answerQuestion, addScore, correctCount, locationId, failLocation, playSFX, state.collectedPolaroids, collectPolaroid]);
+    } else {
+      // End of trivia
+      if (newCorrectCount >= GAME_CONSTANTS.PASSING_THRESHOLD) {
+        // Award polaroid on success
+        const polaroidToCollect = getRandomUncollectedPolaroid(locationId, state.collectedPolaroids);
+        if (polaroidToCollect) {
+          collectPolaroid(polaroidToCollect.id);
+          addScore(SCORING.POLAROID_FOUND);
+          setCollectedPolaroidTitle(polaroidToCollect.title || 'Memory');
+          setCollectedPolaroidImage(polaroidToCollect.image);
+          setCollectedPolaroidCaption(polaroidToCollect.caption);
+          setShowPolaroidNotification(true);
+          playSFX('polaroid');
+        }
+
+        // Perfect score bonus: award trivia_bonus polaroid if available
+        if (newCorrectCount === trivia.questions.length) {
+          const bonusPolaroid = getUncollectedPolaroidByType(locationId, 'trivia_bonus', state.collectedPolaroids);
+          if (bonusPolaroid && bonusPolaroid.id !== polaroidToCollect?.id) {
+            collectPolaroid(bonusPolaroid.id);
+            addScore(SCORING.POLAROID_FOUND);
+          }
+        }
+
+        setPhase('success_dialogue');
+        setDialogueIndex(0);
+      } else {
+        failLocation(locationId);
+        setPhase('failure_dialogue');
+        setDialogueIndex(0);
+      }
+    }
+  }, [trivia, questionIndex, answerQuestion, addScore, correctCount, locationId, failLocation, playSFX, state.collectedPolaroids, collectPolaroid, getReactionAudioFile, playVoice, npc.id]);
 
   // Reset location lifelines when entering a new location
   useEffect(() => {
@@ -438,7 +452,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
           <TriviaInterlude
             content={currentInterlude}
             locationName={location.name}
-            duration={10000}
+            duration={5000}
             onComplete={handleInterludeComplete}
             questionNumber={pendingQuestionIndex !== null ? pendingQuestionIndex + 1 : questionIndex + 1}
             totalQuestions={trivia.questions.length}
@@ -480,16 +494,30 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
 
         {/* Dialogue Box */}
         <AnimatePresence>
-          {(phase === 'intro_dialogue' || phase === 'success_dialogue' || phase === 'failure_dialogue') && (
-            <DialogueBox
-              text={getCurrentDialogue()?.text || ''}
-              speakerName={getCurrentSpeaker()?.name || 'Unknown'}
-              speakerPortrait={getCurrentSpeaker()?.portrait}
-              speakerId={getCurrentDialogue()?.speakerId}
-              audioFile={getCurrentDialogue()?.audioFile}
-              onComplete={handleDialogueAdvance}
-            />
-          )}
+          {(phase === 'intro_dialogue' || phase === 'success_dialogue' || phase === 'failure_dialogue') && (() => {
+            const currentDialogue = phase === 'intro_dialogue'
+              ? introDialogue
+              : phase === 'success_dialogue'
+                ? successDialogue
+                : failureDialogue;
+            // Auto-advance if this is the last line in a single-line sequence
+            const isSingleLineSequence = currentDialogue.length === 1;
+            const isLastLine = dialogueIndex === currentDialogue.length - 1;
+            const shouldAutoAdvance = isSingleLineSequence || isLastLine;
+
+            return (
+              <DialogueBox
+                text={getCurrentDialogue()?.text || ''}
+                speakerName={getCurrentSpeaker()?.name || 'Unknown'}
+                speakerPortrait={getCurrentSpeaker()?.portrait}
+                speakerId={getCurrentDialogue()?.speakerId}
+                audioFile={getCurrentDialogue()?.audioFile}
+                onComplete={handleDialogueAdvance}
+                autoAdvance={shouldAutoAdvance}
+                autoAdvanceDelay={1500}
+              />
+            );
+          })()}
         </AnimatePresence>
 
         {/* Progress Indicator */}
