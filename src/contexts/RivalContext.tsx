@@ -8,6 +8,7 @@ import type {
   FailedLocation,
   CousinResponse,
   StealQuestion,
+  FamilyChatMessage,
 } from '../types';
 import { useGame } from './GameContext';
 import { getAllLocations } from '../data';
@@ -75,6 +76,7 @@ const initialState: RivalSystemState = {
   race: initialRaceState,
   steal: initialStealState,
   interruption: initialInterruptionState,
+  familyChatMessages: [],
   cousinCallsRemaining: 2,
   lastCousinCall: null,
   movementIntervalMin: 45000, // 45 seconds
@@ -98,6 +100,7 @@ type RivalAction =
   | { type: 'EXPIRE_STEAL_OPPORTUNITY'; rivalId: 'brendan' | 'maeve'; locationId: string }
   | { type: 'SHOW_INTERRUPTION'; interruption: Partial<InterruptionState> }
   | { type: 'DISMISS_INTERRUPTION' }
+  | { type: 'ADD_CHAT_MESSAGE'; message: Omit<FamilyChatMessage, 'id' | 'timestamp'> }
   | { type: 'USE_COUSIN_CALL' }
   | { type: 'UPDATE_RIVAL_MOVE_TIME'; rivalId: 'brendan' | 'maeve'; nextMoveTime: number }
   | { type: 'RESET_RIVALS' };
@@ -304,6 +307,18 @@ function rivalReducer(state: RivalSystemState, action: RivalAction): RivalSystem
         interruption: initialInterruptionState,
       };
 
+    case 'ADD_CHAT_MESSAGE': {
+      const newMessage: FamilyChatMessage = {
+        ...action.message,
+        id: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        timestamp: Date.now(),
+      };
+      return {
+        ...state,
+        familyChatMessages: [...state.familyChatMessages, newMessage],
+      };
+    }
+
     case 'USE_COUSIN_CALL':
       return {
         ...state,
@@ -359,6 +374,9 @@ interface RivalContextValue {
   showInterruption: (interruption: Partial<InterruptionState>) => void;
   dismissInterruption: () => void;
   triggerRandomInterruption: () => void;
+
+  // Family chat
+  addChatMessage: (message: Omit<FamilyChatMessage, 'id' | 'timestamp'>) => void;
 
   // Cousin lifeline
   useCousinCall: () => boolean;
@@ -620,7 +638,7 @@ export function RivalProvider({ children }: RivalProviderProps) {
   }, [addScore]);
 
   // ============================================
-  // INTERRUPTIONS
+  // INTERRUPTIONS & FAMILY CHAT
   // ============================================
 
   const showInterruption = useCallback((interruption: Partial<InterruptionState>) => {
@@ -629,6 +647,10 @@ export function RivalProvider({ children }: RivalProviderProps) {
 
   const dismissInterruption = useCallback(() => {
     dispatch({ type: 'DISMISS_INTERRUPTION' });
+  }, []);
+
+  const addChatMessage = useCallback((message: Omit<FamilyChatMessage, 'id' | 'timestamp'>) => {
+    dispatch({ type: 'ADD_CHAT_MESSAGE', message });
   }, []);
 
   const triggerRandomInterruption = useCallback(() => {
@@ -644,11 +666,18 @@ export function RivalProvider({ children }: RivalProviderProps) {
         "Dude I almost choked at North End but pulled through",
         "Mom's asking when you're gonna finish. No pressure lol",
       ];
+      const messageText = brendanTexts[Math.floor(Math.random() * brendanTexts.length)];
       showInterruption({
         type: 'brendan_text',
         source: 'brendan',
-        content: brendanTexts[Math.floor(Math.random() * brendanTexts.length)],
+        content: messageText,
         displayDuration: 4000,
+      });
+      // Also add to family chat history
+      addChatMessage({
+        rivalId: 'brendan',
+        text: messageText,
+        type: 'text',
       });
     } else if (roll < 0.5) {
       // Maeve voice memo
@@ -657,17 +686,31 @@ export function RivalProvider({ children }: RivalProviderProps) {
         "Quick tip: the North End questions are mostly about food history. Trust your gut.",
         "I know we're competing but... good luck out there. Seriously.",
         "Brendan keeps texting me updates about you. He's actually rooting for you, you know.",
+        "Just finished Cambridge. Those MIT questions are sneaky. Watch out for the trick answers.",
+        "Mom says hi. She also says she bet on you winning so no pressure. Kidding. Mostly.",
+        "Remember when we used to quiz each other on road trips? This feels like that but with stakes.",
+        "I'm not going to lie, I'm a little nervous. You're better at this than you think.",
       ];
+      // Pick a random message (1-8) and matching audio file (1-10)
+      const messageIndex = Math.floor(Math.random() * maeveTexts.length);
+      const audioIndex = Math.floor(Math.random() * 10) + 1; // maeve_interruption_1.mp3 through maeve_interruption_10.mp3
+      const messageText = maeveTexts[messageIndex];
       showInterruption({
         type: 'maeve_memo',
         source: 'maeve',
-        content: maeveTexts[Math.floor(Math.random() * maeveTexts.length)],
-        audioFile: `/assets/audio/maeve/memo_${Math.floor(Math.random() * 4) + 1}.mp3`,
+        content: messageText,
+        audioFile: `/assets/audio/voice/maeve/maeve_interruption_${audioIndex}.mp3`,
         displayDuration: 6000,
+      });
+      // Also add to family chat history
+      addChatMessage({
+        rivalId: 'maeve',
+        text: messageText,
+        type: 'voice_memo',
       });
     }
     // 50% chance: no interruption
-  }, [showInterruption]);
+  }, [showInterruption, addChatMessage]);
 
   // ============================================
   // COUSIN LIFELINE
@@ -776,6 +819,7 @@ export function RivalProvider({ children }: RivalProviderProps) {
     showInterruption,
     dismissInterruption,
     triggerRandomInterruption,
+    addChatMessage,
     useCousinCall,
     getCousinResponse,
     canUseCousinCall,

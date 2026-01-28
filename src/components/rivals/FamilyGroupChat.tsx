@@ -2,83 +2,46 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRival } from '../../contexts';
 
-interface Message {
-  id: string;
-  rivalId: 'brendan' | 'maeve' | 'system';
-  text: string;
-  timestamp: number;
-  type?: 'text' | 'location_update' | 'taunt' | 'encouragement';
-}
-
 interface FamilyGroupChatProps {
   isOpen: boolean;
   onClose: () => void;
-  initialMessages?: Message[];
 }
 
-export function FamilyGroupChat({ isOpen, onClose, initialMessages = [] }: FamilyGroupChatProps) {
+export function FamilyGroupChat({ isOpen, onClose }: FamilyGroupChatProps) {
   const { state } = useRival();
-  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  // Use messages from context instead of local state
+  const messages = state.familyChatMessages;
   const [isMinimized, setIsMinimized] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
+  const [lastSeenCount, setLastSeenCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to bottom when new messages arrive
+  // Auto-scroll to bottom when new messages arrive and chat is open
   useEffect(() => {
     if (isOpen && !isMinimized) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      setLastSeenCount(messages.length);
       setUnreadCount(0);
     }
-  }, [messages, isOpen, isMinimized]);
+  }, [messages.length, isOpen, isMinimized]);
 
-  // Track unread messages when minimized
+  // Track unread messages when chat is closed or minimized
   useEffect(() => {
-    if (isMinimized) {
-      setUnreadCount(prev => prev + 1);
-    }
-  }, [messages.length, isMinimized]);
-
-  // Add a message function (can be called externally or from context events)
-  const addMessage = (msg: Omit<Message, 'id' | 'timestamp'>) => {
-    setMessages(prev => [
-      ...prev,
-      {
-        ...msg,
-        id: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-        timestamp: Date.now(),
-      },
-    ]);
-  };
-
-  // Generate location update messages based on rival movements
-  useEffect(() => {
-    const brendanLocation = state.rivals.brendan.currentLocation;
-    const maeveLocation = state.rivals.maeve.currentLocation;
-
-    if (brendanLocation && messages.length > 0) {
-      const lastBrendanUpdate = messages.filter(m => m.rivalId === 'brendan' && m.type === 'location_update').pop();
-      if (!lastBrendanUpdate || !lastBrendanUpdate.text.includes(brendanLocation.replace('_', ' '))) {
-        // Brendan moved to a new location
-        addMessage({
-          rivalId: 'brendan',
-          text: getLocationArrivalMessage('brendan', brendanLocation),
-          type: 'location_update',
-        });
+    if (!isOpen || isMinimized) {
+      const newMessages = messages.length - lastSeenCount;
+      if (newMessages > 0) {
+        setUnreadCount(newMessages);
       }
     }
+  }, [messages.length, isOpen, isMinimized, lastSeenCount]);
 
-    if (maeveLocation && messages.length > 0) {
-      const lastMaeveUpdate = messages.filter(m => m.rivalId === 'maeve' && m.type === 'location_update').pop();
-      if (!lastMaeveUpdate || !lastMaeveUpdate.text.includes(maeveLocation.replace('_', ' '))) {
-        // Maeve moved to a new location
-        addMessage({
-          rivalId: 'maeve',
-          text: getLocationArrivalMessage('maeve', maeveLocation),
-          type: 'location_update',
-        });
-      }
+  // Reset unread count when opening chat
+  useEffect(() => {
+    if (isOpen && !isMinimized) {
+      setUnreadCount(0);
+      setLastSeenCount(messages.length);
     }
-  }, [state.rivals.brendan.currentLocation, state.rivals.maeve.currentLocation]);
+  }, [isOpen, isMinimized, messages.length]);
 
   const formatTime = (timestamp: number) => {
     const date = new Date(timestamp);
@@ -265,29 +228,7 @@ export function FamilyGroupChat({ isOpen, onClose, initialMessages = [] }: Famil
   );
 }
 
-// Helper function to generate location arrival messages
-function getLocationArrivalMessage(rivalId: 'brendan' | 'maeve', locationId: string): string {
-  const locationName = locationId.replace(/_/g, ' ');
-
-  const brendanMessages = [
-    `Just got to ${locationName}! Feeling good about this one 💪`,
-    `Heading into ${locationName} now. This is my turf!`,
-    `${locationName} time! Watch and learn, cuz`,
-    `Made it to ${locationName}. Let's see what you got!`,
-  ];
-
-  const maeveMessages = [
-    `Arrived at ${locationName}. Taking my time with this one.`,
-    `Starting ${locationName} now. Focus is key.`,
-    `${locationName}... I've been looking forward to this section.`,
-    `Just reached ${locationName}. The competition is heating up!`,
-  ];
-
-  const messages = rivalId === 'brendan' ? brendanMessages : maeveMessages;
-  return messages[Math.floor(Math.random() * messages.length)];
-}
-
-// Pre-defined messages for various game events
+// Pre-defined messages for various game events (can be used to add context-specific messages)
 export const FAMILY_CHAT_MESSAGES = {
   gameStart: [
     { rivalId: 'brendan' as const, text: "Alright fam, let's do this! May the best O'Brien win!" },

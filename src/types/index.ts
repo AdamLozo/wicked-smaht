@@ -197,6 +197,14 @@ export interface InterruptionState {
   helpContent?: string; // For cousin lifeline hints
 }
 
+export interface FamilyChatMessage {
+  id: string;
+  rivalId: 'brendan' | 'maeve' | 'system';
+  text: string;
+  timestamp: number;
+  type: 'text' | 'voice_memo' | 'location_update' | 'taunt' | 'encouragement';
+}
+
 export interface RivalSystemState {
   rivals: {
     brendan: RivalCharacter;
@@ -205,6 +213,8 @@ export interface RivalSystemState {
   race: RaceState;
   steal: StealState;
   interruption: InterruptionState;
+  // Family group chat messages
+  familyChatMessages: FamilyChatMessage[];
   // Cousin lifeline tracking
   cousinCallsRemaining: number;
   lastCousinCall: number | null;
