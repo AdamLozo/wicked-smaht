@@ -550,3 +550,83 @@ elena,failure,failure_2_1,This close to the end... and stumbling.,elena_failure_
 elena,failure,failure_2_2,Sully would give you another try. So will I.,elena_failure_2_2.mp3,44
 elena,failure,failure_3_1,You've come too far to fail here.,elena_failure_3_1.mp3,33
 elena,failure,failure_3_2,Redemption round. Make it count.,elena_failure_3_2.mp3,32
+tommy,reaction,fenway_q1_correct,"April 20, 1912. Same week the Titanic sank. Stadium's survived everything since.",tommy_reaction_fenway_q1_correct.mp3,79
+tommy,reaction,fenway_q1_wrong,"1912. April 20th. This park's been standing longer than your grandparents. Show some respect.",tommy_reaction_fenway_q1_wrong.mp3,90
+tommy,reaction,fenway_q2_correct,"Ted Williams. June 9, 1946. Longest home run in Fenway history. Guy whose head it hit got a free lifetime pass.",tommy_reaction_fenway_q2_correct.mp3,112
+tommy,reaction,fenway_q2_wrong,"Ted Williams. 502 feet. Section 42, Row 37, Seat 21. Only red seat in the whole park. You shoulda known that.",tommy_reaction_fenway_q2_wrong.mp3,110
+tommy,reaction,fenway_q3_correct,"1918. Eighty-six years. Sully cried in '04. Said he was crying for his father. Then he cried again in '07, '13, and '18.",tommy_reaction_fenway_q3_correct.mp3,121
+tommy,reaction,fenway_q3_wrong,"1918. Eighty-six years of suffering. You want to talk about pain? That was pain.",tommy_reaction_fenway_q3_wrong.mp3,79
+tommy,reaction,fenway_q4_correct,"Thirty-seven feet, two inches. Built in 1912. Wasn't always green—they painted it in 1947.",tommy_reaction_fenway_q4_correct.mp3,91
+tommy,reaction,fenway_q4_wrong,"Thirty-seven feet. Everyone knows the Green Monster. Not everyone knows exactly how tall it is.",tommy_reaction_fenway_q4_wrong.mp3,94
+tommy,reaction,fenway_q5_correct,"Sweet Caroline. Started in 2002. Sully said it was 'sentimental garbage.' He sang it every time.",tommy_reaction_fenway_q5_correct.mp3,96
+tommy,reaction,fenway_q5_wrong,"Sweet Caroline. Middle of the 8th, whole park starts singing. Neil Diamond himself has sung it here.",tommy_reaction_fenway_q5_wrong.mp3,100
+trish,reaction,beacon_hill_q1_correct,"A time capsule. They opened it in 2014. No treasure. Sully was disappointed.",trish_reaction_beacon_hill_q1_correct.mp3,75
+trish,reaction,beacon_hill_q1_wrong,"Coins, newspapers, a silver plate. Placed 1795, opened and resealed 2014. No buried treasure, sadly.",trish_reaction_beacon_hill_q1_wrong.mp3,100
+trish,reaction,beacon_hill_q2_correct,"The Golden Dome. Paul Revere's company did the copper in 1802. Gold leaf came later. Everything connects to that man.",trish_reaction_beacon_hill_q2_correct.mp3,116
+trish,reaction,beacon_hill_q2_wrong,"Paul Revere's company covered it in copper. 1802. Gold leaf was added in 1874. History is layers.",trish_reaction_beacon_hill_q2_wrong.mp3,97
+trish,reaction,beacon_hill_q3_correct,"Louisburg Square. Most expensive real estate in Boston. Louisa May Alcott lived there. So did John Kerry.",trish_reaction_beacon_hill_q3_correct.mp3,103
+trish,reaction,beacon_hill_q3_wrong,"Louisburg Square. Residents pay to maintain it themselves. Old money. Very old money.",trish_reaction_beacon_hill_q3_wrong.mp3,84
+trish,reaction,beacon_hill_q4_correct,"Oldest Black church building still standing. Built 1806. Frederick Douglass spoke there. William Lloyd Garrison founded the Anti-Slavery Society there.",trish_reaction_beacon_hill_q4_correct.mp3,148
+trish,reaction,beacon_hill_q4_wrong,"Oldest Black church building still standing in America. Built 1806. This neighborhood has more history than most cities.",trish_reaction_beacon_hill_q4_wrong.mp3,117
+trish,reaction,beacon_hill_q5_correct,"Calvin Coolidge. Silent Cal. Said less in four years than most politicians say in an hour.",trish_reaction_beacon_hill_q5_correct.mp3,91
+trish,reaction,beacon_hill_q5_wrong,"Calvin Coolidge. Governor here, then Vice President, then President when Harding died. They called him Silent Cal.",trish_reaction_beacon_hill_q5_wrong.mp3,112
+eddie,reaction,charlestown_q1_correct,"Breed's Hill. They built the fortifications in the wrong place. History kept the wrong name. Sounds about right.",eddie_reaction_charlestown_q1_correct.mp3,110
+eddie,reaction,charlestown_q1_wrong,"Breed's Hill. Everybody calls it the Battle of Bunker Hill. But that's not where most of the fighting happened.",eddie_reaction_charlestown_q1_wrong.mp3,111
+eddie,reaction,charlestown_q2_correct,"Old Ironsides. War of 1812. British cannonballs bounced off her sides. Hull was made of live oak. Toughest wood on earth.",eddie_reaction_charlestown_q2_correct.mp3,120
+eddie,reaction,charlestown_q2_wrong,"Old Ironsides. War of 1812. That ship over there's the oldest commissioned warship still afloat. Show some respect.",eddie_reaction_charlestown_q2_wrong.mp3,112
+eddie,reaction,charlestown_q3_correct,"221 feet. 294 steps. No elevator. Sully used to race me up there. Lost every time but never stopped trying.",eddie_reaction_charlestown_q3_correct.mp3,108
+eddie,reaction,charlestown_q3_wrong,"221 feet. You see that obelisk up there? I've climbed it a hundred times. 294 steps, no elevator.",eddie_reaction_charlestown_q3_wrong.mp3,98
+eddie,reaction,charlestown_q4_correct,"Don't fire until you see the whites of their eyes. Ammunition was scarce. Every shot had to count.",eddie_reaction_charlestown_q4_correct.mp3,98
+eddie,reaction,charlestown_q4_wrong,"Don't fire until you see the whites of their eyes. Every kid learns that in school. You shoulda known.",eddie_reaction_charlestown_q4_wrong.mp3,102
+eddie,reaction,charlestown_q5_correct,"1800 to 1974. 174 years. My grandfather worked here. My father worked here. Then they said we weren't needed anymore.",eddie_reaction_charlestown_q5_correct.mp3,116
+eddie,reaction,charlestown_q5_wrong,"174 years. 1800 to 1974. This yard built ships for almost two centuries. Then the government closed us down.",eddie_reaction_charlestown_q5_wrong.mp3,107
+miles,reaction,back_bay_q1_correct,"Tidal flats. Swamp. They filled it in starting in the 1850s. Every building you see is standing on garbage and gravel.",miles_reaction_back_bay_q1_correct.mp3,117
+miles,reaction,back_bay_q1_wrong,"This whole neighborhood is built on lies. Literally. There was nothing here but marsh and mud.",miles_reaction_back_bay_q1_wrong.mp3,93
+miles,reaction,back_bay_q2_correct,"1895. Though the library itself started in 1854. That building has murals by John Singer Sargent. Free to see. Free to use. Imagine.",miles_reaction_back_bay_q2_correct.mp3,130
+miles,reaction,back_bay_q2_wrong,"1895. The library in Copley Square—the building, not the institution. First publicly supported municipal library in America.",miles_reaction_back_bay_q2_wrong.mp3,122
+miles,reaction,back_bay_q3_correct,"Victorian. French Academic influence. They planned the whole thing at once. That's why the streets go in alphabetical order.",miles_reaction_back_bay_q3_correct.mp3,121
+miles,reaction,back_bay_q3_wrong,"Victorian with French influence. The brownstones here all look similar. That's not an accident.",miles_reaction_back_bay_q3_wrong.mp3,93
+miles,reaction,back_bay_q4_correct,"Arlington, Berkeley, Clarendon, Dartmouth... all the way to Hereford. Sully used to sing them to remember.",miles_reaction_back_bay_q4_correct.mp3,105
+miles,reaction,back_bay_q4_wrong,"Arlington, Berkeley, Clarendon, Dartmouth, Exeter, Fairfield, Gloucester, Hereford. Then Massachusetts Ave.",miles_reaction_back_bay_q4_wrong.mp3,105
+miles,reaction,back_bay_q5_correct,"H.H. Richardson. They named a whole style after him: Richardsonian Romanesque. The man was a genius. Died at 47.",miles_reaction_back_bay_q5_correct.mp3,112
+miles,reaction,back_bay_q5_wrong,"Henry Hobson Richardson. Trinity Church—that's the one reflected in the Hancock Tower. An architectural masterpiece.",miles_reaction_back_bay_q5_wrong.mp3,112
+simon,reaction,cambridge_q1_correct,"Back Bay. Copley Square area. They moved in 1916. Some say crossing the Charles was the best decision they ever made.",simon_reaction_cambridge_q1_correct.mp3,115
+simon,reaction,cambridge_q1_wrong,"MIT wasn't always in Cambridge. Before they crossed the river, they were in Back Bay.",simon_reaction_cambridge_q1_wrong.mp3,85
+simon,reaction,cambridge_q2_correct,"1636. Before the English Civil War. Before the Bill of Rights. Before everything. We've had time to cultivate our... reputation.",simon_reaction_cambridge_q2_correct.mp3,126
+simon,reaction,cambridge_q2_wrong,"1636. Harvard predates the country by over a century. Think about that.",simon_reaction_cambridge_q2_wrong.mp3,71
+simon,reaction,cambridge_q3_correct,"Wrong date of founding, the model wasn't actually John Harvard, and Harvard wasn't the founder—just an early benefactor. But people keep rubbing that shoe.",simon_reaction_cambridge_q3_correct.mp3,154
+simon,reaction,cambridge_q3_wrong,"The John Harvard statue. Three lies: wrong date, wrong person as model, wrong title. He wasn't the founder.",simon_reaction_cambridge_q3_wrong.mp3,106
+simon,reaction,cambridge_q4_correct,"The AI Lab. McCarthy. Minsky. They thought machines could think. Turns out they were right. Eventually.",simon_reaction_cambridge_q4_correct.mp3,100
+simon,reaction,cambridge_q4_wrong,"MIT helped invent the future. In 1959, they started the AI Lab. Changed computing forever.",simon_reaction_cambridge_q4_wrong.mp3,89
+simon,reaction,cambridge_q5_correct,"Newtowne. Renamed in 1638 to honor Cambridge University. Colonial ambition. Name a town after a school, hope some prestige rubs off.",simon_reaction_cambridge_q5_correct.mp3,130
+simon,reaction,cambridge_q5_wrong,"Newtowne. Before they named this place Cambridge, flattering the English, it had another name.",simon_reaction_cambridge_q5_wrong.mp3,93
+mary_catherine,reaction,dorchester_q1_correct,"Brookline. Not Dorchester. Not Boston proper. The Kennedys lived there until Joe started making real money.",mary_catherine_reaction_dorchester_q1_correct.mp3,105
+mary_catherine,reaction,dorchester_q1_wrong,"Brookline. Everyone claims JFK for Boston, but he was actually born in Brookline. 83 Beals Street.",mary_catherine_reaction_dorchester_q1_wrong.mp3,98
+mary_catherine,reaction,dorchester_q2_correct,"About one-sixth. Six square miles. More people, more history, more everything than the neighborhoods tourists visit.",mary_catherine_reaction_dorchester_q2_correct.mp3,114
+mary_catherine,reaction,dorchester_q2_wrong,"One-sixth of Boston. Dorchester is bigger than people realize. This neighborhood has weight.",mary_catherine_reaction_dorchester_q2_wrong.mp3,90
+mary_catherine,reaction,dorchester_q3_correct,"Triple-deckers. Built for working families. Grandparents on one floor, parents on another, rental income from the third. That's how people survived.",mary_catherine_reaction_dorchester_q3_correct.mp3,145
+mary_catherine,reaction,dorchester_q3_wrong,"Triple-deckers. Three floors, three families. You drive through Dorchester, you see the same house over and over.",mary_catherine_reaction_dorchester_q3_wrong.mp3,109
+mary_catherine,reaction,dorchester_q4_correct,"Washington put cannons up there. British looked up, saw they were outgunned, and left. March 17, 1776. That's why we celebrate Evacuation Day.",mary_catherine_reaction_dorchester_q4_correct.mp3,141
+mary_catherine,reaction,dorchester_q4_wrong,"Washington's fortification. The British saw those cannons and evacuated Boston. No shots fired. Smart warfare.",mary_catherine_reaction_dorchester_q4_wrong.mp3,106
+mary_catherine,reaction,dorchester_q5_correct,"Cape Verde. Haiti too. Vietnam. This neighborhood has welcomed everyone. Sully used to say Dorchester was what America was supposed to be.",mary_catherine_reaction_dorchester_q5_correct.mp3,135
+mary_catherine,reaction,dorchester_q5_wrong,"Cape Verde has one of its biggest American communities right here. Dorchester's been home to immigrants for generations.",mary_catherine_reaction_dorchester_q5_wrong.mp3,116
+jerome,reaction,downtown_q1_correct,"Sixteen. Sixteen places where history happened. Most tourists quit after ten. Sully walked all sixteen every year. Called it 'paying respects.'",jerome_reaction_downtown_q1_correct.mp3,143
+jerome,reaction,downtown_q1_wrong,"Sixteen. You've walked the Freedom Trail, right? Most people don't finish it.",jerome_reaction_downtown_q1_wrong.mp3,75
+jerome,reaction,downtown_q2_correct,"A marketplace. Meat, produce, goods. The upstairs was for town meetings. Liberty came later. Commerce came first. Always does.",jerome_reaction_downtown_q2_correct.mp3,124
+jerome,reaction,downtown_q2_wrong,"A marketplace. Ground floor was markets, upstairs was public meetings. Peter Faneuil funded it.",jerome_reaction_downtown_q2_wrong.mp3,93
+jerome,reaction,downtown_q3_correct,"Outside the Old State House. King Street. March 5, 1770. Crispus Attucks was the first to fall. First martyr of the Revolution.",jerome_reaction_downtown_q3_correct.mp3,127
+jerome,reaction,downtown_q3_wrong,"The Old State House. Five colonists died. State Street now, used to be King Street.",jerome_reaction_downtown_q3_wrong.mp3,82
+jerome,reaction,downtown_q4_correct,"A grasshopper. Weathervane. Shem Drowne made it in 1742. During the Revolution, they used it to test if someone was a real Bostonian or a British spy.",jerome_reaction_downtown_q4_correct.mp3,152
+jerome,reaction,downtown_q4_wrong,"A grasshopper. Look at the top of Faneuil Hall. Most people don't notice. It's been there since 1742.",jerome_reaction_downtown_q4_wrong.mp3,100
+jerome,reaction,downtown_q5_correct,"North End. Christ Church, most people call it Old North Church. Still standing. Still active. You can visit any Sunday.",jerome_reaction_downtown_q5_correct.mp3,116
+jerome,reaction,downtown_q5_wrong,"North End. One if by land, two if by sea. Everyone knows the poem, not everyone knows where the church is.",jerome_reaction_downtown_q5_wrong.mp3,106
+elena,reaction,seaport_q1_correct,"Almost fifteen billion dollars. Originally budgeted at two billion. Cost overruns, corruption, mistakes. But it worked. Mostly.",elena_reaction_seaport_q1_correct.mp3,124
+elena,reaction,seaport_q1_wrong,"The Big Dig changed everything. Twenty years of construction. Almost fifteen billion dollars. Think about that number.",elena_reaction_seaport_q1_wrong.mp3,112
+elena,reaction,seaport_q2_correct,"The Central Artery. Now it's the Rose Kennedy Greenway. The highway used to divide the city. Now the park connects it.",elena_reaction_seaport_q2_correct.mp3,115
+elena,reaction,seaport_q2_wrong,"They buried the Central Artery. Interstate 93. Put the Rose Kennedy Greenway on top. Named after JFK's mother.",elena_reaction_seaport_q2_wrong.mp3,108
+elena,reaction,seaport_q3_correct,"It was warehouses, fishing, industrial. South Boston Waterfront. Nobody wanted to live here. Now look at it. Sully barely recognized it at the end.",elena_reaction_seaport_q3_correct.mp3,145
+elena,reaction,seaport_q3_wrong,"Before the condos and restaurants, this was all warehouses and fishing. Industrial waterfront. Completely transformed.",elena_reaction_seaport_q3_wrong.mp3,113
+elena,reaction,seaport_q4_correct,"The Tea Party Ships museum. They have replica ships. You can throw the tea. Every tourist does it. Sully did it three times.",elena_reaction_seaport_q4_correct.mp3,123
+elena,reaction,seaport_q4_wrong,"The Boston Tea Party Ships museum. You can reenact throwing tea overboard. Tourist trap, but a fun one.",elena_reaction_seaport_q4_wrong.mp3,103
+elena,reaction,seaport_q5_correct,"Ted Williams Tunnel. About a mile and a half. Part of the Big Dig. Sully used to drive through it just to feel like he was underwater.",elena_reaction_seaport_q5_correct.mp3,133
+elena,reaction,seaport_q5_wrong,"Ted Williams Tunnel. Named after the baseball legend. About 1.6 miles. Opened in 1995.",elena_reaction_seaport_q5_wrong.mp3,86
