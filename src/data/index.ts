@@ -375,7 +375,7 @@ export function getRandomIntroDialogue(
   return [
     { speaker: 'npc', speakerId: npcId, text: introSet.npcOpener, audioFile: `${npcId}_intro_${introIndex + 1}_1.mp3` },
     { speaker: 'npc', speakerId: npcId, text: introSet.npcFollowup, audioFile: `${npcId}_intro_${introIndex + 1}_2.mp3` },
-    { speaker: 'player', speakerId: playerId, text: playerGreeting, audioFile: `${playerId}_intro_${npcId}.mp3` },
+    { speaker: 'player', speakerId: playerId, text: playerGreeting, audioFile: `${playerId}_intro_${npcId}_${introIndex + 1}.mp3` },
     { speaker: 'npc', speakerId: npcId, text: introSet.npcChallenge, audioFile: `${npcId}_intro_${introIndex + 1}_3.mp3` },
   ];
 }
