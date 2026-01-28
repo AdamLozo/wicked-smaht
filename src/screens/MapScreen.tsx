@@ -209,6 +209,13 @@ export function MapScreen({ onNavigate }: MapScreenProps) {
         >
           Settings
         </Button>
+
+        <Button
+          variant="outline"
+          onClick={() => onNavigate('title')}
+        >
+          Exit
+        </Button>
       </div>
 
       {/* Steal Opportunity Badge */}
