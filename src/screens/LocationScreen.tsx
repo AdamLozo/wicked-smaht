@@ -268,7 +268,7 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
           setDialogueIndex(0);
         }
       }
-    }, 2000);
+    }, 1000);
   }, [trivia, questionIndex, answerQuestion, addScore, correctCount, locationId, failLocation, playSFX, state.collectedPolaroids, collectPolaroid]);
 
   // Reset location lifelines when entering a new location

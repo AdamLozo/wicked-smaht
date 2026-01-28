@@ -78,7 +78,7 @@ export function GauntletScreen({ onNavigate }: GauntletScreenProps) {
         attemptGauntlet(passed, score);
         setPhase(passed ? 'passed' : 'failed');
       }
-    }, 1500);
+    }, 750);
   }, [answers, correctCount, questionIndex, questions.length, attemptGauntlet, playSfx]);
 
   const handleRetry = useCallback(() => {
