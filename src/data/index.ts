@@ -1,4 +1,4 @@
-import type { Location, Character, TriviaSet, Polaroid, Rival, LifelineHint, SullyHint, StealQuestion, DialogueLine } from '../types';
+import type { Location, Character, TriviaSet, Polaroid, Rival, LifelineHint, SullyHint, StealQuestion, DialogueLine, LocationInterludes, InterludeContent } from '../types';
 
 // Import JSON data
 import locationsData from './locations.json';
@@ -8,6 +8,7 @@ import lifelineHintsData from './lifeline-hints.json';
 import stealQuestionsData from './steal-questions.json';
 import rivalDialogueData from './rival-dialogue.json';
 import npcDialogueData from './npc-dialogue.json';
+import interludesData from './interludes.json';
 
 // Import trivia files
 import southieTrivia from './trivia/southie.json';
@@ -359,22 +360,23 @@ export function getRandomIntroDialogue(
   if (!dialogueData || !dialogueData.intro || dialogueData.intro.length === 0) {
     // Fallback to default dialogue
     return [
-      { speaker: 'npc', speakerId: npcId, text: `Well, well. Another O'Brien looking for a key.` },
-      { speaker: 'npc', speakerId: npcId, text: `Sully told me you might come by.` },
-      { speaker: 'player', text: `I'm here for the key.` },
-      { speaker: 'npc', speakerId: npcId, text: `Let's see if you know your Boston. Five questions. Get three right.` },
+      { speaker: 'npc', speakerId: npcId, text: `Well, well. Another O'Brien looking for a key.`, audioFile: `${npcId}_intro_1.mp3` },
+      { speaker: 'npc', speakerId: npcId, text: `Sully told me you might come by.`, audioFile: `${npcId}_intro_2.mp3` },
+      { speaker: 'player', speakerId: playerId, text: `I'm here for the key.`, audioFile: `${playerId}_intro_response.mp3` },
+      { speaker: 'npc', speakerId: npcId, text: `Let's see if you know your Boston. Five questions. Get three right.`, audioFile: `${npcId}_intro_3.mp3` },
     ];
   }
 
-  // Pick a random intro set
-  const introSet = dialogueData.intro[Math.floor(Math.random() * dialogueData.intro.length)];
+  // Pick a random intro set and get its index for audio file naming
+  const introIndex = Math.floor(Math.random() * dialogueData.intro.length);
+  const introSet = dialogueData.intro[introIndex];
   const playerGreeting = introSet.playerGreetings[playerId] || `I'm here for the key.`;
 
   return [
-    { speaker: 'npc', speakerId: npcId, text: introSet.npcOpener },
-    { speaker: 'npc', speakerId: npcId, text: introSet.npcFollowup },
-    { speaker: 'player', text: playerGreeting },
-    { speaker: 'npc', speakerId: npcId, text: introSet.npcChallenge },
+    { speaker: 'npc', speakerId: npcId, text: introSet.npcOpener, audioFile: `${npcId}_intro_${introIndex + 1}_1.mp3` },
+    { speaker: 'npc', speakerId: npcId, text: introSet.npcFollowup, audioFile: `${npcId}_intro_${introIndex + 1}_2.mp3` },
+    { speaker: 'player', speakerId: playerId, text: playerGreeting, audioFile: `${playerId}_intro_${npcId}.mp3` },
+    { speaker: 'npc', speakerId: npcId, text: introSet.npcChallenge, audioFile: `${npcId}_intro_${introIndex + 1}_3.mp3` },
   ];
 }
 
@@ -383,17 +385,18 @@ export function getRandomSuccessDialogue(npcId: string): DialogueLine[] {
   if (!dialogueData || !dialogueData.success || dialogueData.success.length === 0) {
     // Fallback to default dialogue
     return [
-      { speaker: 'npc', speakerId: npcId, text: `Not bad, kid. Not bad at all.` },
-      { speaker: 'npc', speakerId: npcId, text: `Sully would've been proud. Here's your key.` },
+      { speaker: 'npc', speakerId: npcId, text: `Not bad, kid. Not bad at all.`, audioFile: `${npcId}_success_1.mp3` },
+      { speaker: 'npc', speakerId: npcId, text: `Sully would've been proud. Here's your key.`, audioFile: `${npcId}_success_2.mp3` },
     ];
   }
 
-  // Pick a random success set
-  const successSet = dialogueData.success[Math.floor(Math.random() * dialogueData.success.length)];
+  // Pick a random success set and get its index for audio file naming
+  const successIndex = Math.floor(Math.random() * dialogueData.success.length);
+  const successSet = dialogueData.success[successIndex];
 
   return [
-    { speaker: 'npc', speakerId: npcId, text: successSet.line1 },
-    { speaker: 'npc', speakerId: npcId, text: successSet.line2 },
+    { speaker: 'npc', speakerId: npcId, text: successSet.line1, audioFile: `${npcId}_success_${successIndex + 1}_1.mp3` },
+    { speaker: 'npc', speakerId: npcId, text: successSet.line2, audioFile: `${npcId}_success_${successIndex + 1}_2.mp3` },
   ];
 }
 
@@ -402,16 +405,47 @@ export function getRandomFailureDialogue(npcId: string): DialogueLine[] {
   if (!dialogueData || !dialogueData.failure || dialogueData.failure.length === 0) {
     // Fallback to default dialogue
     return [
-      { speaker: 'npc', speakerId: npcId, text: `That's... not great.` },
-      { speaker: 'npc', speakerId: npcId, text: `You want another shot? Redemption challenge?` },
+      { speaker: 'npc', speakerId: npcId, text: `That's... not great.`, audioFile: `${npcId}_failure_1.mp3` },
+      { speaker: 'npc', speakerId: npcId, text: `You want another shot? Redemption challenge?`, audioFile: `${npcId}_failure_2.mp3` },
     ];
   }
 
-  // Pick a random failure set
-  const failureSet = dialogueData.failure[Math.floor(Math.random() * dialogueData.failure.length)];
+  // Pick a random failure set and get its index for audio file naming
+  const failureIndex = Math.floor(Math.random() * dialogueData.failure.length);
+  const failureSet = dialogueData.failure[failureIndex];
 
   return [
-    { speaker: 'npc', speakerId: npcId, text: failureSet.line1 },
-    { speaker: 'npc', speakerId: npcId, text: failureSet.line2 },
+    { speaker: 'npc', speakerId: npcId, text: failureSet.line1, audioFile: `${npcId}_failure_${failureIndex + 1}_1.mp3` },
+    { speaker: 'npc', speakerId: npcId, text: failureSet.line2, audioFile: `${npcId}_failure_${failureIndex + 1}_2.mp3` },
   ];
+}
+
+// ============================================
+// INTERLUDES (Between-question content)
+// ============================================
+
+const interludesMap = interludesData as Record<string, LocationInterludes>;
+
+export function getInterludesForLocation(locationId: string): LocationInterludes | undefined {
+  return interludesMap[locationId];
+}
+
+export function getInterludeForQuestion(
+  locationId: string,
+  questionIndex: number
+): InterludeContent | undefined {
+  const locationInterludes = interludesMap[locationId];
+  if (!locationInterludes || !locationInterludes.interludes) return undefined;
+
+  // Use questionIndex to pick an interlude (wrapping if needed)
+  const interludeIndex = questionIndex % locationInterludes.interludes.length;
+  return locationInterludes.interludes[interludeIndex];
+}
+
+export function getRandomInterlude(locationId: string): InterludeContent | undefined {
+  const locationInterludes = interludesMap[locationId];
+  if (!locationInterludes || locationInterludes.interludes.length === 0) return undefined;
+
+  const randomIndex = Math.floor(Math.random() * locationInterludes.interludes.length);
+  return locationInterludes.interludes[randomIndex];
 }

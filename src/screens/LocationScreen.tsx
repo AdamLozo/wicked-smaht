@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DialogueBox, TriviaCard, Button, Portrait, ScoreDisplay, Polaroid } from '../components';
+import { DialogueBox, TriviaCard, TriviaInterlude, Button, Portrait, ScoreDisplay, Polaroid } from '../components';
 import { RaceSplitScreen, StealChallengeScreen, BrendanTextOverlay, MaeveMemoPlayer } from '../components/rivals';
 import { useGame, useLifeline, useRival, useAudio } from '../contexts';
 import { useSFX } from '../hooks';
-import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation, getRandomIntroDialogue, getRandomSuccessDialogue, getRandomFailureDialogue, getUncollectedPolaroidByType, getRandomUncollectedPolaroid } from '../data';
-import type { ScreenId, LocationPhase, DialogueLine, Character, TriviaQuestion, StealQuestion } from '../types';
+import { locations, npcs, getTrivia, playerCharacters, SCORING, GAME_CONSTANTS, getNpcHintForQuestion, getSullyHintForQuestion, getStealQuestionForLocation, getRandomIntroDialogue, getRandomSuccessDialogue, getRandomFailureDialogue, getUncollectedPolaroidByType, getRandomUncollectedPolaroid, getInterludeForQuestion } from '../data';
+import type { ScreenId, LocationPhase, DialogueLine, Character, TriviaQuestion, StealQuestion, InterludeContent } from '../types';
 
 interface LocationScreenProps {
   onNavigate: (screen: ScreenId, data?: Record<string, unknown>) => void;
@@ -28,7 +28,8 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
     addScore,
     completeLocation,
     failLocation,
-    collectPolaroid
+    collectPolaroid,
+    timerDuration
   } = useGame();
 
   const { resetLocationLifelines } = useLifeline();
@@ -61,6 +62,11 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
   const [collectedPolaroidImage, setCollectedPolaroidImage] = useState('');
   const [collectedPolaroidCaption, setCollectedPolaroidCaption] = useState('');
   const [showPolaroidModal, setShowPolaroidModal] = useState(false);
+
+  // Interlude state (shows between questions)
+  const [showInterlude, setShowInterlude] = useState(false);
+  const [currentInterlude, setCurrentInterlude] = useState<InterludeContent | null>(null);
+  const [pendingQuestionIndex, setPendingQuestionIndex] = useState<number | null>(null);
 
   // Get the current question and its hints
   const currentQuestion = trivia?.questions[questionIndex];
@@ -213,12 +219,23 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
       setCorrectCount(newCorrectCount);
     }
 
-    // After reaction, move to next question or end
+    // After reaction, show interlude or move to next question/end
     setTimeout(() => {
       setShowReaction(false);
 
       if (questionIndex < trivia.questions.length - 1) {
-        setQuestionIndex(prev => prev + 1);
+        // Not the last question - show interlude before next question
+        const nextIndex = questionIndex + 1;
+        const interlude = getInterludeForQuestion(locationId, questionIndex);
+
+        if (interlude) {
+          setCurrentInterlude(interlude);
+          setPendingQuestionIndex(nextIndex);
+          setShowInterlude(true);
+        } else {
+          // No interlude available, advance directly
+          setQuestionIndex(nextIndex);
+        }
       } else {
         // End of trivia
         if (newCorrectCount >= GAME_CONSTANTS.PASSING_THRESHOLD) {
@@ -258,6 +275,16 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
   useEffect(() => {
     resetLocationLifelines();
   }, [locationId, resetLocationLifelines]);
+
+  // Handle interlude completion - advance to next question
+  const handleInterludeComplete = useCallback(() => {
+    setShowInterlude(false);
+    setCurrentInterlude(null);
+    if (pendingQuestionIndex !== null) {
+      setQuestionIndex(pendingQuestionIndex);
+      setPendingQuestionIndex(null);
+    }
+  }, [pendingQuestionIndex]);
 
   const handleKeyCeremony = useCallback(() => {
     playSFX('key_get');
@@ -388,11 +415,12 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
         )}
 
         {/* Trivia Phase */}
-        {phase === 'trivia_loop' && trivia && currentQuestion && !showReaction && (
+        {phase === 'trivia_loop' && trivia && currentQuestion && !showReaction && !showInterlude && (
           <div className="flex-1 flex items-center justify-center">
             <TriviaCard
               question={currentQuestion}
               onAnswer={handleAnswer}
+              timeLimit={timerDuration}
               className="w-full max-w-2xl"
               npcName={npc.name}
               npcPortrait={npc.portrait}
@@ -403,6 +431,18 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
               onSkipReplace={handleSkipReplace}
             />
           </div>
+        )}
+
+        {/* Interlude between questions */}
+        {phase === 'trivia_loop' && showInterlude && currentInterlude && trivia && (
+          <TriviaInterlude
+            content={currentInterlude}
+            locationName={location.name}
+            duration={10000}
+            onComplete={handleInterludeComplete}
+            questionNumber={pendingQuestionIndex !== null ? pendingQuestionIndex + 1 : questionIndex + 1}
+            totalQuestions={trivia.questions.length}
+          />
         )}
 
         {/* Reaction */}
@@ -445,6 +485,8 @@ export function LocationScreen({ onNavigate, data }: LocationScreenProps) {
               text={getCurrentDialogue()?.text || ''}
               speakerName={getCurrentSpeaker()?.name || 'Unknown'}
               speakerPortrait={getCurrentSpeaker()?.portrait}
+              speakerId={getCurrentDialogue()?.speakerId}
+              audioFile={getCurrentDialogue()?.audioFile}
               onComplete={handleDialogueAdvance}
             />
           )}

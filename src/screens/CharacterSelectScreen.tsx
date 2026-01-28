@@ -3,16 +3,17 @@ import { motion } from 'framer-motion';
 import { Button, Portrait } from '../components';
 import { useGame, useAudio } from '../contexts';
 import { playerCharacters } from '../data';
-import type { ScreenId } from '../types';
+import type { ScreenId, DifficultyLevel } from '../types';
 
 interface CharacterSelectScreenProps {
   onNavigate: (screen: ScreenId) => void;
 }
 
 export function CharacterSelectScreen({ onNavigate }: CharacterSelectScreenProps) {
-  const { selectCharacter } = useGame();
+  const { selectCharacter, setDifficulty } = useGame();
   const { playSfx } = useAudio();
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedDifficulty, setSelectedDifficulty] = useState<DifficultyLevel>('local');
 
   const characters = Object.values(playerCharacters);
   const selectedCharacter = selectedId ? playerCharacters[selectedId] : null;
@@ -21,8 +22,14 @@ export function CharacterSelectScreen({ onNavigate }: CharacterSelectScreenProps
     if (selectedId) {
       playSfx('click');
       selectCharacter(selectedId);
+      setDifficulty(selectedDifficulty);
       onNavigate('map');
     }
+  };
+
+  const handleDifficultyToggle = (difficulty: DifficultyLevel) => {
+    playSfx('click');
+    setSelectedDifficulty(difficulty);
   };
 
   const handleCharacterSelect = (charId: string) => {
@@ -31,12 +38,12 @@ export function CharacterSelectScreen({ onNavigate }: CharacterSelectScreenProps
   };
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen p-8 overflow-auto">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center mb-8"
+        className="text-center mb-6"
       >
         <h1 className="text-4xl font-display text-boston-gold mb-2">
           Choose Your O'Brien
@@ -44,6 +51,44 @@ export function CharacterSelectScreen({ onNavigate }: CharacterSelectScreenProps
         <p className="text-boston-cream/70">
           Each cousin has their own way of handling Boston.
         </p>
+      </motion.div>
+
+      {/* Difficulty Selection - Moved to top for visibility */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="max-w-md mx-auto mb-6"
+      >
+        <h3 className="text-center text-boston-cream/70 mb-3 font-body text-sm">
+          How well do you know Boston?
+        </h3>
+        <div className="flex gap-3 justify-center">
+          <button
+            onClick={() => handleDifficultyToggle('novice')}
+            className={`
+              px-4 py-2 rounded-lg border-2 transition-all font-body
+              ${selectedDifficulty === 'novice'
+                ? 'border-boston-gold bg-boston-gold/20 text-boston-gold'
+                : 'border-boston-cream/30 text-boston-cream/70 hover:border-boston-cream/50'}
+            `}
+          >
+            <span className="block font-display text-base">Novice</span>
+            <span className="text-xs opacity-70">Extra time</span>
+          </button>
+          <button
+            onClick={() => handleDifficultyToggle('local')}
+            className={`
+              px-4 py-2 rounded-lg border-2 transition-all font-body
+              ${selectedDifficulty === 'local'
+                ? 'border-boston-gold bg-boston-gold/20 text-boston-gold'
+                : 'border-boston-cream/30 text-boston-cream/70 hover:border-boston-cream/50'}
+            `}
+          >
+            <span className="block font-display text-base">From Boston</span>
+            <span className="text-xs opacity-70">Standard</span>
+          </button>
+        </div>
       </motion.div>
 
       {/* Character Grid */}

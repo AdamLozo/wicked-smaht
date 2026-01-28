@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button, ScoreDisplay, RivalIndicator, RivalProgressPanel, StealOpportunityBadge } from '../components';
 import { StealSelectionModal } from '../components/rivals/StealChallengeScreen';
 import { FamilyGroupChat } from '../components/rivals/FamilyGroupChat';
@@ -35,6 +35,16 @@ export function MapScreen({ onNavigate }: MapScreenProps) {
 
   const [showStealModal, setShowStealModal] = useState(false);
   const [showGroupChat, setShowGroupChat] = useState(false);
+  const [showTutorialHint, setShowTutorialHint] = useState(false);
+
+  // Show tutorial hint for first-time players
+  useEffect(() => {
+    if (state.completedLocations.length === 0) {
+      // Small delay so the map loads first
+      const timer = setTimeout(() => setShowTutorialHint(true), 800);
+      return () => clearTimeout(timer);
+    }
+  }, [state.completedLocations.length]);
 
   // Play exploration music on mount
   useEffect(() => {
@@ -218,6 +228,47 @@ export function MapScreen({ onNavigate }: MapScreenProps) {
         isOpen={showGroupChat}
         onClose={() => setShowGroupChat(false)}
       />
+
+      {/* Tutorial Hint for First-Time Players */}
+      <AnimatePresence>
+        {showTutorialHint && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4"
+            onClick={() => setShowTutorialHint(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="bg-boston-navy border-2 border-boston-gold rounded-lg p-6 max-w-sm text-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="w-12 h-12 bg-boston-gold rounded-full mx-auto mb-4 flex items-center justify-center animate-pulse">
+                <span className="text-boston-navy text-2xl font-bold">!</span>
+              </div>
+              <h3 className="font-display text-xl text-boston-gold mb-2">
+                Time to Explore!
+              </h3>
+              <p className="text-boston-cream/80 font-body mb-4">
+                Tap on a <span className="text-boston-gold font-semibold">yellow dot</span> on
+                the map to visit a neighborhood and answer trivia questions to earn keys.
+              </p>
+              <p className="text-boston-cream/60 text-sm font-body mb-4">
+                Start with <span className="text-boston-gold">Southie</span> — it's already unlocked!
+              </p>
+              <Button
+                onClick={() => setShowTutorialHint(false)}
+                className="w-full"
+              >
+                Got It!
+              </Button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -82,11 +82,11 @@ export function useSaveGame() {
 // Version migration handler
 function migrateIfNeeded(data: SaveData): SaveData {
   // Add migration logic as versions change
-  // Example:
-  // if (data.version === '0.9.0') {
-  //   data.gameState.newField = defaultValue;
-  //   data.version = '1.0.0';
-  // }
+
+  // Ensure difficulty field exists (added in version with difficulty toggle)
+  if (!data.gameState.difficulty) {
+    data.gameState.difficulty = 'local'; // Default for existing saves
+  }
 
   return data;
 }

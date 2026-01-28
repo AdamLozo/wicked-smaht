@@ -1,0 +1,412 @@
+{
+  "southie": {
+    "locationId": "southie",
+    "theme": "Working-class pride and Irish heritage",
+    "interludes": [
+      {
+        "id": "southie_int_1",
+        "type": "fun_fact",
+        "headline": "Did You Know?",
+        "text": "South Boston's annual St. Patrick's Day parade has been running since 1901, making it one of the oldest in America.",
+        "icon": "shamrock"
+      },
+      {
+        "id": "southie_int_2",
+        "type": "context",
+        "headline": "Local Lore",
+        "text": "Castle Island isn't actually an island anymore. It was connected to the mainland in 1928.",
+        "icon": "castle"
+      },
+      {
+        "id": "southie_int_3",
+        "type": "fun_fact",
+        "headline": "Triple Deckers",
+        "text": "The iconic triple-decker homes were built for immigrant families to share, with each floor housing a different generation.",
+        "icon": "home"
+      },
+      {
+        "id": "southie_int_4",
+        "type": "context",
+        "headline": "The Brownies",
+        "text": "The L Street Brownies have been swimming in the Atlantic year-round since 1902. Even on January 1st.",
+        "icon": "waves"
+      },
+      {
+        "id": "southie_int_5",
+        "type": "fun_fact",
+        "headline": "Broadway's Heart",
+        "text": "Broadway in Southie was once the center of the Irish immigrant community, lined with bakeries, pubs, and parish halls.",
+        "icon": "street"
+      }
+    ]
+  },
+  "north_end": {
+    "locationId": "north_end",
+    "theme": "Italian heritage and culinary tradition",
+    "interludes": [
+      {
+        "id": "north_end_int_1",
+        "type": "fun_fact",
+        "headline": "America's Little Italy",
+        "text": "The North End has been Boston's Italian neighborhood since the 1880s, home to over 100 restaurants in just 1 square mile.",
+        "icon": "pasta"
+      },
+      {
+        "id": "north_end_int_2",
+        "type": "context",
+        "headline": "Saint's Days",
+        "text": "Every summer, the North End hosts over a dozen religious festivals honoring Italian patron saints, called 'festas.'",
+        "icon": "celebrate"
+      },
+      {
+        "id": "north_end_int_3",
+        "type": "fun_fact",
+        "headline": "Paul Revere's Ride",
+        "text": "Paul Revere's house, built around 1680, is the oldest remaining structure in downtown Boston.",
+        "icon": "horse"
+      },
+      {
+        "id": "north_end_int_4",
+        "type": "context",
+        "headline": "Narrow Streets",
+        "text": "The North End's narrow, winding streets follow the original colonial layout, predating the grid system.",
+        "icon": "map"
+      },
+      {
+        "id": "north_end_int_5",
+        "type": "fun_fact",
+        "headline": "Cannoli Wars",
+        "text": "Mike's Pastry and Modern Pastry have been in a friendly cannoli rivalry since the 1940s. Locals take sides seriously.",
+        "icon": "dessert"
+      }
+    ]
+  },
+  "fenway": {
+    "locationId": "fenway",
+    "theme": "Baseball history and college culture",
+    "interludes": [
+      {
+        "id": "fenway_int_1",
+        "type": "fun_fact",
+        "headline": "America's Oldest",
+        "text": "Fenway Park opened in 1912, making it the oldest Major League Baseball stadium still in use.",
+        "icon": "baseball"
+      },
+      {
+        "id": "fenway_int_2",
+        "type": "context",
+        "headline": "The Green Monster",
+        "text": "The Green Monster is 37 feet tall. It was originally built to prevent people from watching games for free.",
+        "icon": "wall"
+      },
+      {
+        "id": "fenway_int_3",
+        "type": "fun_fact",
+        "headline": "Curse Reversed",
+        "text": "The 'Curse of the Bambino' lasted 86 years after the Red Sox sold Babe Ruth in 1920. They finally won in 2004.",
+        "icon": "trophy"
+      },
+      {
+        "id": "fenway_int_4",
+        "type": "context",
+        "headline": "Kenmore Square",
+        "text": "The iconic Citgo sign has been glowing over Kenmore Square since 1965, becoming an unofficial Boston landmark.",
+        "icon": "neon"
+      },
+      {
+        "id": "fenway_int_5",
+        "type": "fun_fact",
+        "headline": "Pesky's Pole",
+        "text": "The right field foul pole is named for Johnny Pesky, though he only hit six home runs around it.",
+        "icon": "flag"
+      }
+    ]
+  },
+  "beacon_hill": {
+    "locationId": "beacon_hill",
+    "theme": "Historic elegance and literary heritage",
+    "interludes": [
+      {
+        "id": "beacon_hill_int_1",
+        "type": "fun_fact",
+        "headline": "Gaslight Era",
+        "text": "Beacon Hill still has gas-lit street lamps. The 1800s aesthetic is protected by strict historical guidelines.",
+        "icon": "lamp"
+      },
+      {
+        "id": "beacon_hill_int_2",
+        "type": "context",
+        "headline": "Purple Panes",
+        "text": "Some Beacon Hill windows have purple glass, accidentally created by manganese oxide reacting with sunlight over centuries.",
+        "icon": "window"
+      },
+      {
+        "id": "beacon_hill_int_3",
+        "type": "fun_fact",
+        "headline": "Acorn Street",
+        "text": "Acorn Street is often called the most photographed street in America. The cobblestones are original.",
+        "icon": "camera"
+      },
+      {
+        "id": "beacon_hill_int_4",
+        "type": "context",
+        "headline": "The Sacred Cod",
+        "text": "A wooden codfish has hung in the Massachusetts State House since 1784, symbolizing the fishing industry's importance.",
+        "icon": "fish"
+      },
+      {
+        "id": "beacon_hill_int_5",
+        "type": "fun_fact",
+        "headline": "Literary Haven",
+        "text": "Louisa May Alcott, Nathaniel Hawthorne, and Henry David Thoreau all lived on Beacon Hill.",
+        "icon": "book"
+      }
+    ]
+  },
+  "charlestown": {
+    "locationId": "charlestown",
+    "theme": "Revolutionary War history and Navy pride",
+    "interludes": [
+      {
+        "id": "charlestown_int_1",
+        "type": "fun_fact",
+        "headline": "Old Ironsides",
+        "text": "The USS Constitution, launched in 1797, is the world's oldest commissioned warship still afloat.",
+        "icon": "ship"
+      },
+      {
+        "id": "charlestown_int_2",
+        "type": "context",
+        "headline": "Bunker Hill",
+        "text": "'Don't fire until you see the whites of their eyes' was supposedly said at the Battle of Bunker Hill in 1775.",
+        "icon": "monument"
+      },
+      {
+        "id": "charlestown_int_3",
+        "type": "fun_fact",
+        "headline": "Navy Yard Legacy",
+        "text": "The Charlestown Navy Yard built and repaired ships for 174 years, from 1800 to 1974.",
+        "icon": "anchor"
+      },
+      {
+        "id": "charlestown_int_4",
+        "type": "context",
+        "headline": "The Monument",
+        "text": "The Bunker Hill Monument has 294 steps and no elevator. Climbing it became a Boston rite of passage.",
+        "icon": "stairs"
+      },
+      {
+        "id": "charlestown_int_5",
+        "type": "fun_fact",
+        "headline": "Townies",
+        "text": "Charlestown was a separate town until 1874. Many 'Townies' families have lived there for generations.",
+        "icon": "community"
+      }
+    ]
+  },
+  "back_bay": {
+    "locationId": "back_bay",
+    "theme": "Victorian grandeur and urban design",
+    "interludes": [
+      {
+        "id": "back_bay_int_1",
+        "type": "fun_fact",
+        "headline": "Made Land",
+        "text": "Back Bay was literally underwater until the 1850s. It took 40 years to fill in the bay with gravel.",
+        "icon": "construction"
+      },
+      {
+        "id": "back_bay_int_2",
+        "type": "context",
+        "headline": "Alphabetical Order",
+        "text": "The cross streets in Back Bay run alphabetically: Arlington, Berkeley, Clarendon, Dartmouth, Exeter, Fairfield, Gloucester, Hereford.",
+        "icon": "abc"
+      },
+      {
+        "id": "back_bay_int_3",
+        "type": "fun_fact",
+        "headline": "Copley Square",
+        "text": "The Boston Public Library was the first large free municipal library in America, opened in 1895.",
+        "icon": "library"
+      },
+      {
+        "id": "back_bay_int_4",
+        "type": "context",
+        "headline": "Brownstone Row",
+        "text": "Commonwealth Avenue's brownstones were designed to rival the grand boulevards of Paris.",
+        "icon": "building"
+      },
+      {
+        "id": "back_bay_int_5",
+        "type": "fun_fact",
+        "headline": "Trinity Church",
+        "text": "Trinity Church sits on 4,500 wooden pilings. Workers must keep them wet to prevent rot.",
+        "icon": "church"
+      }
+    ]
+  },
+  "cambridge": {
+    "locationId": "cambridge",
+    "theme": "Academic excellence and innovation",
+    "interludes": [
+      {
+        "id": "cambridge_int_1",
+        "type": "fun_fact",
+        "headline": "Oldest in America",
+        "text": "Harvard was founded in 1636, just 16 years after the Pilgrims landed at Plymouth Rock.",
+        "icon": "graduation"
+      },
+      {
+        "id": "cambridge_int_2",
+        "type": "context",
+        "headline": "Cambridge Connection",
+        "text": "Cambridge, Massachusetts was named after Cambridge, England, where many early colonists had studied.",
+        "icon": "bridge"
+      },
+      {
+        "id": "cambridge_int_3",
+        "type": "fun_fact",
+        "headline": "Nobel Central",
+        "text": "MIT has produced 98 Nobel laureates, making it one of the most decorated research institutions on Earth.",
+        "icon": "medal"
+      },
+      {
+        "id": "cambridge_int_4",
+        "type": "context",
+        "headline": "Harvard Square",
+        "text": "Harvard Square has been a gathering place since 1630, predating the university itself.",
+        "icon": "plaza"
+      },
+      {
+        "id": "cambridge_int_5",
+        "type": "fun_fact",
+        "headline": "The Statue",
+        "text": "The John Harvard statue is called the 'Statue of Three Lies' because the name, date, and claim of being the founder are all wrong.",
+        "icon": "statue"
+      }
+    ]
+  },
+  "dorchester": {
+    "locationId": "dorchester",
+    "theme": "Diverse communities and neighborhood pride",
+    "interludes": [
+      {
+        "id": "dorchester_int_1",
+        "type": "fun_fact",
+        "headline": "Dot's Scale",
+        "text": "Dorchester is Boston's largest neighborhood by area and population. Locals call it 'Dot.'",
+        "icon": "dot"
+      },
+      {
+        "id": "dorchester_int_2",
+        "type": "context",
+        "headline": "Triple Deckers",
+        "text": "Dorchester has more triple-decker homes than any other neighborhood in America.",
+        "icon": "home"
+      },
+      {
+        "id": "dorchester_int_3",
+        "type": "fun_fact",
+        "headline": "JFK's Birthplace",
+        "text": "John F. Kennedy was born in Brookline, but Dorchester's JFK/UMass T station honors his family's Boston roots.",
+        "icon": "president"
+      },
+      {
+        "id": "dorchester_int_4",
+        "type": "context",
+        "headline": "First in America",
+        "text": "The first chocolate factory in America opened in Dorchester in 1764. It became Baker's Chocolate.",
+        "icon": "chocolate"
+      },
+      {
+        "id": "dorchester_int_5",
+        "type": "fun_fact",
+        "headline": "Cultural Mosaic",
+        "text": "Dorchester is one of the most ethnically diverse zip codes in America, home to Vietnamese, Irish, Haitian, and Cape Verdean communities.",
+        "icon": "globe"
+      }
+    ]
+  },
+  "downtown": {
+    "locationId": "downtown",
+    "theme": "Freedom Trail and founding fathers",
+    "interludes": [
+      {
+        "id": "downtown_int_1",
+        "type": "fun_fact",
+        "headline": "Freedom Trail",
+        "text": "The Freedom Trail covers 2.5 miles and 16 historic sites, from Boston Common to the Bunker Hill Monument.",
+        "icon": "trail"
+      },
+      {
+        "id": "downtown_int_2",
+        "type": "context",
+        "headline": "Faneuil Hall",
+        "text": "Faneuil Hall has been called the 'Cradle of Liberty' since Samuel Adams and others debated independence there.",
+        "icon": "hall"
+      },
+      {
+        "id": "downtown_int_3",
+        "type": "fun_fact",
+        "headline": "Boston Massacre",
+        "text": "The Boston Massacre happened on March 5, 1770. A circle of cobblestones marks the spot on State Street.",
+        "icon": "marker"
+      },
+      {
+        "id": "downtown_int_4",
+        "type": "context",
+        "headline": "Old South Meeting",
+        "text": "The Boston Tea Party was planned at Old South Meeting House before 5,000 colonists marched to Griffin's Wharf.",
+        "icon": "meeting"
+      },
+      {
+        "id": "downtown_int_5",
+        "type": "fun_fact",
+        "headline": "King's Chapel",
+        "text": "King's Chapel was built in 1688 and contains the oldest pulpit still in use in America.",
+        "icon": "chapel"
+      }
+    ]
+  },
+  "seaport": {
+    "locationId": "seaport",
+    "theme": "Modern innovation and waterfront renewal",
+    "interludes": [
+      {
+        "id": "seaport_int_1",
+        "type": "fun_fact",
+        "headline": "Innovation District",
+        "text": "The Seaport transformed from parking lots to a tech hub in just 15 years, attracting startups and biotech firms.",
+        "icon": "rocket"
+      },
+      {
+        "id": "seaport_int_2",
+        "type": "context",
+        "headline": "Boston Tea Party",
+        "text": "Griffin's Wharf, where the Tea Party happened in 1773, was located in what is now the Seaport district.",
+        "icon": "tea"
+      },
+      {
+        "id": "seaport_int_3",
+        "type": "fun_fact",
+        "headline": "ICA Boston",
+        "text": "The Institute of Contemporary Art was the first new museum built in Boston in 100 years when it opened in 2006.",
+        "icon": "art"
+      },
+      {
+        "id": "seaport_int_4",
+        "type": "context",
+        "headline": "Convention Center",
+        "text": "The Boston Convention and Exhibition Center is the largest convention center in the Northeast, covering 2.1 million square feet.",
+        "icon": "convention"
+      },
+      {
+        "id": "seaport_int_5",
+        "type": "fun_fact",
+        "headline": "Harbor Walk",
+        "text": "The 43-mile HarborWalk connects beaches, parks, and neighborhoods along Boston's entire waterfront.",
+        "icon": "walk"
+      }
+    ]
+  }
+}

@@ -87,6 +87,7 @@ export interface DialogueLine {
   speaker: 'npc' | 'player' | 'narrator';
   speakerId?: string;
   text: string;
+  audioFile?: string;
   characterVariants?: Record<string, string>;
   emotion?: 'neutral' | 'happy' | 'sad' | 'angry' | 'surprised';
 }
@@ -237,6 +238,8 @@ export interface CousinResponse {
 // GAME STATE TYPES
 // ============================================
 
+export type DifficultyLevel = 'novice' | 'local';
+
 export interface AnsweredQuestion {
   correct: boolean;
   attempts: number;
@@ -245,6 +248,7 @@ export interface AnsweredQuestion {
 export interface GameState {
   // Player
   selectedCharacter: string | null;
+  difficulty: DifficultyLevel;
 
   // Progress
   currentLocation: string | null;
@@ -406,3 +410,23 @@ export const LIFELINE_COSTS = {
   phone_a_local: -30,
   skip_and_replace: -50, // Can be modified by Colleen's perk to -35
 } as const;
+
+// ============================================
+// INTERLUDE TYPES (Between-question interludes)
+// ============================================
+
+export type InterludeContentType = 'fun_fact' | 'context';
+
+export interface InterludeContent {
+  id: string;
+  type: InterludeContentType;
+  headline: string;
+  text: string;
+  icon: string;
+}
+
+export interface LocationInterludes {
+  locationId: string;
+  theme: string;
+  interludes: InterludeContent[];
+}

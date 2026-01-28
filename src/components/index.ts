@@ -21,6 +21,7 @@ export { TypewriterText } from './dialogue/TypewriterText';
 
 // Trivia Components
 export { TriviaCard } from './trivia/TriviaCard';
+export { TriviaInterlude } from './trivia/TriviaInterlude';
 
 // Rival Components
 export { FamilyGroupChat, FAMILY_CHAT_MESSAGES } from './rivals/FamilyGroupChat';

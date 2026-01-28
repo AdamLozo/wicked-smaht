@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer, type ReactNode } from 'react';
-import type { GameState, AnsweredQuestion } from '../types';
+import type { GameState, AnsweredQuestion, DifficultyLevel } from '../types';
 import { GAME_CONSTANTS } from '../data';
 
 // ============================================
@@ -15,6 +15,7 @@ function generatePlaythroughId(): string {
 const initialState: GameState = {
   // Player
   selectedCharacter: null,
+  difficulty: 'local', // Default to standard difficulty
 
   // Progress
   currentLocation: null,
@@ -53,6 +54,7 @@ const initialState: GameState = {
 
 type GameAction =
   | { type: 'SELECT_CHARACTER'; characterId: string }
+  | { type: 'SET_DIFFICULTY'; difficulty: DifficultyLevel }
   | { type: 'START_LOCATION'; locationId: string }
   | { type: 'COMPLETE_LOCATION'; locationId: string; keyEarned: boolean }
   | { type: 'LEAVE_LOCATION' }
@@ -79,6 +81,12 @@ function gameReducer(state: GameState, action: GameAction): GameState {
       return {
         ...state,
         selectedCharacter: action.characterId,
+      };
+
+    case 'SET_DIFFICULTY':
+      return {
+        ...state,
+        difficulty: action.difficulty,
       };
 
     case 'START_LOCATION':
@@ -206,6 +214,7 @@ interface GameContextValue {
 
   // Helper methods
   selectCharacter: (characterId: string) => void;
+  setDifficulty: (difficulty: DifficultyLevel) => void;
   startLocation: (locationId: string) => void;
   completeLocation: (locationId: string, keyEarned?: boolean) => void;
   failLocation: (locationId: string) => void;
@@ -227,6 +236,7 @@ interface GameContextValue {
   correctAnswersForLocation: (locationId: string) => number;
   locationProgress: string;
   endingType: 'standard' | 'true' | 'perfect';
+  timerDuration: number; // Adjusted for difficulty
 }
 
 const GameContext = createContext<GameContextValue | null>(null);
@@ -245,6 +255,10 @@ export function GameProvider({ children }: GameProviderProps) {
   // Helper methods
   const selectCharacter = (characterId: string) => {
     dispatch({ type: 'SELECT_CHARACTER', characterId });
+  };
+
+  const setDifficulty = (difficulty: DifficultyLevel) => {
+    dispatch({ type: 'SET_DIFFICULTY', difficulty });
   };
 
   const startLocation = (locationId: string) => {
@@ -318,6 +332,11 @@ export function GameProvider({ children }: GameProviderProps) {
 
   const locationProgress = `${state.completedLocations.length}/10 locations | ${state.keysCollected.length}/10 keys`;
 
+  // Timer duration adjusted for difficulty (novice gets 1.6x time)
+  const timerDuration = state.difficulty === 'novice'
+    ? Math.round(GAME_CONSTANTS.TIMER_DURATION * 1.6)
+    : GAME_CONSTANTS.TIMER_DURATION;
+
   // Determine ending type based on conditions
   const endingType: 'standard' | 'true' | 'perfect' = (() => {
     if (state.gauntletAttempts === 1 && state.gauntletPassed) {
@@ -333,6 +352,7 @@ export function GameProvider({ children }: GameProviderProps) {
     state,
     dispatch,
     selectCharacter,
+    setDifficulty,
     startLocation,
     completeLocation,
     failLocation,
@@ -352,6 +372,7 @@ export function GameProvider({ children }: GameProviderProps) {
     correctAnswersForLocation,
     locationProgress,
     endingType,
+    timerDuration,
   };
 
   return (
