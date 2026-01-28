@@ -73,7 +73,7 @@ export function CharacterSelectScreen({ onNavigate }: CharacterSelectScreenProps
                 : 'border-boston-cream/30 text-boston-cream/70 hover:border-boston-cream/50'}
             `}
           >
-            <span className="block font-display text-base">Novice</span>
+            <span className="block font-display text-base">Out-of-Towner</span>
             <span className="text-xs opacity-70">Extra time</span>
           </button>
           <button
@@ -85,7 +85,7 @@ export function CharacterSelectScreen({ onNavigate }: CharacterSelectScreenProps
                 : 'border-boston-cream/30 text-boston-cream/70 hover:border-boston-cream/50'}
             `}
           >
-            <span className="block font-display text-base">From Boston</span>
+            <span className="block font-display text-base">Townie</span>
             <span className="text-xs opacity-70">Standard</span>
           </button>
         </div>
